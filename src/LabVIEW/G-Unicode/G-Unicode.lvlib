@@ -25,20 +25,32 @@ https://github.com/dataflowg/g-unicode</Property>
 	<Item Name="File I/O" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Item Name="Build Path.vim" Type="VI" URL="../File IO/Build Path.vim"/>
-		<Item Name="Open-Create-Replace File.vi" Type="VI" URL="../File IO/Open-Create-Replace File.vi"/>
-		<Item Name="File Dialog.vi" Type="VI" URL="../File IO/File Dialog.vi"/>
+		<Item Name="Close File.vi" Type="VI" URL="../File IO/Close File.vi"/>
+		<Item Name="Create File.vim" Type="VI" URL="../File IO/Create File.vim"/>
+		<Item Name="File Dialog.vim" Type="VI" URL="../File IO/File Dialog.vim"/>
+		<Item Name="List Folder.vim" Type="VI" URL="../File IO/List Folder.vim"/>
+		<Item Name="Not A Path.vim" Type="VI" URL="../File IO/Not A Path.vim"/>
+		<Item Name="Open-Create-Replace File.vim" Type="VI" URL="../File IO/Open-Create-Replace File.vim"/>
+		<Item Name="Path to Short Name.vi" Type="VI" URL="../File IO/Path to Short Name.vi"/>
+		<Item Name="Path Type.vim" Type="VI" URL="../File IO/Path Type.vim"/>
 		<Item Name="Path to String.vim" Type="VI" URL="../File IO/Path to String.vim"/>
+		<Item Name="Refnum To Path.vi" Type="VI" URL="../File IO/Refnum To Path.vi"/>
+		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
 		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
 		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
-		<Item Name="Path to Short Name.vi" Type="VI" URL="../File IO/Path to Short Name.vi"/>
-		<Item Name="Not A Path.vim" Type="VI" URL="../File IO/Not A Path.vim"/>
-		<Item Name="List Folder.vim" Type="VI" URL="../File IO/List Folder.vim"/>
 	</Item>
 	<Item Name="Private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="Assert Path (as Encoded Path).vim" Type="VI" URL="../Private/Assert Path (as Encoded Path).vim"/>
+		<Item Name="Assert Path (as Path).vim" Type="VI" URL="../Private/Assert Path (as Path).vim"/>
+		<Item Name="Assert Path (as UTF-8 Path).vim" Type="VI" URL="../Private/Assert Path (as UTF-8 Path).vim"/>
+		<Item Name="Assert String (as Encoded String).vim" Type="VI" URL="../Private/Assert String (as Encoded String).vim"/>
+		<Item Name="Assert String (as String).vim" Type="VI" URL="../Private/Assert String (as String).vim"/>
+		<Item Name="Assert String (as UTF-8 String).vim" Type="VI" URL="../Private/Assert String (as UTF-8 String).vim"/>
+		<Item Name="Assert Text (as Encoded Path).vim" Type="VI" URL="../Private/Assert Text (as Encoded Path).vim"/>
+		<Item Name="Assert Text (as Encoded String).vim" Type="VI" URL="../Private/Assert Text (as Encoded String).vim"/>
 		<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Copy String Array.vi"/>
 		<Item Name="Copy String.vi" Type="VI" URL="../Private/Copy String.vi"/>
-		<Item Name="Create File.vi" Type="VI" URL="../Private/Create File.vi"/>
 		<Item Name="Debug Path.vi" Type="VI" URL="../Private/Debug Path.vi"/>
 		<Item Name="Free Memory.vi" Type="VI" URL="../Private/Free Memory.vi"/>
 		<Item Name="Move Block.vim" Type="VI" URL="../Private/Move Block.vim"/>
@@ -54,20 +66,14 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="To Upper Case.vim" Type="VI" URL="../String/To Upper Case.vim"/>
 	</Item>
 	<Item Name="Types" Type="Folder">
-		<Item Name="Raw UTF-8 Path.ctl" Type="VI" URL="../Types/Raw UTF-8 Path.ctl"/>
-		<Item Name="Raw UTF-8 String.ctl" Type="VI" URL="../Types/Raw UTF-8 String.ctl"/>
-		<Item Name="Raw UTF-16LE String.ctl" Type="VI" URL="../Types/Raw UTF-16LE String.ctl"/>
+		<Item Name="Encoded UTF-8 Path.ctl" Type="VI" URL="../Types/Encoded UTF-8 Path.ctl"/>
+		<Item Name="Encoded UTF-8 String.ctl" Type="VI" URL="../Types/Encoded UTF-8 String.ctl"/>
+		<Item Name="Encoded UTF-16LE String.ctl" Type="VI" URL="../Types/Encoded UTF-16LE String.ctl"/>
 		<Item Name="UTF-8 Path.lvclass" Type="LVClass" URL="../Types/UTF-8 Path/UTF-8 Path.lvclass"/>
 		<Item Name="UTF-8 String.lvclass" Type="LVClass" URL="../Types/UTF-8 String/UTF-8 String.lvclass"/>
 	</Item>
 	<Item Name="Unicode" Type="Folder">
-		<Item Name="Path to Raw UTF-8 Path.vim" Type="VI" URL="../Unicode/Path to Raw UTF-8 Path.vim"/>
-		<Item Name="Path To UTF-8 Path.vim" Type="VI" URL="../Unicode/Path To UTF-8 Path.vim"/>
-		<Item Name="Raw UTF-16LE String to Raw UTF-8 String.vi" Type="VI" URL="../Unicode/Raw UTF-16LE String to Raw UTF-8 String.vi"/>
-		<Item Name="String to Raw UTF-8 String.vim" Type="VI" URL="../Unicode/String to Raw UTF-8 String.vim"/>
-		<Item Name="String to Raw UTF-16LE String.vim" Type="VI" URL="../Unicode/String to Raw UTF-16LE String.vim"/>
-		<Item Name="String To UTF-8 String.vim" Type="VI" URL="../Unicode/String To UTF-8 String.vim"/>
-		<Item Name="To Raw UTF-8 Path.vim" Type="VI" URL="../Unicode/To Raw UTF-8 Path.vim"/>
-		<Item Name="To Raw UTF-8 String.vim" Type="VI" URL="../Unicode/To Raw UTF-8 String.vim"/>
+		<Item Name="Encoded UTF-8 String to Encoded UTF-16LE String.vi" Type="VI" URL="../Unicode/Encoded UTF-8 String to Encoded UTF-16LE String.vi"/>
+		<Item Name="Encoded UTF-16LE String to Encoded UTF-8 String.vi" Type="VI" URL="../Unicode/Encoded UTF-16LE String to Encoded UTF-8 String.vi"/>
 	</Item>
 </Library>
