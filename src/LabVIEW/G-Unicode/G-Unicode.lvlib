@@ -38,26 +38,69 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
 		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
 		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
+		<Item Name="Recursive File List.vi" Type="VI" URL="../File IO/Recursive File List.vi"/>
 	</Item>
 	<Item Name="Private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
-		<Item Name="Assert Path (as Encoded Path).vim" Type="VI" URL="../Private/Assert Path (as Encoded Path).vim"/>
-		<Item Name="Assert Path (as Path).vim" Type="VI" URL="../Private/Assert Path (as Path).vim"/>
-		<Item Name="Assert Path (as UTF-8 Path).vim" Type="VI" URL="../Private/Assert Path (as UTF-8 Path).vim"/>
-		<Item Name="Assert String (as Encoded String).vim" Type="VI" URL="../Private/Assert String (as Encoded String).vim"/>
-		<Item Name="Assert String (as String).vim" Type="VI" URL="../Private/Assert String (as String).vim"/>
-		<Item Name="Assert String (as UTF-8 String).vim" Type="VI" URL="../Private/Assert String (as UTF-8 String).vim"/>
-		<Item Name="Assert Text (as Encoded Path).vim" Type="VI" URL="../Private/Assert Text (as Encoded Path).vim"/>
-		<Item Name="Assert Text (as Encoded String).vim" Type="VI" URL="../Private/Assert Text (as Encoded String).vim"/>
-		<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Copy String Array.vi"/>
-		<Item Name="Copy String.vi" Type="VI" URL="../Private/Copy String.vi"/>
-		<Item Name="Debug Path.vi" Type="VI" URL="../Private/Debug Path.vi"/>
-		<Item Name="Free Memory.vi" Type="VI" URL="../Private/Free Memory.vi"/>
-		<Item Name="Move Block.vim" Type="VI" URL="../Private/Move Block.vim"/>
+		<Item Name="Assert" Type="Folder">
+			<Item Name="Assert Unicode Path.vim" Type="VI" URL="../Private/Assert/Assert Unicode Path.vim"/>
+			<Item Name="Assert Unicode String.vim" Type="VI" URL="../Private/Assert/Assert Unicode String.vim"/>
+			<Item Name="Assert Unicode Text.vim" Type="VI" URL="../Private/Assert/Assert Unicode Text.vim"/>
+		</Item>
+		<Item Name="Conversion" Type="Folder">
+			<Item Name="Polymorphic VIs" Type="Folder">
+				<Item Name="Path as Encoded Path (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as Encoded Path (LabVIEW Path).vi"/>
+				<Item Name="Path as Encoded Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as Encoded Path (UTF-8 Path).vi"/>
+				<Item Name="Path as Path (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as Path (LabVIEW Path).vi"/>
+				<Item Name="Path as Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as Path (UTF-8 Path).vi"/>
+				<Item Name="Path as UTF-8 Path (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as UTF-8 Path (LabVIEW Path).vi"/>
+				<Item Name="Path as UTF-8 Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as UTF-8 Path (UTF-8 Path).vi"/>
+				<Item Name="String as Encoded String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as Encoded String (LabVIEW String).vi"/>
+				<Item Name="String as Encoded String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as Encoded String (UTF-8 String).vi"/>
+				<Item Name="Text as Encoded Path (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (LabVIEW Path).vi"/>
+				<Item Name="Text as Encoded Path (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (LabVIEW String).vi"/>
+				<Item Name="Text as Encoded Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (UTF-8 Path).vi"/>
+				<Item Name="Text as Encoded Path (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (UTF-8 String).vi"/>
+				<Item Name="Text as Encoded String (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (LabVIEW Path).vi"/>
+				<Item Name="Text as Encoded String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (LabVIEW String).vi"/>
+				<Item Name="Text as Encoded String (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 Path).vi"/>
+				<Item Name="Text as Encoded String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 String).vi"/>
+			</Item>
+			<Item Name="Path as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Path as Encoded Path.vi"/>
+			<Item Name="Path as Path.vi" Type="VI" URL="../Private/Conversion/Path as Path.vi"/>
+			<Item Name="Path as UTF-8 Path.vi" Type="VI" URL="../Private/Conversion/Path as UTF-8 Path.vi"/>
+			<Item Name="String as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/String as Encoded String (Array).vim"/>
+			<Item Name="String as Encoded String.vi" Type="VI" URL="../Private/Conversion/String as Encoded String.vi"/>
+			<Item Name="String as String.vim" Type="VI" URL="../Private/Conversion/String as String.vim"/>
+			<Item Name="String as UTF-8 String.vim" Type="VI" URL="../Private/Conversion/String as UTF-8 String.vim"/>
+			<Item Name="Text as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Text as Encoded Path.vi"/>
+			<Item Name="Text as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/Text as Encoded String (Array).vim"/>
+			<Item Name="Text as Encoded String.vi" Type="VI" URL="../Private/Conversion/Text as Encoded String.vi"/>
+		</Item>
+		<Item Name="Library" Type="Folder">
+			<Item Name="_Debug Path.vi" Type="VI" URL="../Private/Library/_Debug Path.vi"/>
+			<Item Name="gu_create_file.vi" Type="VI" URL="../Private/Library/gu_create_file.vi"/>
+			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
+			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
+			<Item Name="gu_open_file_dialog.vi" Type="VI" URL="../Private/Library/gu_open_file_dialog.vi"/>
+			<Item Name="gu_reverse_string.vi" Type="VI" URL="../Private/Library/gu_reverse_string.vi"/>
+			<Item Name="gu_rotate_string.vi" Type="VI" URL="../Private/Library/gu_rotate_string.vi"/>
+			<Item Name="gu_string_subset.vi" Type="VI" URL="../Private/Library/gu_string_subset.vi"/>
+			<Item Name="gu_strlen.vi" Type="VI" URL="../Private/Library/gu_strlen.vi"/>
+			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
+			<Item Name="gu_to_upper_case.vi" Type="VI" URL="../Private/Library/gu_to_upper_case.vi"/>
+		</Item>
+		<Item Name="Memory" Type="Folder">
+			<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Memory/Copy String Array.vi"/>
+			<Item Name="Copy String.vi" Type="VI" URL="../Private/Memory/Copy String.vi"/>
+			<Item Name="Move Block.vim" Type="VI" URL="../Private/Memory/Move Block.vim"/>
+		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">
 		<Item Name="Concatenate Strings.vim" Type="VI" URL="../String/Concatenate Strings.vim"/>
 		<Item Name="Empty String-Path.vim" Type="VI" URL="../String/Empty String-Path.vim"/>
+		<Item Name="Equal.vim" Type="VI" URL="../String/Equal.vim"/>
+		<Item Name="Not Equal.vim" Type="VI" URL="../String/Not Equal.vim"/>
 		<Item Name="Reverse String.vim" Type="VI" URL="../String/Reverse String.vim"/>
 		<Item Name="Rotate String.vim" Type="VI" URL="../String/Rotate String.vim"/>
 		<Item Name="String Length.vim" Type="VI" URL="../String/String Length.vim"/>
