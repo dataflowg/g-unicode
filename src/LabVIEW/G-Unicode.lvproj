@@ -72,15 +72,19 @@
 		</Item>
 		<Item Name="Unit Tests" Type="Folder">
 			<Item Name="File IO" Type="Folder">
+				<Item Name="Test List Folder.vi" Type="VI" URL="../Unit Tests/File IO/Test List Folder.vi"/>
 				<Item Name="Test Not A Path.vi" Type="VI" URL="../Unit Tests/File IO/Test Not A Path.vi"/>
+				<Item Name="Test Recursive File List.vi" Type="VI" URL="../Unit Tests/File IO/Test Recursive File List.vi"/>
 			</Item>
 			<Item Name="String" Type="Folder">
 				<Item Name="Test Empty String-Path.vi" Type="VI" URL="../Unit Tests/String/Test Empty String-Path.vi"/>
 				<Item Name="Test Reverse String.vi" Type="VI" URL="../Unit Tests/String/Test Reverse String.vi"/>
 				<Item Name="Test Rotate String.vi" Type="VI" URL="../Unit Tests/String/Test Rotate String.vi"/>
+				<Item Name="Test Search-Split String.vi" Type="VI" URL="../Unit Tests/String/Test Search-Split String.vi"/>
 				<Item Name="Test String Length.vi" Type="VI" URL="../Unit Tests/String/Test String Length.vi"/>
 				<Item Name="Test String Subset.vi" Type="VI" URL="../Unit Tests/String/Test String Subset.vi"/>
 			</Item>
+			<Item Name="Test Data Path.vi" Type="VI" URL="../Unit Tests/Test Data Path.vi"/>
 		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -88,9 +92,11 @@
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="Delimited String to 1D String Array.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Delimited String to 1D String Array.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="QuickDrop Parse Plugin Variant.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Parse Plugin Variant.vi"/>
 				<Item Name="QuickDrop Plugin Data ver1.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Plugin Data ver1.ctl"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">

@@ -56,7 +56,7 @@ extern "C" LV_DLL_EXPORT int32_t gu_strlen(const char* str)
 	return (int32_t)utf8len(str);
 }
 
-extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_length)
+extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size)
 {
 	if (str == NULL)
 	{
@@ -102,7 +102,7 @@ extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, 
 		sz = sz - utf8codepointsize(cp);
 	}
 
-	*substring_length = buffer_size - sz;
+	*substring_size = buffer_size - sz;
 	*substring_pointer = (intptr_t)substring;
 }
 
@@ -191,6 +191,75 @@ extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str)
 		return;
 	}
 	utf8catcodepoint(str + buffer_size - cp_size, cp, cp_size);
+}
+
+
+
+extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t direction, intptr_t* string_a_pointer, int32_t* string_a_size, intptr_t* string_b_pointer, int32_t* string_b_size)
+{
+	if (str == NULL || search_str == NULL)
+	{
+		*string_a_size = 0;
+		*string_b_size = 0;
+		return;
+	}
+
+	utf8_int8_t* match_ptr = NULL;
+	int32_t string_length = (int32_t)utf8len(str);
+	int32_t string_size = (int32_t)strlen(str);
+	if (offset < string_length)
+	{
+		if (offset < 0)
+		{
+			offset = 0;
+		}
+
+		int32_t search_str_length = utf8len(search_str);
+		utf8_int32_t cp = 0;
+		utf8_int8_t* str_offset = (utf8_int8_t*)str;
+		for (int32_t i = 0; i < offset; i++)
+		{
+			str_offset = utf8codepoint(str_offset, &cp);
+		}
+
+		// Codepoint match only, allows forward or reverse searching
+		if (search_str_length == 1)
+		{
+			utf8codepoint(search_str, &cp);
+
+			if (direction == 0)
+			{
+				match_ptr = utf8chr(str_offset, cp);
+			}
+			else
+			{
+				match_ptr = utf8rchr(str_offset, cp);
+			}
+		}
+		else
+		{
+			match_ptr = utf8str(str_offset, search_str);
+		}
+	}
+
+	if (match_ptr == 0 || match_ptr == NULL)
+	{
+		match_ptr = (utf8_int8_t*)str + string_size;
+	}
+
+	int32_t a_size = match_ptr - str;
+	int32_t b_size = string_size - a_size;
+
+	char* string_a = (char*)malloc(a_size);
+	char* string_b = (char*)malloc(b_size);
+
+	memcpy(string_a, str, a_size);
+	memcpy(string_b, match_ptr, b_size);
+
+	*string_a_pointer = (intptr_t)string_a;
+	*string_b_pointer = (intptr_t)string_b;
+	*string_a_size = a_size;
+	*string_b_size = b_size;
 }
 
 
@@ -384,6 +453,7 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, intptr_t* files, 
 
 extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16_length(const char* utf8_str)
 {
+#if defined(_WIN32)
 	if (utf8_str == NULL)
 	{
 		return 0;
@@ -391,10 +461,9 @@ extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16_length(const char* utf8_str)
 
 	int32_t utf8_length = strlen(utf8_str);
 
-#if defined(_WIN32)
 	return MultiByteToWideChar(CP_UTF8, 0, utf8_str, utf8_length, 0, 0);
 #else
-	return utf8_length;
+	return 0;
 #endif
 }
 
@@ -405,6 +474,7 @@ extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16_length(const char* utf8_str)
 // Moving the dependency to g_unicode_*.* avoids this search.
 extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16(const char* utf8_str, uint8_t * utf16_str, int32_t utf16_str_size)
 {
+#if defined(_WIN32)
 	if (utf8_str == NULL || utf16_str_size == 0)
 	{
 		return 0;
@@ -412,9 +482,8 @@ extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16(const char* utf8_str, uint8_t 
 
 	int utf8_length = strlen(utf8_str);
 
-#if defined(_WIN32)
 	return MultiByteToWideChar(CP_UTF8, 0, utf8_str, utf8_length, (wchar_t*)utf16_str, utf16_str_size);
 #else
-	return utf8_length;
+	return 0;
 #endif
 }

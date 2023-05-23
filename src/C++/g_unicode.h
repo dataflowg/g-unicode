@@ -63,11 +63,12 @@ void gu_free(void* pointer);
 // UTF-8 API //
 ///////////////
 extern "C" LV_DLL_EXPORT int32_t gu_strlen(const char* str);
-extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_length);
+extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size);
 extern "C" LV_DLL_EXPORT void gu_to_upper_case(char* str);
 extern "C" LV_DLL_EXPORT void gu_to_lower_case(char* str);
 extern "C" LV_DLL_EXPORT void gu_reverse_string(char* str);
 extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str);
+extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t direction, intptr_t* string_a_pointer, int32_t* string_a_length, intptr_t* string_b_pointer, int32_t* string_b_length);
 
 ////////////////
 // Dialog API //

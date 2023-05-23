@@ -28,6 +28,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Close File.vi" Type="VI" URL="../File IO/Close File.vi"/>
 		<Item Name="Create File.vim" Type="VI" URL="../File IO/Create File.vim"/>
 		<Item Name="File Dialog.vim" Type="VI" URL="../File IO/File Dialog.vim"/>
+		<Item Name="List Directory and LLBs.vim" Type="VI" URL="../File IO/List Directory and LLBs.vim"/>
 		<Item Name="List Folder.vim" Type="VI" URL="../File IO/List Folder.vim"/>
 		<Item Name="Not A Path.vim" Type="VI" URL="../File IO/Not A Path.vim"/>
 		<Item Name="Open-Create-Replace File.vim" Type="VI" URL="../File IO/Open-Create-Replace File.vim"/>
@@ -38,7 +39,8 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
 		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
 		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
-		<Item Name="Recursive File List.vi" Type="VI" URL="../File IO/Recursive File List.vi"/>
+		<Item Name="Recursive File List.vim" Type="VI" URL="../File IO/Recursive File List.vim"/>
+		<Item Name="Get File Extension.vim" Type="VI" URL="../File IO/Get File Extension.vim"/>
 	</Item>
 	<Item Name="Private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
@@ -85,6 +87,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_open_file_dialog.vi" Type="VI" URL="../Private/Library/gu_open_file_dialog.vi"/>
 			<Item Name="gu_reverse_string.vi" Type="VI" URL="../Private/Library/gu_reverse_string.vi"/>
 			<Item Name="gu_rotate_string.vi" Type="VI" URL="../Private/Library/gu_rotate_string.vi"/>
+			<Item Name="gu_search_split_string.vi" Type="VI" URL="../Private/Library/gu_search_split_string.vi"/>
 			<Item Name="gu_string_subset.vi" Type="VI" URL="../Private/Library/gu_string_subset.vi"/>
 			<Item Name="gu_strlen.vi" Type="VI" URL="../Private/Library/gu_strlen.vi"/>
 			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
@@ -103,6 +106,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Not Equal.vim" Type="VI" URL="../String/Not Equal.vim"/>
 		<Item Name="Reverse String.vim" Type="VI" URL="../String/Reverse String.vim"/>
 		<Item Name="Rotate String.vim" Type="VI" URL="../String/Rotate String.vim"/>
+		<Item Name="Search-Split String.vim" Type="VI" URL="../String/Search-Split String.vim"/>
 		<Item Name="String Length.vim" Type="VI" URL="../String/String Length.vim"/>
 		<Item Name="String Subset.vim" Type="VI" URL="../String/String Subset.vim"/>
 		<Item Name="To Lower Case.vim" Type="VI" URL="../String/To Lower Case.vim"/>

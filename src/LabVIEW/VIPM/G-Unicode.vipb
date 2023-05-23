@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-05-18 15:35:05" Creator="Dataflow_G" Comments="" ID="cad2e9821265b33aaf1ced657af2f307">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-05-23 13:17:08" Creator="Dataflow_G" Comments="" ID="49605fc96f261b28e881404de9053137">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.1.0.1</Library_Version>
@@ -273,7 +273,7 @@
         <Path>..\Unicode</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B703BCFF0BC4566AA614EB8DF6131DFD</GUID>
+      <GUID>88DEA615F8653802A34153AB74F2B751</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -341,7 +341,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Reverse String</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Rotate String</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
@@ -408,14 +408,28 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\String\String Subset.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1AAA3BBA32A556CDEC13F7E9BB59DC79</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Search/Split String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\Search-Split String.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>C8DF347C10AE07C7AD419F2E6F2242A2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
       <Name>File I/O</Name>
       <View_Format>Icons</View_Format>
       <Size>
-        <Height_Row>4</Height_Row>
+        <Height_Row>5</Height_Row>
         <Width_Col.>4</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C1E001D00000C1800000C00000000000020002000180000000000FFFFFF0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444996633CC9900FFCC00FFCC00996633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444999933FFCC00FFCC00CCCC00996633CC9900999933444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444666633CCCC00CCCC00996633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444666633FFCC00CC9900444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444666633FFCC00CC9900444444444444444444444444444444444444444444444444444444444444444444444444444444444444FF66FFFF66FF444444444444444444444444444444444444444444444444444444000000000000444444444444CC9900CC9900444444444444444444444444444444444444444444444444444444444444FF66FFFF66FF444444444444444444FF66FFFF66FF444444444444444444444444444444444444444444444444444444000000000000444444999933FFCC00666633444444444444444444444444444444444444CC9900666633444444444444444444FF66FFFF66FF444444444444FF66FFFF66FFFF66FFFF66FF444444444444444444FF66FFFF66FFFF66FF444444000000000000444444CC9900CC9900444444444444444444444444444444444444444444CCCC00CC9900444444444444FF66FFFF66FFFF66FF444444444444FF66FFFF66FF444444FF66FFFF66FF444444FF66FFFF66FF444444444444444444000000000000444444FFCC00999933444444444444444444444444444444444444999933FFCC00666633444444FF66FF444444FF66FFFF66FF444444444444FF66FFFF66FF444444FF66FFFF66FF444444FF66FFFF66FF444444444444444444000000000000444444FFCC00CC9900444444444444444444444444666633CC9900FFCC00CC9900444444444444444444FF66FFFF66FFFF66FFFF66FF444444FF66FFFF66FFFF66FFFF66FF444444444444444444FF66FFFF66FFFF66FF444444000000000000444444999933FFCC00CCCC00999933CC9933CC9900FFCC00999933FFCC00999933444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444996633CC9900CCCC00CC9933996633444444666633FFCC00666633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444666633FFCC006666334444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444440000000000004444444444444444444444444444444444444444444444444444449966334444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444440000000000004444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444440000000000004444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0033FF0033FF44444444444444444444444433CCCC33CCCC33CCCC4444444444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FFFFFFFF999999999999999999FFFFFF999999FFFFFF0033FF0033FF44444444444444444444444433CCCC44444433CCCC4444444444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0033FF0033FF44444444444444444444444433CCCC33CCCC33CCCC4444444444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FFFFFFFF999999FFFFFF999999999999FFFFFFFFFFFF0033FF0033FF44444444444444444444444444444444444444444433CCCC4444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0033FF0033FF44444444444444444444444444444444444444444444444433CCCC33CCCC33CCCC4444444444444444444444440000000000004444444444444444444444440033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF44444444444444444444444444444444444444444444444433CCCC44444433CCCC4444444444444444444444440000000000004444444444444444444444440033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF0033FF44444444444444444444444444444444444444444444444433CCCC33CCCC33CCCC4444444444444444444444440000000000004444444444444444444444440033FF0033FF0033FFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0033FF0033FF0033FF44444444444444444444444444444444444444444433CCCC4444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FF0033FFCCCCCC0033FFCCCCCCCCCCCCCCCCCC0033FF0033FF0033FF44444444444444444444444433CCCC33CCCC33CCCC4444444444444444444444444444444444444444444444440000000000004444444444444444444444440033FF0033FF0033FFCCCCCC0033FFCCCCCCCCCCCCCCCCCC0033FF0033FF0033FF44444444444444444444444433CCCC44444433CCCC4444444444444444444444444444444444444444444444440000000000004444444444444444444444444444440033FF0033FFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0033FF0033FF0033FF44444444444444444444444433CCCC33CCCC33CCCC444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
@@ -434,76 +448,6 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Open/Create/Replace File</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Open-Create-Replace File.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>File Dialog</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\File Dialog.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>String to Path</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\String to Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to String</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Path to String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Not a Path?</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Not A Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>List Folder.vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
@@ -513,20 +457,6 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
         </Position>
         <Icon>00000000</Icon>
         <Path>..\G-Unicode\File IO\List Folder.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to Short Name</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>4</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Path to Short Name.vi</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -557,7 +487,175 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
         <Path>..\G-Unicode\File IO\Strip Path.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2EE3343EA58A51AA14841845F83AF05B</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Get File Extension.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Get File Extension.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Open/Create/Replace File</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Open-Create-Replace File.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Close File.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Close File.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Path to String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Path to String.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>String to Path</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\String to Path.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Not a Path?</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Not A Path.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Refnum to Path</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Refnum To Path.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Recursive File List.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Recursive File List.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Path Type</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Path Type.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Short Name to Path</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Short Name to Path.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Path to Short Name</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Path to Short Name.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Create File.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Create File.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>6C4B143C437AEFB5B3A9DE8EE4834D36</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -636,7 +734,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Dialog &amp; User Interface\Input Box.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7D27E423D3052469B0A54DF880AC24BE</GUID>
+      <GUID>ED2248F4E982DC871F5683441C7C26FF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -644,7 +742,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <View_Format>Icons</View_Format>
       <Size>
         <Height_Row>2</Height_Row>
-        <Width_Col.>8</Width_Col.>
+        <Width_Col.>5</Width_Col.>
       </Size>
       <_256_Color_Icon>00000CA0002800000C9A00000400000000000020002000080000000000FFFFFF00FF80000000FFFFFFFFFFFF0000FFFFFFFFCCCC0000FFFFFFFF99990000FFFFFFFF66660000FFFFFFFF33330000FFFFFFFF00000000FFFFCCCCFFFF0000FFFFCCCCCCCC0000FFFFCCCC99990000FFFFCCCC66660000FFFFCCCC33330000FFFFCCCC00000000FFFF9999FFFF0000FFFF9999CCCC0000FFFF999999990000FFFF999966660000FFFF999933330000FFFF999900000000FFFF6666FFFF0000FFFF6666CCCC0000FFFF666699990000FFFF666666660000FFFF666633330000FFFF666600000000FFFF3333FFFF0000FFFF3333CCCC0000FFFF333399990000FFFF333366660000FFFF333333330000FFFF333300000000FFFF0000FFFF0000FFFF0000CCCC0000FFFF000099990000FFFF000066660000FFFF000033330000FFFF000000000000CCCCFFFFFFFF0000CCCCFFFFCCCC0000CCCCFFFF99990000CCCCFFFF66660000CCCCFFFF33330000CCCCFFFF00000000CCCCCCCCFFFF0000CCCCCCCCCCCC0000CCCCCCCC99990000CCCCCCCC66660000CCCCCCCC33330000CCCCCCCC00000000CCCC9999FFFF0000CCCC9999CCCC0000CCCC999999990000CCCC999966660000CCCC999933330000CCCC999900000000CCCC6666FFFF0000CCCC6666CCCC0000CCCC666699990000CCCC666666660000CCCC666633330000CCCC666600000000CCCC3333FFFF0000CCCC3333CCCC0000CCCC333399990000CCCC333366660000CCCC333333330000CCCC333300000000CCCC0000FFFF0000CCCC0000CCCC0000CCCC000099990000CCCC000066660000CCCC000033330000CCCC0000000000009999FFFFFFFF00009999FFFFCCCC00009999FFFF999900009999FFFF666600009999FFFF333300009999FFFF000000009999CCCCFFFF00009999CCCCCCCC00009999CCCC999900009999CCCC666600009999CCCC333300009999CCCC0000000099999999FFFF000099999999CCCC0000999999999999000099999999666600009999999933330000999999990000000099996666FFFF000099996666CCCC0000999966669999000099996666666600009999666633330000999966660000000099993333FFFF000099993333CCCC0000999933339999000099993333666600009999333333330000999933330000000099990000FFFF000099990000CCCC000099990000999900009999000066660000999900003333000099990000000000006666FFFFFFFF00006666FFFFCCCC00006666FFFF999900006666FFFF666600006666FFFF333300006666FFFF000000006666CCCCFFFF00006666CCCCCCCC00006666CCCC999900006666CCCC666600006666CCCC333300006666CCCC0000000066669999FFFF000066669999CCCC0000666699999999000066669999666600006666999933330000666699990000000066666666FFFF000066666666CCCC0000666666669999000066666666666600006666666633330000666666660000000066663333FFFF000066663333CCCC0000666633339999000066663333666600006666333333330000666633330000000066660000FFFF000066660000CCCC000066660000999900006666000066660000666600003333000066660000000000003333FFFFFFFF00003333FFFFCCCC00003333FFFF999900003333FFFF666600003333FFFF333300003333FFFF000000003333CCCCFFFF00003333CCCCCCCC00003333CCCC999900003333CCCC666600003333CCCC333300003333CCCC0000000033339999FFFF000033339999CCCC0000333399999999000033339999666600003333999933330000333399990000000033336666FFFF000033336666CCCC0000333366669999000033336666666600003333666633330000333366660000000033333333FFFF000033333333CCCC0000333333339999000033333333666600003333333333330000333333330000000033330000FFFF000033330000CCCC000033330000999900003333000066660000333300003333000033330000000000000000FFFFFFFF00000000FFFFCCCC00000000FFFF999900000000FFFF666600000000FFFF333300000000FFFF000000000000CCCCFFFF00000000CCCCCCCC00000000CCCC999900000000CCCC666600000000CCCC333300000000CCCC0000000000009999FFFF000000009999CCCC0000000099999999000000009999666600000000999933330000000099990000000000006666FFFF000000006666CCCC0000000066669999000000006666666600000000666633330000000066660000000000003333FFFF000000003333CCCC0000000033339999000000003333666600000000333333330000000033330000000000000000FFFF000000000000CCCC0000000000009999000000000000666600000000000033330000EEEE000000000000DDDD000000000000BBBB000000000000AAAA0000000000008888000000000000777700000000000055550000000000004444000000000000222200000000000011110000000000000000EEEE000000000000DDDD000000000000BBBB000000000000AAAA0000000000008888000000000000777700000000000055550000000000004444000000000000222200000000000011110000000000000000EEEE000000000000DDDD000000000000BBBB000000000000AAAA0000000000008888000000000000777700000000000055550000000000004444000000000000222200000000000011110000EEEEEEEEEEEE0000DDDDDDDDDDDD0000BBBBBBBBBBBB0000AAAAAAAAAAAA0000888888888888000077777777777700005555555555550000444444444444000022222222222200001111111111110000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFC5E350B0B5EFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFCFC580B0B2F5E3558FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFC822F2F5EFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFC820B35FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFC820B35FCFCFCFCFCFCFCFCFCFCFCFCFCFC1212FCFCFCFCFCFCFCFCFCFFFFFCFC3535FCFCFCFCFCFCFCFCFCFC1212FCFCFC1212FCFCFCFCFCFCFCFCFCFFFFFC580B82FCFCFCFCFCFC3582FCFCFC1212FCFC12121212FCFCFC121212FCFFFFFC3535FCFCFCFCFCFCFC2F35FCFC121212FCFC1212FC1212FC1212FCFCFCFFFFFC0B58FCFCFCFCFCFC580B82FC12FC1212FCFC1212FC1212FC1212FCFCFCFFFFFC0B35FCFCFCFC82350B35FCFCFC12121212FC12121212FCFCFC121212FCFFFFFC580B2F5834350B580B58FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFC5E352F345EFC820B82FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFC820B82FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFCFC5EFCFCFCFCFCFCFCFCFC0BFCFCFCFCFCFCFCFCFCFCFFFFFCFC0000FCFC000000FCFCFC0000FCFCFCFC0BFCFCFCFCFCFCFCFCFCFCFCFFFFFCFC0000FCFC00FCFC00FC00FCFC00FCFC0B0B0B0B0B0BFCFCFCFCFCFCFCFFFFFC00FCFC00FC000000FCFC00FCFCFCFCFCFC0BFCFCFC0B0BFCFCFCFCFCFCFFFFFC00000000FC00FCFC00FC00FCFC00FCFCFCFC0BFCFCFC0BFCFCFCFCFCFCFFFFFC00FCFC00FC000000FCFCFC0000FCFCFCFCFCFCFCFCFC0BFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFC0BFC0BFC0BFCFCFCFCFFFFFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFC0B0B0BFCFCFCFCFCFFFFFCFCFCFCFCFCFCFCFCFCFC00FCFCFCFCFCFCFCFCFCFCFC0BFCFCFCFCFCFCFFFFFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFC00FCFCFCFCFCFCFCFCFCFCFCFCFCFFFFFCFCFCFCFC00FCFCFC00000000FC0000000000FC0000FC000000FC00FCFCFFFFFCFCFCFCFC00FCFCFCFC0000FCFCFCFCFCFCFCFCFCFC00FC00FCFC000000FFFFFCFCFCFCFC00FCFCFC00FCFCFCFCFC000000FCFC0000000000FCFCFCFC00FFFFFCFCFCFC00FC00FCFC00FCFCFCFC00FCFCFC00FCFCFC00FC00FCFCFCFC00FFFFFCFCFC00FCFCFC00FCFC000000FCFC000000FCFC0000FCFC00FCFCFC00FCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</_256_Color_Icon>
       <BW_Color_Icon>00000000</BW_Color_Icon>
@@ -674,34 +772,6 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Read Raw UTF-8 String</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Types\UTF-8 String\Read Raw UTF-8 String.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Write Raw UTF-8 String</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Types\UTF-8 String\Write Raw UTF-8 String.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>New UTF-8 Path</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
@@ -716,6 +786,34 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Raw UTF-8 String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Types\UTF-8 String\Read Encoded UTF-8 String.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Write Raw UTF-8 String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Types\UTF-8 String\Write Encoded UTF-8 String.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Read Raw UTF-8 Path</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
@@ -724,7 +822,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
           <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Types\UTF-8 Path\Read Raw UTF-8 Path.vi</Path>
+        <Path>..\G-Unicode\Types\UTF-8 Path\Read Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -738,111 +836,13 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
           <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Types\UTF-8 Path\Write Raw UTF-8 Path.vi</Path>
+        <Path>..\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>String to Raw UTF-8 String.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\String to Raw UTF-8 String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to Raw UTF-8 Path.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\Path to Raw UTF-8 Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>To Raw UTF-8 Path.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\To Raw UTF-8 Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>To Raw UTF-8 String.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\To Raw UTF-8 String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>String to Raw UTF-16LE String.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>7</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\String to Raw UTF-16LE String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Raw UTF-16LE String to Raw UTF-8 String.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>8</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\Raw UTF-16LE String to Raw UTF-8 String.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path To UTF-8 Path.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\Path To UTF-8 Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>String To UTF-8 String.vim</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Encoded UTF-8 String to Encoded UTF-16LE String.vi</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
@@ -850,10 +850,24 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
           <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Unicode\String To UTF-8 String.vim</Path>
+        <Path>..\G-Unicode\Unicode\Encoded UTF-8 String to Encoded UTF-16LE String.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9EDB0A36A03CD1F9A2A0AEAC72BF766B</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Encoded UTF-16LE String to Encoded UTF-8 String.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>5</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Unicode\Encoded UTF-16LE String to Encoded UTF-8 String.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>BD2AA8B8745646711E10D86BC7757879</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
