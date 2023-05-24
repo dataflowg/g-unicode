@@ -66,7 +66,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Examples" Type="Folder"/>
+		<Item Name="Examples" Type="Folder">
+			<Item Name="Unicode List Folder Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode List Folder Example.vi"/>
+		</Item>
 		<Item Name="QuickDrop Plugins" Type="Folder">
 			<Item Name="G-Unicode Constant Editor.vi" Type="VI" URL="../G-Unicode/QuickDrop Plugins/G-Unicode Constant Editor.vi"/>
 		</Item>
@@ -97,6 +99,8 @@
 				<Item Name="QuickDrop Parse Plugin Variant.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Parse Plugin Variant.vi"/>
 				<Item Name="QuickDrop Plugin Data ver1.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Plugin Data ver1.ctl"/>
 				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="UI Unicode Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UI Unicode Tools.lvlib"/>
+				<Item Name="UTF8 Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UTF8 Tools.lvlib"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">

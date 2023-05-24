@@ -347,7 +347,7 @@ extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path)
 	return 0;
 }
 
-extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders)
+extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders)
 {
 	tinydir_dir dir;
 #if defined _WIN32
@@ -367,43 +367,64 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, intptr_t* files, 
 	void* temp_ptr = NULL;
 	gu_string* file_list = NULL;
 	gu_string* folder_list = NULL;
+	char* file_name = NULL;
+	int32_t file_name_size = 0;
+	bool do_match = strlen(match) > 0;
 
 	while (dir.has_next)
 	{
 		tinydir_file file;
 		tinydir_readfile(&dir, &file);
 
+		if (_tinydir_strcmp(file.name, TINYDIR_STRING(".")) == 0 ||
+			_tinydir_strcmp(file.name, TINYDIR_STRING("..")) == 0)
+		{
+			tinydir_next(&dir);
+			continue;
+		}
+
+#if defined _WIN32
+		file_name = narrow(file.name);
+#else
+		file_name = file.name;
+#endif
+		if (do_match && !wildcard_match(file_name, match))
+		{
+#if defined _WIN32
+			// free memory allocated in narrow();
+			free(file_name);
+#endif
+			tinydir_next(&dir);
+			continue;
+		}
+
 		if (file.is_dir)
 		{
-			if (_tinydir_strcmp(file.name, TINYDIR_STRING(".")) != 0 &&
-				_tinydir_strcmp(file.name, TINYDIR_STRING("..")) != 0)
+			if (folder_list_length % REALLOC_SIZE == 0)
 			{
-				if (folder_list_length % REALLOC_SIZE == 0)
+				temp_ptr = realloc(folder_list, sizeof(gu_string) * (folder_list_length + REALLOC_SIZE));
+				if (temp_ptr == NULL)
 				{
-					temp_ptr = realloc(folder_list, sizeof(gu_string) * (folder_list_length + REALLOC_SIZE));
-					if (temp_ptr == NULL)
-					{
-						//free_string_list(folder_list, folder_list_length);
-						//free_string_list(file_list, file_list_length);
-						*num_folders = 0;
-						*num_files = 0;
-						return;
-					}
-					folder_list = (gu_string*)temp_ptr;
-					temp_ptr = NULL;
+					//free_string_list(folder_list, folder_list_length);
+					//free_string_list(file_list, file_list_length);
+					*num_folders = 0;
+					*num_files = 0;
+					return;
 				}
-#if defined _WIN32
-				// The memory allocated in narrow() will be freed in LabVIEW
-				folder_list[folder_list_length].string = narrow(file.name);
-				folder_list[folder_list_length].size = strlen(folder_list[folder_list_length].string);
-#else
-				// The memory allocated by malloc() will be freed in LabVIEW
-				folder_list[folder_list_length].size = strlen(file.name);
-				folder_list[folder_list_length].string = (char*)malloc(folder_list[folder_list_length].size);
-				memcpy(folder_list[folder_list_length].string, file.name, folder_list[folder_list_length].size);
-#endif
-				folder_list_length++;
+				folder_list = (gu_string*)temp_ptr;
+				temp_ptr = NULL;
 			}
+
+			folder_list[folder_list_length].size = strlen(file_name);
+#if defined _WIN32
+			// The memory allocated in narrow() will be freed in LabVIEW
+			folder_list[folder_list_length].string = file_name;
+#else
+			// The memory allocated by malloc() will be freed in LabVIEW
+			folder_list[folder_list_length].string = (char*)malloc(folder_list[folder_list_length].size);
+			memcpy(folder_list[folder_list_length].string, file_name, folder_list[folder_list_length].size);
+#endif
+			folder_list_length++;
 		}
 		else
 		{
@@ -421,13 +442,13 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, intptr_t* files, 
 				file_list = (gu_string*)temp_ptr;
 				temp_ptr = NULL;
 			}
+
+			file_list[file_list_length].size = strlen(file_name);
 #if defined _WIN32
 			// The memory allocated by narrow() will be freed in LabVIEW
-			file_list[file_list_length].string = narrow(file.name);
-			file_list[file_list_length].size = strlen(file_list[file_list_length].string);
+			file_list[file_list_length].string = file_name;
 #else
 			// The memory allocated by malloc() will be freed in LabVIEW
-			file_list[file_list_length].size = strlen(file.name);
 			file_list[file_list_length].string = (char*)malloc(file_list[file_list_length].size);
 			memcpy(file_list[file_list_length].string, file.name, file_list[file_list_length].size);
 #endif

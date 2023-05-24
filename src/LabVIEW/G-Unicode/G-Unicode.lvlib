@@ -21,6 +21,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Message Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Message Box.vim"/>
 		<Item Name="One Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog.vim"/>
 		<Item Name="Two Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog.vim"/>
+		<Item Name="Write Control.vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control.vim"/>
 	</Item>
 	<Item Name="File I/O" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
@@ -35,7 +36,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Path to Short Name.vi" Type="VI" URL="../File IO/Path to Short Name.vi"/>
 		<Item Name="Path Type.vim" Type="VI" URL="../File IO/Path Type.vim"/>
 		<Item Name="Path to String.vim" Type="VI" URL="../File IO/Path to String.vim"/>
-		<Item Name="Refnum To Path.vi" Type="VI" URL="../File IO/Refnum To Path.vi"/>
+		<Item Name="Refnum To Path.vim" Type="VI" URL="../File IO/Refnum To Path.vim"/>
 		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
 		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
 		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
@@ -75,6 +76,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="String as Encoded String.vi" Type="VI" URL="../Private/Conversion/String as Encoded String.vi"/>
 			<Item Name="String as String.vim" Type="VI" URL="../Private/Conversion/String as String.vim"/>
 			<Item Name="String as UTF-8 String.vim" Type="VI" URL="../Private/Conversion/String as UTF-8 String.vim"/>
+			<Item Name="String as UTF-16LE String (Array).vim" Type="VI" URL="../Private/Conversion/String as UTF-16LE String (Array).vim"/>
 			<Item Name="Text as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Text as Encoded Path.vi"/>
 			<Item Name="Text as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/Text as Encoded String (Array).vim"/>
 			<Item Name="Text as Encoded String.vi" Type="VI" URL="../Private/Conversion/Text as Encoded String.vi"/>

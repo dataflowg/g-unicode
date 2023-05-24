@@ -81,7 +81,7 @@ extern "C" LV_DLL_EXPORT int32_t gu_input_box(const char* title, const char* mes
 // File I/O API //
 //////////////////
 extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path);
-extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders);
+extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders);
 
 ////////////////////////
 // Win32 API Wrappers //
@@ -92,6 +92,77 @@ extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16(const char* utf8_str, uint8_t*
 //////////////////////////
 // Ancilliary Functions //
 //////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//    WildcardMatch
+//        str      - Input string to match
+//        match    - Match mask that may contain wildcards like ? and *
+//    
+//        A ? sign matches any character, except an empty string.
+//        A * sign matches any string inclusive an empty string.
+//        Characters are compared caseless.
+//        https://www.codeproject.com/articles/188256/a-simple-wildcard-matching-function
+//
+//    Modified to match UTF-8 codepoints
+bool wildcard_match(const char* str, const char* match)
+{
+    utf8_int32_t str_cp;
+    utf8_int32_t match_cp;
+
+    // We have a special case where string is empty ("") and the mask is "*".
+    // We need to handle this too. So we can't test on !*pszString here.
+    // The loop breaks when the match string is exhausted.
+    while (*match)
+    {
+        utf8codepoint(match, &match_cp);
+
+        // Single wildcard character
+        if (match_cp == '?')
+        {
+            // Matches any character except empty string
+            if (!*str)
+                return false;
+
+            // OK next
+            str = utf8codepoint(str, &str_cp);
+            match = utf8codepoint(match, &match_cp);
+        }
+        else if (match_cp == '*')
+        {
+            // Need to do some tricks.
+
+            // 1. The wildcard * is ignored. 
+            //    So just an empty string matches. This is done by recursion.
+            //      Because we eat one character from the match string, the
+            //      recursion will stop.
+            if (wildcard_match(str, utf8codepoint(match, &match_cp)))
+                // we have a match and the * replaces no other character
+                return true;
+
+            // 2. Chance we eat the next character and try it again, with a
+            //    wildcard * match. This is done by recursion. Because we eat
+            //      one character from the string, the recursion will stop.
+            if (*str && wildcard_match(utf8codepoint(str, &str_cp), match))
+                return true;
+
+            // Nothing worked with this wildcard.
+            return false;
+        }
+        else
+        {
+            // Standard compare of 2 chars. Note that *str might be 0
+            // here, but then we never get a match on *match that has always
+            // a value while inside this loop.
+            str = utf8codepoint(str, &str_cp);
+            match = utf8codepoint(match, &match_cp);
+            if (utf8uprcodepoint(str_cp) != utf8uprcodepoint(match_cp))
+                return false;
+        }
+    }
+
+    // Have a match? Only if both are at the end...
+    return !*str && !*match;
+}
 
 #if defined(_WIN32)
 // NOTE: Caller must free returned wchar_t*
