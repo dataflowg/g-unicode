@@ -164,16 +164,15 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="g_unicode.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="portable-file-dialogs.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="tinydir.h" />
-    <ClInclude Include="tinyfiledialogs.h" />
     <ClInclude Include="utf8.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="g_unicode.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="tinyfiledialogs.c" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="g_unicode.rc" />

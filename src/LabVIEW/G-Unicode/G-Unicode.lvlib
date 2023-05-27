@@ -20,7 +20,12 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Input Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Input Box.vim"/>
 		<Item Name="Message Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Message Box.vim"/>
 		<Item Name="One Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog.vim"/>
+		<Item Name="Read Control Caption.vim" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption.vim"/>
+		<Item Name="Read Control.vim" Type="VI" URL="../Dialog &amp; User Interface/Read Control.vim"/>
 		<Item Name="Two Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog.vim"/>
+		<Item Name="Update Unicode Controls.vi" Type="VI" URL="../Dialog &amp; User Interface/Update Unicode Controls.vi"/>
+		<Item Name="Write Control (UTF-16LE).vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control (UTF-16LE).vim"/>
+		<Item Name="Write Control Caption.vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption.vim"/>
 		<Item Name="Write Control.vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control.vim"/>
 	</Item>
 	<Item Name="File I/O" Type="Folder">
@@ -60,6 +65,8 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Path as UTF-8 Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Path as UTF-8 Path (UTF-8 Path).vi"/>
 				<Item Name="String as Encoded String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as Encoded String (LabVIEW String).vi"/>
 				<Item Name="String as Encoded String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as Encoded String (UTF-8 String).vi"/>
+				<Item Name="String as UTF-8 String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as UTF-8 String (LabVIEW String).vi"/>
+				<Item Name="String as UTF-8 String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/String as UTF-8 String (UTF-8 String).vi"/>
 				<Item Name="Text as Encoded Path (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (LabVIEW Path).vi"/>
 				<Item Name="Text as Encoded Path (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (LabVIEW String).vi"/>
 				<Item Name="Text as Encoded Path (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded Path (UTF-8 Path).vi"/>
@@ -69,27 +76,32 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Text as Encoded String (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 Path).vi"/>
 				<Item Name="Text as Encoded String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 String).vi"/>
 			</Item>
+			<Item Name="Encoded UTF-16LE String as UTF-8 String (Array).vim" Type="VI" URL="../Private/Conversion/Encoded UTF-16LE String as UTF-8 String (Array).vim"/>
 			<Item Name="Path as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Path as Encoded Path.vi"/>
 			<Item Name="Path as Path.vi" Type="VI" URL="../Private/Conversion/Path as Path.vi"/>
 			<Item Name="Path as UTF-8 Path.vi" Type="VI" URL="../Private/Conversion/Path as UTF-8 Path.vi"/>
 			<Item Name="String as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/String as Encoded String (Array).vim"/>
 			<Item Name="String as Encoded String.vi" Type="VI" URL="../Private/Conversion/String as Encoded String.vi"/>
 			<Item Name="String as String.vim" Type="VI" URL="../Private/Conversion/String as String.vim"/>
-			<Item Name="String as UTF-8 String.vim" Type="VI" URL="../Private/Conversion/String as UTF-8 String.vim"/>
+			<Item Name="String as UTF-8 String (Array).vim" Type="VI" URL="../Private/Conversion/String as UTF-8 String (Array).vim"/>
+			<Item Name="String as UTF-8 String.vi" Type="VI" URL="../Private/Conversion/String as UTF-8 String.vi"/>
 			<Item Name="String as UTF-16LE String (Array).vim" Type="VI" URL="../Private/Conversion/String as UTF-16LE String (Array).vim"/>
 			<Item Name="Text as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Text as Encoded Path.vi"/>
 			<Item Name="Text as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/Text as Encoded String (Array).vim"/>
 			<Item Name="Text as Encoded String.vi" Type="VI" URL="../Private/Conversion/Text as Encoded String.vi"/>
+			<Item Name="Text as UTF-16LE String (Array).vim" Type="VI" URL="../Private/Conversion/Text as UTF-16LE String (Array).vim"/>
 		</Item>
 		<Item Name="Library" Type="Folder">
 			<Item Name="_Debug Path.vi" Type="VI" URL="../Private/Library/_Debug Path.vi"/>
 			<Item Name="gu_create_file.vi" Type="VI" URL="../Private/Library/gu_create_file.vi"/>
 			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
 			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
+			<Item Name="gu_message_box.vi" Type="VI" URL="../Private/Library/gu_message_box.vi"/>
 			<Item Name="gu_open_file_dialog.vi" Type="VI" URL="../Private/Library/gu_open_file_dialog.vi"/>
 			<Item Name="gu_reverse_string.vi" Type="VI" URL="../Private/Library/gu_reverse_string.vi"/>
 			<Item Name="gu_rotate_string.vi" Type="VI" URL="../Private/Library/gu_rotate_string.vi"/>
 			<Item Name="gu_search_split_string.vi" Type="VI" URL="../Private/Library/gu_search_split_string.vi"/>
+			<Item Name="gu_select_folder_dialog.vi" Type="VI" URL="../Private/Library/gu_select_folder_dialog.vi"/>
 			<Item Name="gu_string_subset.vi" Type="VI" URL="../Private/Library/gu_string_subset.vi"/>
 			<Item Name="gu_strlen.vi" Type="VI" URL="../Private/Library/gu_strlen.vi"/>
 			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
@@ -100,12 +112,14 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Copy String.vi" Type="VI" URL="../Private/Memory/Copy String.vi"/>
 			<Item Name="Move Block.vim" Type="VI" URL="../Private/Memory/Move Block.vim"/>
 		</Item>
+		<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
+		<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>
 	</Item>
 	<Item Name="String" Type="Folder">
 		<Item Name="Concatenate Strings.vim" Type="VI" URL="../String/Concatenate Strings.vim"/>
 		<Item Name="Empty String-Path.vim" Type="VI" URL="../String/Empty String-Path.vim"/>
-		<Item Name="Equal.vim" Type="VI" URL="../String/Equal.vim"/>
-		<Item Name="Not Equal.vim" Type="VI" URL="../String/Not Equal.vim"/>
+		<Item Name="Equal String-Path.vim" Type="VI" URL="../String/Equal String-Path.vim"/>
+		<Item Name="Not Equal String-Path.vim" Type="VI" URL="../String/Not Equal String-Path.vim"/>
 		<Item Name="Reverse String.vim" Type="VI" URL="../String/Reverse String.vim"/>
 		<Item Name="Rotate String.vim" Type="VI" URL="../String/Rotate String.vim"/>
 		<Item Name="Search-Split String.vim" Type="VI" URL="../String/Search-Split String.vim"/>

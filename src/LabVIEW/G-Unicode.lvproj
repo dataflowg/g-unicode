@@ -73,6 +73,10 @@
 			<Item Name="G-Unicode Constant Editor.vi" Type="VI" URL="../G-Unicode/QuickDrop Plugins/G-Unicode Constant Editor.vi"/>
 		</Item>
 		<Item Name="Unit Tests" Type="Folder">
+			<Item Name="Dialog &amp; User Interface" Type="Folder">
+				<Item Name="Test Read-Write Control Caption.vi" Type="VI" URL="../Unit Tests/Dialog &amp; User Interface/Test Read-Write Control Caption.vi"/>
+				<Item Name="Test Read-Write Control.vi" Type="VI" URL="../Unit Tests/Dialog &amp; User Interface/Test Read-Write Control.vi"/>
+			</Item>
 			<Item Name="File IO" Type="Folder">
 				<Item Name="Test List Folder.vi" Type="VI" URL="../Unit Tests/File IO/Test List Folder.vi"/>
 				<Item Name="Test Not A Path.vi" Type="VI" URL="../Unit Tests/File IO/Test Not A Path.vi"/>
@@ -86,7 +90,7 @@
 				<Item Name="Test String Length.vi" Type="VI" URL="../Unit Tests/String/Test String Length.vi"/>
 				<Item Name="Test String Subset.vi" Type="VI" URL="../Unit Tests/String/Test String Subset.vi"/>
 			</Item>
-			<Item Name="Test Data Path.vi" Type="VI" URL="../Unit Tests/Test Data Path.vi"/>
+			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
 		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -99,6 +103,7 @@
 				<Item Name="QuickDrop Parse Plugin Variant.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Parse Plugin Variant.vi"/>
 				<Item Name="QuickDrop Plugin Data ver1.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/QuickDropSupport/QuickDrop Plugin Data ver1.ctl"/>
 				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Synchronize Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Synchronize Data Flow.vim"/>
 				<Item Name="UI Unicode Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UI Unicode Tools.lvlib"/>
 				<Item Name="UTF8 Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UTF8 Tools.lvlib"/>
 			</Item>

@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-05-23 13:17:08" Creator="Dataflow_G" Comments="" ID="49605fc96f261b28e881404de9053137">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-05-25 13:38:20" Creator="Dataflow_G" Comments="" ID="6b07991012db6336a1a953f9aee365b8">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.1.0.1</Library_Version>
@@ -16,7 +16,9 @@
     <Target>LabVIEW</Target>
   </Library_General_Settings>
   <Advanced_Settings>
-    <Package_Dependencies/>
+    <Package_Dependencies>
+      <Additional_External_Dependencies>ni_lib_unicode &gt;=2.0.1.6</Additional_External_Dependencies>
+    </Package_Dependencies>
     <Custom_Action_VIs>
       <Pre-Build_VI/>
       <Post-Build_VI/>
@@ -273,7 +275,7 @@
         <Path>..\Unicode</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>88DEA615F8653802A34153AB74F2B751</GUID>
+      <GUID>56938BF1C81F3A41709B5BB2D8D7E6B4</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -327,68 +329,12 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Reverse String</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\String\Reverse String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Rotate String</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\String\Rotate String.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>To Lower Case</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\String\To Lower Case.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>To Upper Case</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\String\To Upper Case.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Empty String/Path?</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>1</Column>
+          <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>..\G-Unicode\String\Empty String-Path.vim</Path>
@@ -422,7 +368,91 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\String\Search-Split String.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C8DF347C10AE07C7AD419F2E6F2242A2</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Rotate String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\Rotate String.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Reverse String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\Reverse String.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>To Upper Case</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\To Upper Case.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Equal?</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\Equal.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Not Equal?</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\Not Equal.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>To Lower Case</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\String\To Lower Case.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>AA33FC039F2C2C8A7EA10327E6821F91</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -560,48 +590,6 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Not a Path?</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Not A Path.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Refnum to Path</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Refnum To Path.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Recursive File List.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>4</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\File IO\Recursive File List.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Path Type</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
@@ -655,14 +643,70 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
         <Path>..\G-Unicode\File IO\Create File.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6C4B143C437AEFB5B3A9DE8EE4834D36</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Recursive File List.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Recursive File List.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>File Dialog</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\File Dialog.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Refnum to Path</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Refnum To Path.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Not a Path?</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\File IO\Not A Path.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>44D69B89647968B0835BCE77F8CB030A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
       <Name>Dialog &amp; User Interface</Name>
       <View_Format>Icons</View_Format>
       <Size>
-        <Height_Row>1</Height_Row>
+        <Height_Row>2</Height_Row>
         <Width_Col.>4</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C1E001D00000C1800000C00000000000020002000180000000000FFFFFF0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444996633CC9900FFCC00FFCC00996633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444999933FFCC00FFCC00CCCC00996633CC9900999933444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444666633CCCC00CCCC00996633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444666633FFCC00CC9900444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444666633FFCC00CC9900444444444444444444444444444444444444444444444444444444444444444444444444444444444444FF66FFFF66FF444444444444444444444444444444444444444444444444444444000000000000444444444444CC9900CC9900444444444444444444444444444444444444444444444444444444444444FF66FFFF66FF444444444444444444FF66FFFF66FF444444444444444444444444444444444444444444444444444444000000000000444444999933FFCC00666633444444444444444444444444444444444444CC9900666633444444444444444444FF66FFFF66FF444444444444FF66FFFF66FFFF66FFFF66FF444444444444444444FF66FFFF66FFFF66FF444444000000000000444444CC9900CC9900444444444444444444444444444444444444444444CCCC00CC9900444444444444FF66FFFF66FFFF66FF444444444444FF66FFFF66FF444444FF66FFFF66FF444444FF66FFFF66FF444444444444444444000000000000444444FFCC00999933444444444444444444444444444444444444999933FFCC00666633444444FF66FF444444FF66FFFF66FF444444444444FF66FFFF66FF444444FF66FFFF66FF444444FF66FFFF66FF444444444444444444000000000000444444FFCC00CC9900444444444444444444444444666633CC9900FFCC00CC9900444444444444444444FF66FFFF66FFFF66FFFF66FF444444FF66FFFF66FFFF66FFFF66FF444444444444444444FF66FFFF66FFFF66FF444444000000000000444444999933FFCC00CCCC00999933CC9933CC9900FFCC00999933FFCC00999933444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444996633CC9900CCCC00CC9933996633444444666633FFCC00666633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444666633FFCC00666633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444444444444444996633444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFF000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFF000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFFFF000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFFFFFFFFFFFFFFFF000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFFFF000000000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444000000000000444444444444444444444444444444444444444444000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444444444444444444444444444444444444444444000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
@@ -685,7 +729,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>1</Row>
+          <Row>2</Row>
           <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
@@ -699,7 +743,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>1</Row>
+          <Row>2</Row>
           <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
@@ -713,7 +757,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>1</Row>
+          <Row>2</Row>
           <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
@@ -727,14 +771,42 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>1</Row>
+          <Row>2</Row>
           <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>..\G-Unicode\Dialog &amp; User Interface\Input Box.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>ED2248F4E982DC871F5683441C7C26FF</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Write Control.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Control.vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Read Control.vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>6C313A6C9EDCD9F838537BE743A0133C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -867,7 +939,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Unicode\Encoded UTF-16LE String to Encoded UTF-8 String.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BD2AA8B8745646711E10D86BC7757879</GUID>
+      <GUID>47E559B1C44ECB57592B6A214A41F408</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

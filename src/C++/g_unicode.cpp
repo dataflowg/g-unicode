@@ -271,8 +271,20 @@ extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char
 
 extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, intptr_t* path_pointer, int32_t* path_length)
 {
-	char* path = tinyfd_openFileDialog(title, default_path, num_filter_patterns, filter_patterns, filter_description, allow_multi_select);
+	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
+	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
 
+	auto selection = pfd::open_file(_title, _default_path, { "All Files (*.*)", "*" }, pfd::opt::none).result();
+
+	// User cancelled the dialog
+	if (selection.size() == 0)
+	{
+		*path_length = 0;
+		*path_pointer = 0;
+		return 1;
+	}
+
+	char* path = _strdup(selection[0].c_str());
 	if (path == NULL)
 	{
 		*path_length = 0;
@@ -285,25 +297,37 @@ extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const ch
 	return 0;
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, const char* dialog_type, const char* icon_type, int32_t default_button)
+extern "C" LV_DLL_EXPORT int32_t gu_select_folder_dialog(const char* title, const char* default_path, intptr_t* path_pointer, int32_t* path_length)
 {
-	return tinyfd_messageBox(title, message, dialog_type, icon_type, default_button);
-}
+	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
+	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
 
-extern "C" LV_DLL_EXPORT int32_t gu_input_box(const char* title, const char* message, const char* default_input, intptr_t* input_pointer, int32_t* input_length)
-{
-	char* input = tinyfd_inputBox(title, message, default_input);
+	std::string selection = pfd::select_folder(_title, _default_path).result();
 
-	if (input == NULL)
+	// User cancelled the dialog
+	if (selection.empty())
 	{
-		*input_length = 0;
-		*input_pointer = 0;
+		*path_length = 0;
+		*path_pointer = 0;
 		return 1;
 	}
 
-	*input_length = strlen(input);
-	*input_pointer = (intptr_t)input;
+	char* path = _strdup(selection.c_str());
+	if (path == NULL)
+	{
+		*path_length = 0;
+		*path_pointer = 0;
+		return 1;
+	}
+
+	*path_length = strlen(path);
+	*path_pointer = (intptr_t)path;
 	return 0;
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon)
+{
+	return (int32_t)pfd::message(title, message, (pfd::choice)choice, (pfd::icon)icon).result();
 }
 
 

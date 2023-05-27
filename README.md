@@ -78,6 +78,6 @@ This library uses the following open source code. Massive thanks to the authors 
 Library | License
 --------|----------------------
 [utf8.h](https://github.com/sheredom/utf8.h) | [Unlicense](https://github.com/sheredom/utf8.h/blob/master/LICENSE)
-[tiny file dialogs](https://sourceforge.net/projects/tinyfiledialogs/) | zlib
+[Portable File Dialogs](https://github.com/samhocevar/portable-file-dialogs) | [WTFPL](https://github.com/samhocevar/portable-file-dialogs/blob/main/COPYING)
 [TinyDir](https://github.com/cxong/tinydir) | [Simplified BSD](https://github.com/cxong/tinydir/blob/master/COPYING)
 

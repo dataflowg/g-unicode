@@ -16,7 +16,7 @@ Twitter - https://twitter.com/Dataflow_G
 
 #include "utf8.h"
 #include "tinydir.h"
-#include "tinyfiledialogs.h"
+#include "portable-file-dialogs.h"
 
 #if defined(_WIN32)
 #define LV_DLL_IMPORT  __declspec(dllimport)
@@ -74,8 +74,8 @@ extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char
 // Dialog API //
 ////////////////
 extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, intptr_t* path_pointer, int32_t* path_length);
-extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, const char* dialog_type, const char* icon_type, int32_t default_button);
-extern "C" LV_DLL_EXPORT int32_t gu_input_box(const char* title, const char* message, const char* default_input, intptr_t* input_pointer, int32_t* input_length);
+extern "C" LV_DLL_EXPORT int32_t gu_select_folder_dialog(const char* title, const char* default_path, intptr_t* path_pointer, int32_t* path_length);
+extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon);
 
 //////////////////
 // File I/O API //
