@@ -8,6 +8,7 @@ A cross-platform LabVIEW library for manipulating unicode strings, and performin
 
 <p align="center">
     <a href="#whats-new">What's New?</a> -
+    <a href="#motivation">Motivation</a> -
     <a href="#features">Features</a> -
     <a href="#installation">Installation</a> -
     <a href="#usage">Usage</a> -
@@ -19,6 +20,15 @@ A cross-platform LabVIEW library for manipulating unicode strings, and performin
 
 ## <a id="whats-new"></a>What's New?
 * Library is currently under development, with the first release coming soon
+
+## <a id="motivation"></a>Motivation
+LabVIEW doesn't provide official unicode support under Windows, but through a combination of hidden control properties, ini tokens, and good luck, it is possible to read and display unicode strings. Unfortunately there are still many gaps in functionality:
+* File I/O functions don't support unicode, and any unicode characters in paths are replaced with `?` rendering them invalid
+* String operations aren't unicode aware
+
+There is a UTF-8 locale setting in Windows, and ability to embed a UTF-8 application manifest to a compiled LabVIEW app (both available since Windows 10 v1903), which brings another level of unicode support to LabVIEW. This still requires special string handling and encoding for display.
+
+G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to develop applications with unicode and multi-lingual support.
 
 ## <a id="features"></a>Features
 * New classes: _UTF-8 String_ and _UTF-8 Path_
@@ -39,15 +49,26 @@ A cross-platform LabVIEW library for manipulating unicode strings, and performin
 TBD
 
 ## <a id="usage"></a>Usage
-### Types & Naming Conventions
-G-Unicode introduces two classes for handling unicode text: _UTF-8 String.lvclass_ and _UTF-8 Path.lvclass_. These classes are containers around LabVIEW's standard string and path types, adding a custom wire appearance and unicode capable probes.
+**IMPORTANT:** LabVIEW has a [UseUnicode](https://labviewwiki.org/wiki/LabVIEW_configuration_file/Miscellaneous#useUnicode) ini token to help aid in handling unicode input. It is strongly recommended to **NOT** use this token. It makes dealing with string controls and constants problematic, silently mixing UTF-16LE and ANSI encodings when pasting or typing text. _G-Unicode does not require this token._
+
+**IMPORTANT II:** G-Unicode relies on LabVIEW's experimental unicode support for unicode string input. This unicode string input is _**very buggy**_, and prone to strange input behavior and outright crashes. Where possible it's recommended to avoid using LabVIEW's string controls for unicode input.
+
+### New Types
+G-Unicode use two classes for handling unicode text: _UTF-8 String.lvclass_ and _UTF-8 Path.lvclass_. These classes are containers around LabVIEW's standard string and path types (encoded as UTF-8), adding a custom wire appearance and unicode capable probes.
 
 Type         | Wire Appearance
 -------------|----------------
 UTF-8 String | ![UTF-8 String wire](images/wire-utf8-string.png?raw=true "UTF-8 String wire")
 UTF-8 Path   | ![UTF-8 Path wire](images/wire-utf8-path.png?raw=true "UTF-8 Path wire")
 
-Most functions in G-Unicode are designed to accept both the new UTF-8 classes and regular string/path types as inputs. When a string/path is wired to a function which supports unicode, it will first be encoded as UTF-8.
+Most functions in G-Unicode support wiring either a UTF-8 String/Path class, a standard LabVIEW string/path, or a combination of both (as in `Concatenate Strings.vim`). When a standard LabVIEW type is wired to a G-Unicode function it is internally converted to UTF-8 using LabVIEW's built-in `Text to UTF-8` primitive, and any return values are in the respective UTF-8 class.
+
+### Error Wiring
+There are two types of error wiring conventions used throughout G-Unicode. The first is the standard error in/error out clusters wired to the lower left and right terminals respectively. It is recommended to always wire these terminals.
+
+The second convention is the error in/error out clusters wired to the bottom two terminals in the center of the connector pane. These error terminals only need to be wired when a standard LabVIEW string or path is wired to a function (and subject to the internal UTF-8 conversion mentioned above). If only UTF-8 String/Path(s) are wired to the function, these terminals will never contain error information and so can be ignored.
+
+![Example G-Unicode error wiring](images/g-unicode-error-wiring.png?raw=true "Example G-Unicode error wiring")
 
 ### Using Unicode Paths With LabVIEW Functions
 The File I/O functions included with G-Unicode cover most common file operations performed in LabVIEW. To use unicode paths with other LabVIEW functions which have a standard path input, first convert the unicode path to a short 8.3 format path with `Path to Short Name.vi`. Note that the unicode path must exist on disk for this function to work. If it doesn't exist, it can be created using `Create File.vim`.

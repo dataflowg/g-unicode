@@ -75,8 +75,18 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Text as Encoded String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (LabVIEW String).vi"/>
 				<Item Name="Text as Encoded String (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 Path).vi"/>
 				<Item Name="Text as Encoded String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as Encoded String (UTF-8 String).vi"/>
+				<Item Name="Text as String (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as String (LabVIEW Path).vi"/>
+				<Item Name="Text as String (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as String (LabVIEW String).vi"/>
+				<Item Name="Text as String (UTF-8 Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as String (UTF-8 Path).vi"/>
+				<Item Name="Text as String (UTF-8 String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text as String (UTF-8 String).vi"/>
+				<Item Name="Text to UTF-8 (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text to UTF-8 (LabVIEW Path).vi"/>
+				<Item Name="Text to UTF-8 (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/Text to UTF-8 (LabVIEW String).vi"/>
+				<Item Name="UTF-8 to Text (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/UTF-8 to Text (LabVIEW Path).vi"/>
+				<Item Name="UTF-8 to Text (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/UTF-8 to Text (LabVIEW String).vi"/>
 			</Item>
+			<Item Name="Encoded UTF-8 String to Encoded UTF-16LE String.vi" Type="VI" URL="../Private/Conversion/Encoded UTF-8 String to Encoded UTF-16LE String.vi"/>
 			<Item Name="Encoded UTF-16LE String as UTF-8 String (Array).vim" Type="VI" URL="../Private/Conversion/Encoded UTF-16LE String as UTF-8 String (Array).vim"/>
+			<Item Name="Encoded UTF-16LE String to Encoded UTF-8 String.vi" Type="VI" URL="../Private/Conversion/Encoded UTF-16LE String to Encoded UTF-8 String.vi"/>
 			<Item Name="Path as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Path as Encoded Path.vi"/>
 			<Item Name="Path as Path.vi" Type="VI" URL="../Private/Conversion/Path as Path.vi"/>
 			<Item Name="Path as UTF-8 Path.vi" Type="VI" URL="../Private/Conversion/Path as UTF-8 Path.vi"/>
@@ -89,12 +99,17 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Text as Encoded Path.vi" Type="VI" URL="../Private/Conversion/Text as Encoded Path.vi"/>
 			<Item Name="Text as Encoded String (Array).vim" Type="VI" URL="../Private/Conversion/Text as Encoded String (Array).vim"/>
 			<Item Name="Text as Encoded String.vi" Type="VI" URL="../Private/Conversion/Text as Encoded String.vi"/>
+			<Item Name="Text as String.vi" Type="VI" URL="../Private/Conversion/Text as String.vi"/>
 			<Item Name="Text as UTF-16LE String (Array).vim" Type="VI" URL="../Private/Conversion/Text as UTF-16LE String (Array).vim"/>
+			<Item Name="Text to UTF-8.vi" Type="VI" URL="../Private/Conversion/Text to UTF-8.vi"/>
+			<Item Name="UTF-8 to Text.vi" Type="VI" URL="../Private/Conversion/UTF-8 to Text.vi"/>
 		</Item>
 		<Item Name="Library" Type="Folder">
 			<Item Name="_Debug Path.vi" Type="VI" URL="../Private/Library/_Debug Path.vi"/>
 			<Item Name="gu_create_file.vi" Type="VI" URL="../Private/Library/gu_create_file.vi"/>
 			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
+			<Item Name="gu_is_text_utf8.vi" Type="VI" URL="../Private/Library/gu_is_text_utf8.vi"/>
+			<Item Name="gu_is_text_utf16.vi" Type="VI" URL="../Private/Library/gu_is_text_utf16.vi"/>
 			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
 			<Item Name="gu_message_box.vi" Type="VI" URL="../Private/Library/gu_message_box.vi"/>
 			<Item Name="gu_open_file_dialog.vi" Type="VI" URL="../Private/Library/gu_open_file_dialog.vi"/>
@@ -136,7 +151,18 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="UTF-8 String.lvclass" Type="LVClass" URL="../Types/UTF-8 String/UTF-8 String.lvclass"/>
 	</Item>
 	<Item Name="Unicode" Type="Folder">
-		<Item Name="Encoded UTF-8 String to Encoded UTF-16LE String.vi" Type="VI" URL="../Unicode/Encoded UTF-8 String to Encoded UTF-16LE String.vi"/>
-		<Item Name="Encoded UTF-16LE String to Encoded UTF-8 String.vi" Type="VI" URL="../Unicode/Encoded UTF-16LE String to Encoded UTF-8 String.vi"/>
+		<Item Name="Controls" Type="Folder">
+			<Item Name="Detect String Encoding Steps.ctl" Type="VI" URL="../Unicode/Controls/Detect String Encoding Steps.ctl"/>
+			<Item Name="Input String Encoding.ctl" Type="VI" URL="../Unicode/Controls/Input String Encoding.ctl"/>
+			<Item Name="String Encoding.ctl" Type="VI" URL="../Unicode/Controls/String Encoding.ctl"/>
+		</Item>
+		<Item Name="SubVIs" Type="Folder">
+			<Item Name="Byte Order Marks.vi" Type="VI" URL="../Unicode/SubVIs/Byte Order Marks.vi"/>
+		</Item>
+		<Item Name="Detect BOM.vi" Type="VI" URL="../Unicode/Detect BOM.vi"/>
+		<Item Name="Detect String Encoding.vi" Type="VI" URL="../Unicode/Detect String Encoding.vi"/>
+		<Item Name="Encode String.vi" Type="VI" URL="../Unicode/Encode String.vi"/>
+		<Item Name="Prepend BOM.vi" Type="VI" URL="../Unicode/Prepend BOM.vi"/>
+		<Item Name="Strip BOM.vi" Type="VI" URL="../Unicode/Strip BOM.vi"/>
 	</Item>
 </Library>
