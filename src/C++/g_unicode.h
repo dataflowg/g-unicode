@@ -13,6 +13,9 @@ Twitter - https://twitter.com/Dataflow_G
 #include <io.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <shlwapi.h>
+
+#pragma comment(lib, "shlwapi.lib")
 
 #include "utf8.h"
 #include "tinydir.h"
@@ -84,7 +87,11 @@ extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* m
 // File I/O API //
 //////////////////
 extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path);
+extern "C" LV_DLL_EXPORT int32_t gu_create_folder(const char* path);
 extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders);
+extern "C" LV_DLL_EXPORT int32_t gu_move(const char* src, const char* dest);
+extern "C" LV_DLL_EXPORT int32_t gu_copy(const char* src, const char* dest);
+int32_t gu_file_operation(const char* src, const char* dest, UINT func);
 
 ////////////////////////
 // Win32 API Wrappers //
@@ -169,7 +176,7 @@ bool wildcard_match(const char* str, const char* match)
 
 #if defined(_WIN32)
 // NOTE: Caller must free returned wchar_t*
-wchar_t* widen(const char* utf8_string)
+wchar_t* widen(const char* utf8_string, bool double_null = false)
 {
 	if (utf8_string == NULL)
 	{
@@ -186,12 +193,17 @@ wchar_t* widen(const char* utf8_string)
 		return NULL;
 	}
 
-	wchar_t* wide_string = (wchar_t*)malloc((wide_length * sizeof(wchar_t)) + sizeof(wchar_t));
+	wchar_t* wide_string = (wchar_t*)malloc((wide_length * sizeof(wchar_t)) + (sizeof(wchar_t) * (double_null ? 2 : 1)));
 
 	if (wide_string != NULL)
 	{
 		MultiByteToWideChar(codepage, 0, utf8_string, utf8_length, wide_string, wide_length);
 		wide_string[wide_length] = L'\0';
+
+        if (double_null)
+        {
+            wide_string[wide_length + 1] = L'\0';
+        }
 	}
 
 	return wide_string;

@@ -466,6 +466,27 @@ extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path)
 	return 0;
 }
 
+extern "C" LV_DLL_EXPORT int32_t gu_create_folder(const char* path)
+{
+	int32_t result = 0;
+#if defined _WIN32
+	if (path == NULL)
+	{
+		return 1;
+	}
+
+	wchar_t* wide_path = widen(path);
+	if (wide_path == NULL)
+	{
+		return 1;
+	}
+
+	result = SHCreateDirectory(NULL, wide_path);
+	free(wide_path);
+#endif
+	return result;
+}
+
 extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders)
 {
 	tinydir_dir dir;
@@ -584,6 +605,64 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match
 	*num_files = file_list_length;
 	*num_folders = folder_list_length;
 }
+
+int32_t gu_file_operation(const char* src, const char* dest, UINT func)
+{
+	SHFILEOPSTRUCT fileOps;
+	fileOps.hwnd = NULL;
+	fileOps.wFunc = func;
+	fileOps.pFrom = widen(src, true);
+	fileOps.pTo = widen(dest, true);
+	fileOps.fFlags = FOF_NO_UI;
+	fileOps.fAnyOperationsAborted = FALSE;
+	fileOps.hNameMappings = NULL;
+	fileOps.lpszProgressTitle = NULL;
+
+	if ((fileOps.pFrom != NULL && PathIsRelative(fileOps.pFrom)) ||
+		(fileOps.pTo != NULL && PathIsRelative(fileOps.pTo)))
+	{
+		return 1;
+	}
+
+	int32_t result = SHFileOperation(&fileOps);
+	free((void*)fileOps.pFrom);
+	free((void*)fileOps.pTo);
+
+	return result;
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_move(const char* src, const char* dest)
+{
+	return gu_file_operation(src, dest, FO_MOVE);
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_copy(const char* src, const char* dest)
+{
+	return gu_file_operation(src, dest, FO_COPY);
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_delete(const char* src, int32_t delete_hierarchy)
+{
+	int32_t result = 0;
+
+	if (delete_hierarchy == 0)
+	{
+		wchar_t* wide_src = widen(src);
+		if (widen == NULL)
+		{
+			return 1;
+		}
+		result = RemoveDirectory(wide_src);
+		free(wide_src);
+	}
+	else
+	{
+		result = gu_file_operation(src, NULL, FO_DELETE);
+	}
+
+	return result;
+}
+
 
 
 

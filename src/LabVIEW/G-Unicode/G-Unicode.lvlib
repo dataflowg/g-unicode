@@ -30,23 +30,31 @@ https://github.com/dataflowg/g-unicode</Property>
 	</Item>
 	<Item Name="File I/O" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
+		<Item Name="Array of Strings to Path.vim" Type="VI" URL="../File IO/Array of Strings to Path.vim"/>
 		<Item Name="Build Path.vim" Type="VI" URL="../File IO/Build Path.vim"/>
 		<Item Name="Close File.vi" Type="VI" URL="../File IO/Close File.vi"/>
+		<Item Name="Compare Two Paths.vim" Type="VI" URL="../File IO/Compare Two Paths.vim"/>
+		<Item Name="Copy.vim" Type="VI" URL="../File IO/Copy.vim"/>
 		<Item Name="Create File.vim" Type="VI" URL="../File IO/Create File.vim"/>
+		<Item Name="Create Folder.vim" Type="VI" URL="../File IO/Create Folder.vim"/>
+		<Item Name="Delete.vim" Type="VI" URL="../File IO/Delete.vim"/>
 		<Item Name="File Dialog.vim" Type="VI" URL="../File IO/File Dialog.vim"/>
+		<Item Name="Get File Extension.vim" Type="VI" URL="../File IO/Get File Extension.vim"/>
+		<Item Name="Get Volume Info.vim" Type="VI" URL="../File IO/Get Volume Info.vim"/>
 		<Item Name="List Directory and LLBs.vim" Type="VI" URL="../File IO/List Directory and LLBs.vim"/>
 		<Item Name="List Folder.vim" Type="VI" URL="../File IO/List Folder.vim"/>
+		<Item Name="Move.vim" Type="VI" URL="../File IO/Move.vim"/>
 		<Item Name="Not A Path.vim" Type="VI" URL="../File IO/Not A Path.vim"/>
 		<Item Name="Open-Create-Replace File.vim" Type="VI" URL="../File IO/Open-Create-Replace File.vim"/>
 		<Item Name="Path to Short Name.vi" Type="VI" URL="../File IO/Path to Short Name.vi"/>
 		<Item Name="Path Type.vim" Type="VI" URL="../File IO/Path Type.vim"/>
+		<Item Name="Path to Array of Strings.vim" Type="VI" URL="../File IO/Path to Array of Strings.vim"/>
 		<Item Name="Path to String.vim" Type="VI" URL="../File IO/Path to String.vim"/>
 		<Item Name="Refnum To Path.vim" Type="VI" URL="../File IO/Refnum To Path.vim"/>
 		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
 		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
 		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
 		<Item Name="Recursive File List.vim" Type="VI" URL="../File IO/Recursive File List.vim"/>
-		<Item Name="Get File Extension.vim" Type="VI" URL="../File IO/Get File Extension.vim"/>
 	</Item>
 	<Item Name="Private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
@@ -106,12 +114,16 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 		<Item Name="Library" Type="Folder">
 			<Item Name="_Debug Path.vi" Type="VI" URL="../Private/Library/_Debug Path.vi"/>
+			<Item Name="gu_copy.vi" Type="VI" URL="../Private/Library/gu_copy.vi"/>
 			<Item Name="gu_create_file.vi" Type="VI" URL="../Private/Library/gu_create_file.vi"/>
+			<Item Name="gu_create_folder.vi" Type="VI" URL="../Private/Library/gu_create_folder.vi"/>
+			<Item Name="gu_delete.vi" Type="VI" URL="../Private/Library/gu_delete.vi"/>
 			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
 			<Item Name="gu_is_text_utf8.vi" Type="VI" URL="../Private/Library/gu_is_text_utf8.vi"/>
 			<Item Name="gu_is_text_utf16.vi" Type="VI" URL="../Private/Library/gu_is_text_utf16.vi"/>
 			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
 			<Item Name="gu_message_box.vi" Type="VI" URL="../Private/Library/gu_message_box.vi"/>
+			<Item Name="gu_move.vi" Type="VI" URL="../Private/Library/gu_move.vi"/>
 			<Item Name="gu_open_file_dialog.vi" Type="VI" URL="../Private/Library/gu_open_file_dialog.vi"/>
 			<Item Name="gu_reverse_string.vi" Type="VI" URL="../Private/Library/gu_reverse_string.vi"/>
 			<Item Name="gu_rotate_string.vi" Type="VI" URL="../Private/Library/gu_rotate_string.vi"/>
