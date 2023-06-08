@@ -4,6 +4,10 @@ G-Unicode - A LabVIEW unicode library.
 Author - Dataflow_G
 GitHub - https://github.com/dataflowg/g-unicode
 Twitter - https://twitter.com/Dataflow_G
+
+Some of the functions in this library should only be called from LabVIEW for Windows.
+The functions are still defined for all platforms to avoid library loading issues on
+non-Windows platforms, but when called will return the warning GE_W_WIN32_ONLY.
 */
 
 #ifndef _G_UNICODE_H_
@@ -19,6 +23,7 @@ Twitter - https://twitter.com/Dataflow_G
 
 #include "utf8.h"
 #include "tinydir.h"
+#define PFD_NO_ASYNC
 #include "portable-file-dialogs.h"
 
 #if defined(_WIN32)
@@ -45,8 +50,16 @@ typedef struct
 } gu_string;
 
 #define GU_SUCCESS				0
+// WARNINGS
+#define GU_W_WIN32_ONLY         1       // Result only valid on Windows
 // ERRORS
-#define GU_E_GENERIC			-1		// Generic error
+#define GU_E_GENERIC            -1      // Generic error
+#define GU_E_MEMORY             -2      // Memory allocation error
+#define GU_E_INVALID_PARAMS     -3      // Invalid parameters
+#define GU_E_INVALID_PATH       -4      // Invalid path / <Not A Path>
+#define GU_E_RELATIVE_PATH      -5      // Path is relative, requires absolute
+#define GU_E_FILE_IO            -6      // General file I/O error
+#define GU_E_ALREADY_EXISTS     -7      // File/folder already exists
 
 #define REALLOC_SIZE    50
 
@@ -65,33 +78,34 @@ void gu_free(void* pointer);
 /////////////////
 // Unicode API //
 /////////////////
-extern "C" LV_DLL_EXPORT int32_t gu_strlen(const char* str);
-extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size);
-extern "C" LV_DLL_EXPORT void gu_to_upper_case(char* str);
-extern "C" LV_DLL_EXPORT void gu_to_lower_case(char* str);
-extern "C" LV_DLL_EXPORT void gu_reverse_string(char* str);
-extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str);
-extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t direction, intptr_t* string_a_pointer, int32_t* string_a_length, intptr_t* string_b_pointer, int32_t* string_b_length);
+extern "C" LV_DLL_EXPORT gu_result gu_strlen(const char* str, int32_t* length);
+extern "C" LV_DLL_EXPORT gu_result gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size);
+extern "C" LV_DLL_EXPORT gu_result gu_to_upper_case(char* str);
+extern "C" LV_DLL_EXPORT gu_result gu_to_lower_case(char* str);
+extern "C" LV_DLL_EXPORT gu_result gu_reverse_string(char* str);
+extern "C" LV_DLL_EXPORT gu_result gu_rotate_string(char* str);
+extern "C" LV_DLL_EXPORT gu_result gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t reverse, intptr_t* string_a_pointer, int32_t* string_a_length, intptr_t* string_b_pointer, int32_t* string_b_length);
 
-extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf16(const char* buf, int32_t size);
-extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf8(const char* str);
+extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf16(const char* buf, int32_t size, int32_t* is_utf16);
+extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_utf8);
 
 ////////////////
 // Dialog API //
 ////////////////
-extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, intptr_t* path_pointer, int32_t* path_length);
-extern "C" LV_DLL_EXPORT int32_t gu_select_folder_dialog(const char* title, const char* default_path, intptr_t* path_pointer, int32_t* path_length);
-extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon);
+extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length);
+extern "C" LV_DLL_EXPORT gu_result gu_select_folder_dialog(const char* title, const char* default_path, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length);
+extern "C" LV_DLL_EXPORT gu_result gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon, int32_t* user_selection);
 
 //////////////////
 // File I/O API //
 //////////////////
-extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path);
-extern "C" LV_DLL_EXPORT int32_t gu_create_folder(const char* path);
-extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders);
-extern "C" LV_DLL_EXPORT int32_t gu_move(const char* src, const char* dest);
-extern "C" LV_DLL_EXPORT int32_t gu_copy(const char* src, const char* dest);
-int32_t gu_file_operation(const char* src, const char* dest, UINT func);
+extern "C" LV_DLL_EXPORT gu_result gu_create_file(const char* path);
+extern "C" LV_DLL_EXPORT gu_result gu_create_folder(const char* path);
+extern "C" LV_DLL_EXPORT gu_result gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders);
+extern "C" LV_DLL_EXPORT gu_result gu_move(const char* src, const char* dest);
+extern "C" LV_DLL_EXPORT gu_result gu_copy(const char* src, const char* dest);
+extern "C" LV_DLL_EXPORT gu_result gu_delete(const char* src, int32_t delete_hierarchy);
+gu_result gu_file_operation(const char* src, const char* dest, UINT func);
 
 ////////////////////////
 // Win32 API Wrappers //

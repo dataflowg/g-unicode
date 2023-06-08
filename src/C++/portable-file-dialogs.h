@@ -3,6 +3,9 @@
 //
 //  Copyright © 2018–2022 Sam Hocevar <sam@hocevar.net>
 //
+//  Modifications by Dataflow_G:
+//    - Add PFD_NO_ASYNC flag to bypass async calls
+//
 //  This library is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
 //  and/or modify it under the terms of the Do What the Fuck You Want
@@ -358,6 +361,8 @@ public:
 private:
     // Some extra logic to map the exit code to button number
     std::map<int, button> m_mappings;
+    int m_exit_code;
+    std::string m_stdout;
 };
 
 //
@@ -1628,6 +1633,14 @@ inline message::message(std::string const &title,
     m_mappings[IDRETRY] = button::retry;
     m_mappings[IDIGNORE] = button::ignore;
 
+#if defined PFD_NO_ASYNC
+    auto wtext = internal::str2wstr(text);
+    auto wtitle = internal::str2wstr(title);
+    // Apply new visual style (required for all Windows versions)
+    new_style_context ctx;
+    m_exit_code = MessageBoxW(GetActiveWindow(), wtext.c_str(), wtitle.c_str(), style);
+    m_stdout = "";
+#else
     m_async->start_func([text, title, style](int* exit_code) -> std::string
     {
         auto wtext = internal::str2wstr(text);
@@ -1637,6 +1650,7 @@ inline message::message(std::string const &title,
         *exit_code = MessageBoxW(GetActiveWindow(), wtext.c_str(), wtitle.c_str(), style);
         return "";
     });
+#endif
 
 #elif __EMSCRIPTEN__
     std::string full_message;
@@ -1797,8 +1811,13 @@ inline message::message(std::string const &title,
 
 inline button message::result()
 {
+#if defined PFD_NO_ASYNC
+    int exit_code = m_exit_code;
+    auto ret = m_stdout;
+#else
     int exit_code;
     auto ret = m_async->result(&exit_code);
+#endif
     // osascript will say "button returned:Cancel\n"
     // and others will just say "Cancel\n"
     if (internal::ends_with(ret, "Cancel\n"))

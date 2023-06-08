@@ -46,27 +46,32 @@ void gu_free(void* pointer)
 // UTF-8 API //
 ///////////////
 
-extern "C" LV_DLL_EXPORT int32_t gu_strlen(const char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_strlen(const char* str, int32_t* length)
 {
 	if (str == NULL)
 	{
-		return 0;
+		return GU_E_INVALID_PARAMS;
 	}
 
-	return (int32_t)utf8len(str);
+	*length = (int32_t)utf8len(str);
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size)
+extern "C" LV_DLL_EXPORT gu_result gu_string_subset(const char* str, int32_t offset, int32_t length, intptr_t* substring_pointer, int32_t* substring_size)
 {
+	*substring_pointer = 0;
+	*substring_size = 0;
+
 	if (str == NULL)
 	{
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
 	int32_t string_length = (int32_t)utf8len(str);
 	if (offset >= string_length || length <= 0)
 	{
-		return;
+		return GU_SUCCESS;
 	}
 
 	if (offset < 0)
@@ -83,7 +88,7 @@ extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, 
 	char* substring = (char*)malloc(buffer_size);
 	if (substring == NULL)
 	{
-		return;
+		return GU_E_MEMORY;
 	}
 
 	utf8_int32_t cp = 0;
@@ -104,40 +109,46 @@ extern "C" LV_DLL_EXPORT void gu_string_subset(const char* str, int32_t offset, 
 
 	*substring_size = buffer_size - sz;
 	*substring_pointer = (intptr_t)substring;
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT void gu_to_upper_case(char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_to_upper_case(char* str)
 {
 	if (str == NULL)
 	{
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
-	return utf8upr(str);
+	utf8upr(str);
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT void gu_to_lower_case(char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_to_lower_case(char* str)
 {
 	if (str == NULL)
 	{
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
-	return utf8lwr(str);
+	utf8lwr(str);
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT void gu_reverse_string(char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_reverse_string(char* str)
 {
 	if (str == NULL)
 	{
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
 	int32_t string_length = (int32_t)utf8len(str);
 
 	if (string_length <= 1)
 	{
-		return;
+		return GU_SUCCESS;
 	}
 
 	int32_t buffer_size = strlen(str) * sizeof(char);
@@ -145,7 +156,7 @@ extern "C" LV_DLL_EXPORT void gu_reverse_string(char* str)
 
 	if (temp_string == NULL)
 	{
-		return;
+		return GU_E_MEMORY;
 	}
 
 	int32_t sz = buffer_size;
@@ -165,13 +176,15 @@ extern "C" LV_DLL_EXPORT void gu_reverse_string(char* str)
 
 	memcpy(str, temp_string, buffer_size);
 	free(temp_string);
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_rotate_string(char* str)
 {
 	if (str == NULL)
 	{
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
 	int32_t string_length = (int32_t)utf8len(str);
@@ -179,7 +192,7 @@ extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str)
 
 	if (string_length <= 1)
 	{
-		return;
+		return GU_SUCCESS;
 	}
 
 	utf8_int32_t cp;
@@ -188,20 +201,25 @@ extern "C" LV_DLL_EXPORT void gu_rotate_string(char* str)
 	int32_t cp_size = utf8codepointsize(cp);
 	if (memmove(str, str + cp_size, buffer_size - cp_size) == NULL)
 	{
-		return;
+		return GU_E_MEMORY;
 	}
 	utf8catcodepoint(str + buffer_size - cp_size, cp, cp_size);
+
+	return GU_SUCCESS;
 }
 
 
 
-extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t direction, intptr_t* string_a_pointer, int32_t* string_a_size, intptr_t* string_b_pointer, int32_t* string_b_size)
+extern "C" LV_DLL_EXPORT gu_result gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t reverse, intptr_t* string_a_pointer, int32_t* string_a_size, intptr_t* string_b_pointer, int32_t* string_b_size)
 {
+	*string_a_pointer = 0;
+	*string_b_pointer = 0;
+	*string_a_size = 0;
+	*string_b_size = 0;
+
 	if (str == NULL || search_str == NULL)
 	{
-		*string_a_size = 0;
-		*string_b_size = 0;
-		return;
+		return GU_E_INVALID_PARAMS;
 	}
 
 	utf8_int8_t* match_ptr = NULL;
@@ -226,15 +244,7 @@ extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char
 		if (search_str_length == 1)
 		{
 			utf8codepoint(search_str, &cp);
-
-			if (direction == 0)
-			{
-				match_ptr = utf8chr(str_offset, cp);
-			}
-			else
-			{
-				match_ptr = utf8rchr(str_offset, cp);
-			}
+			match_ptr = (reverse == 0) ? utf8chr(str_offset, cp) : utf8rchr(str_offset, cp);
 		}
 		else
 		{
@@ -253,6 +263,11 @@ extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char
 	char* string_a = (char*)malloc(a_size);
 	char* string_b = (char*)malloc(b_size);
 
+	if (string_a == NULL || string_b == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
 	memcpy(string_a, str, a_size);
 	memcpy(string_b, match_ptr, b_size);
 
@@ -260,27 +275,37 @@ extern "C" LV_DLL_EXPORT void gu_search_split_string(const char* str, const char
 	*string_b_pointer = (intptr_t)string_b;
 	*string_a_size = a_size;
 	*string_b_size = b_size;
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf16(const char* buf, int32_t size)
+extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf16(const char* buf, int32_t size, int32_t* is_utf16)
 {
+	*is_utf16 = 0;
 #if defined(_WIN32)
 	int32_t params = IS_TEXT_UNICODE_STATISTICS | IS_TEXT_UNICODE_REVERSE_STATISTICS;
 	
 	if (IsTextUnicode(buf, size, &params) != 0)
 	{
-		return (params & IS_TEXT_UNICODE_STATISTICS) ? 1 : 2;
+		*is_utf16 = (params & IS_TEXT_UNICODE_STATISTICS) ? 1 : 2;
 	}
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
 #endif
-	return 0;
 }
 
 // Taken from https://stackoverflow.com/questions/1031645/how-to-detect-utf-8-in-plain-c/1031773#1031773
 // Based on https://www.w3.org/International/questions/qa-forms-utf-8
-extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf8(const char* str)
+extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_utf8)
 {
-	if (!str)
-		return 0;
+	*is_utf8 = 0;
+
+	if (str == NULL)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
 
 	const unsigned char * bytes = (const unsigned char *)str;
 	while (*bytes)
@@ -351,10 +376,12 @@ extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf8(const char* str)
 			continue;
 		}
 
-		return 0;
+		*is_utf8 = 0;
+		return GU_SUCCESS;
 	}
 
-	return 1;
+	*is_utf8 = 1;
+	return GU_SUCCESS;
 }
 
 
@@ -364,8 +391,12 @@ extern "C" LV_DLL_EXPORT int32_t gu_is_text_utf8(const char* str)
 // Dialog API //
 ////////////////
 
-extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, intptr_t* path_pointer, int32_t* path_length)
+extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length)
 {
+	*path_length = 0;
+	*path_pointer = 0;
+	*cancelled = 0;
+
 	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
 	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
 
@@ -374,26 +405,28 @@ extern "C" LV_DLL_EXPORT int32_t gu_open_file_dialog(const char* title, const ch
 	// User cancelled the dialog
 	if (selection.size() == 0)
 	{
-		*path_length = 0;
-		*path_pointer = 0;
-		return 1;
+		*cancelled = 1;
+		return GU_SUCCESS;
 	}
 
 	char* path = _strdup(selection[0].c_str());
 	if (path == NULL)
 	{
-		*path_length = 0;
-		*path_pointer = 0;
-		return 1;
+		return GU_E_MEMORY;
 	}
 
 	*path_length = strlen(path);
 	*path_pointer = (intptr_t)path;
-	return 0;
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_select_folder_dialog(const char* title, const char* default_path, intptr_t* path_pointer, int32_t* path_length)
+extern "C" LV_DLL_EXPORT gu_result gu_select_folder_dialog(const char* title, const char* default_path, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length)
 {
+	*path_length = 0;
+	*path_pointer = 0;
+	*cancelled = 0;
+
 	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
 	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
 
@@ -402,27 +435,27 @@ extern "C" LV_DLL_EXPORT int32_t gu_select_folder_dialog(const char* title, cons
 	// User cancelled the dialog
 	if (selection.empty())
 	{
-		*path_length = 0;
-		*path_pointer = 0;
-		return 1;
+		*cancelled = 1;
+		return GU_SUCCESS;
 	}
 
 	char* path = _strdup(selection.c_str());
 	if (path == NULL)
 	{
-		*path_length = 0;
-		*path_pointer = 0;
-		return 1;
+		return GU_E_MEMORY;
 	}
 
 	*path_length = strlen(path);
 	*path_pointer = (intptr_t)path;
-	return 0;
+
+	return GU_SUCCESS;
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon)
+extern "C" LV_DLL_EXPORT gu_result gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon, int32_t* user_selection)
 {
-	return (int32_t)pfd::message(title, message, (pfd::choice)choice, (pfd::icon)icon).result();
+	*user_selection = (int32_t)pfd::message(title, message, (pfd::choice)choice, (pfd::icon)icon).result();
+
+	return GU_SUCCESS;
 }
 
 
@@ -432,75 +465,107 @@ extern "C" LV_DLL_EXPORT int32_t gu_message_box(const char* title, const char* m
 // LabVIEW File I/O API //
 //////////////////////////
 
-extern "C" LV_DLL_EXPORT int32_t gu_create_file(const char* path)
+extern "C" LV_DLL_EXPORT gu_result gu_create_file(const char* path)
 {
 #if defined(_WIN32)
 	int32_t fd;
 	errno_t err;
-	wchar_t* wide_path = widen(path);
 
+	if (path == NULL)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
+
+	wchar_t* wide_path = widen(path);
 	if (wide_path == NULL)
-		return 1;
+	{
+		return GU_E_MEMORY;
+	}
 
 	err = _wsopen_s(&fd, wide_path, O_CREAT | O_WRONLY | O_EXCL, _SH_DENYNO, _S_IREAD | _S_IWRITE);
-	gu_free((intptr_t)wide_path);
+	free(wide_path);
 
 	if (err != 0)
 	{
 		switch (err)
 		{
 			case EACCES: break;
-			case EEXIST: break;
-			case EINVAL: break;
+			case EEXIST: return GU_E_ALREADY_EXISTS; break;
+			case EINVAL: return GU_E_INVALID_PARAMS; break;
 			case EMFILE: break;
 			case ENOENT: break;
-			default:
-				break;
+			default:     break;
 		}
 
-		return err;
+		return GU_E_FILE_IO;
 	}
 	_close(fd);
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
 #endif
-
-	return 0;
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_create_folder(const char* path)
+extern "C" LV_DLL_EXPORT gu_result gu_create_folder(const char* path)
 {
-	int32_t result = 0;
 #if defined _WIN32
+	int err;
+
 	if (path == NULL)
 	{
-		return 1;
+		return GU_E_INVALID_PARAMS;
 	}
 
 	wchar_t* wide_path = widen(path);
 	if (wide_path == NULL)
 	{
-		return 1;
+		return GU_E_MEMORY;
 	}
 
-	result = SHCreateDirectory(NULL, wide_path);
+	err = SHCreateDirectory(NULL, wide_path);
 	free(wide_path);
+
+	if (err != ERROR_SUCCESS)
+	{
+		switch (err)
+		{
+			case ERROR_BAD_PATHNAME: return GU_E_RELATIVE_PATH; break;
+			case ERROR_FILENAME_EXCED_RANGE: return GU_E_INVALID_PATH; break;
+			case ERROR_FILE_EXISTS:
+			case ERROR_ALREADY_EXISTS: return GU_E_ALREADY_EXISTS; break;
+			default: break;
+		}
+
+		return GU_E_FILE_IO;
+	}
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
 #endif
-	return result;
 }
 
-extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders)
+extern "C" LV_DLL_EXPORT gu_result gu_list_folder(const char* path, const char* match, intptr_t* files, int32_t* num_files, intptr_t* folders, int32_t* num_folders)
 {
-	tinydir_dir dir;
+	*files = 0;
+	*folders = 0;
+	*num_files = 0;
+	*num_folders = 0;
+
 #if defined _WIN32
+	tinydir_dir dir;
 	wchar_t* wide_path = widen(path);
 	if (wide_path == NULL)
 	{
-		return;
+		return GU_E_MEMORY;
 	}
-	tinydir_open(&dir, wide_path);
+
+	if (tinydir_open(&dir, wide_path) != 0)
+	{
+		free(wide_path);
+		return GU_E_FILE_IO;
+	}
 	free(wide_path);
-#else
-	tinydir_open(&dir, path);
-#endif
 
 	int32_t file_list_length = 0;
 	int32_t folder_list_length = 0;
@@ -514,27 +579,39 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match
 	while (dir.has_next)
 	{
 		tinydir_file file;
-		tinydir_readfile(&dir, &file);
+		
+		if (tinydir_readfile(&dir, &file) != 0)
+		{
+			tinydir_close(&dir);
+			return GU_E_FILE_IO;
+		}
 
 		if (_tinydir_strcmp(file.name, TINYDIR_STRING(".")) == 0 ||
 			_tinydir_strcmp(file.name, TINYDIR_STRING("..")) == 0)
 		{
-			tinydir_next(&dir);
+			if (tinydir_next(&dir) != 0)
+			{
+				tinydir_close(&dir);
+				return GU_E_FILE_IO;
+			}
 			continue;
 		}
 
-#if defined _WIN32
 		file_name = narrow(file.name);
-#else
-		file_name = file.name;
-#endif
+		if (file_name == NULL)
+		{
+			return GU_E_MEMORY;
+		}
+
 		if (do_match && !wildcard_match(file_name, match))
 		{
-#if defined _WIN32
 			// free memory allocated in narrow();
 			free(file_name);
-#endif
-			tinydir_next(&dir);
+			if (tinydir_next(&dir) != 0)
+			{
+				tinydir_close(&dir);
+				return GU_E_FILE_IO;
+			}
 			continue;
 		}
 
@@ -547,23 +624,15 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match
 				{
 					//free_string_list(folder_list, folder_list_length);
 					//free_string_list(file_list, file_list_length);
-					*num_folders = 0;
-					*num_files = 0;
-					return;
+					return GU_E_MEMORY;
 				}
 				folder_list = (gu_string*)temp_ptr;
 				temp_ptr = NULL;
 			}
 
 			folder_list[folder_list_length].size = strlen(file_name);
-#if defined _WIN32
-			// The memory allocated in narrow() will be freed in LabVIEW
+			// The memory allocated in previous call to narrow() will be freed in LabVIEW
 			folder_list[folder_list_length].string = file_name;
-#else
-			// The memory allocated by malloc() will be freed in LabVIEW
-			folder_list[folder_list_length].string = (char*)malloc(folder_list[folder_list_length].size);
-			memcpy(folder_list[folder_list_length].string, file_name, folder_list[folder_list_length].size);
-#endif
 			folder_list_length++;
 		}
 		else
@@ -575,27 +644,23 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match
 				{
 					//free_string_list(folder_list, folder_list_length);
 					//free_string_list(file_list, file_list_length);
-					*num_folders = 0;
-					*num_files = 0;
-					return;
+					return GU_E_MEMORY;
 				}
 				file_list = (gu_string*)temp_ptr;
 				temp_ptr = NULL;
 			}
 
 			file_list[file_list_length].size = strlen(file_name);
-#if defined _WIN32
-			// The memory allocated by narrow() will be freed in LabVIEW
+			// The memory allocated in previous call to narrow() will be freed in LabVIEW
 			file_list[file_list_length].string = file_name;
-#else
-			// The memory allocated by malloc() will be freed in LabVIEW
-			file_list[file_list_length].string = (char*)malloc(file_list[file_list_length].size);
-			memcpy(file_list[file_list_length].string, file.name, file_list[file_list_length].size);
-#endif
 			file_list_length++;
 		}
 
-		tinydir_next(&dir);
+		if (tinydir_next(&dir) != 0)
+		{
+			tinydir_close(&dir);
+			return GU_E_FILE_IO;
+		}
 	}
 
 	tinydir_close(&dir);
@@ -604,10 +669,16 @@ extern "C" LV_DLL_EXPORT void gu_list_folder(const char* path, const char* match
 	*folders = (intptr_t)folder_list;
 	*num_files = file_list_length;
 	*num_folders = folder_list_length;
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
+#endif
 }
 
-int32_t gu_file_operation(const char* src, const char* dest, UINT func)
+gu_result gu_file_operation(const char* src, const char* dest, UINT func)
 {
+#if defined _WIN32
 	SHFILEOPSTRUCT fileOps;
 	fileOps.hwnd = NULL;
 	fileOps.wFunc = func;
@@ -618,49 +689,95 @@ int32_t gu_file_operation(const char* src, const char* dest, UINT func)
 	fileOps.hNameMappings = NULL;
 	fileOps.lpszProgressTitle = NULL;
 
+	if ((src != NULL && fileOps.pFrom == NULL) ||
+		(dest != NULL && fileOps.pTo == NULL))
+	{
+		free((void*)fileOps.pFrom);
+		free((void*)fileOps.pTo);
+		return GU_E_MEMORY;
+	}
+
 	if ((fileOps.pFrom != NULL && PathIsRelative(fileOps.pFrom)) ||
 		(fileOps.pTo != NULL && PathIsRelative(fileOps.pTo)))
 	{
-		return 1;
+		free((void*)fileOps.pFrom);
+		free((void*)fileOps.pTo);
+		return GU_E_RELATIVE_PATH;
 	}
 
 	int32_t result = SHFileOperation(&fileOps);
 	free((void*)fileOps.pFrom);
 	free((void*)fileOps.pTo);
 
-	return result;
+	return result == 0 ? GU_SUCCESS : GU_E_FILE_IO;
+#else
+	return GU_W_WIN32_ONLY;
+#endif
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_move(const char* src, const char* dest)
+extern "C" LV_DLL_EXPORT gu_result gu_move(const char* src, const char* dest)
 {
+#if defined _WIN32
 	return gu_file_operation(src, dest, FO_MOVE);
+#else
+	return GU_W_WIN32_ONLY;
+#endif
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_copy(const char* src, const char* dest)
+extern "C" LV_DLL_EXPORT gu_result gu_copy(const char* src, const char* dest)
 {
+#if defined _WIN32
 	return gu_file_operation(src, dest, FO_COPY);
+#else
+	return GU_W_WIN32_ONLY;
+#endif
 }
 
-extern "C" LV_DLL_EXPORT int32_t gu_delete(const char* src, int32_t delete_hierarchy)
+extern "C" LV_DLL_EXPORT gu_result gu_delete(const char* src, int32_t delete_hierarchy)
 {
-	int32_t result = 0;
-
-	if (delete_hierarchy == 0)
+#if defined _WIN32
+	wchar_t* wide_src = widen(src);
+	if (widen == NULL)
 	{
-		wchar_t* wide_src = widen(src);
-		if (widen == NULL)
-		{
-			return 1;
-		}
-		result = RemoveDirectory(wide_src);
+		return GU_E_MEMORY;
+	}
+
+	int32_t result = GetFileAttributes(wide_src);
+
+	if (result == INVALID_FILE_ATTRIBUTES)
+	{
 		free(wide_src);
+		return GU_E_FILE_IO;
+	}
+
+	if (result & FILE_ATTRIBUTE_DIRECTORY)
+	{
+		if (delete_hierarchy == 0)
+		{
+			result = RemoveDirectory(wide_src);
+			free(wide_src);
+
+			if (result == 0)
+			{
+				return GU_E_FILE_IO;
+			}
+			return GU_SUCCESS;
+		}
+		else
+		{
+			free(wide_src);
+			return gu_file_operation(src, NULL, FO_DELETE);
+		}
 	}
 	else
 	{
-		result = gu_file_operation(src, NULL, FO_DELETE);
+		result = DeleteFile(wide_src);
+		free(wide_src);
+		return result != 0 ? GU_SUCCESS : GU_E_FILE_IO;
 	}
-
-	return result;
+#else
+	return GU_W_WIN32_ONLY;
+#endif
 }
 
 

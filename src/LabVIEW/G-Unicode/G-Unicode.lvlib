@@ -133,6 +133,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_strlen.vi" Type="VI" URL="../Private/Library/gu_strlen.vi"/>
 			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
 			<Item Name="gu_to_upper_case.vi" Type="VI" URL="../Private/Library/gu_to_upper_case.vi"/>
+			<Item Name="Result To Error.vi" Type="VI" URL="../Private/Library/Result To Error.vi"/>
 		</Item>
 		<Item Name="Memory" Type="Folder">
 			<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Memory/Copy String Array.vi"/>
