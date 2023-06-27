@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="g_unicode.h" />
+    <ClInclude Include="inputbox.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="portable-file-dialogs.h" />
     <ClInclude Include="resource.h" />
@@ -172,6 +173,7 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="g_unicode.cpp" />
+    <ClCompile Include="inputbox.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>

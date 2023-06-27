@@ -458,6 +458,14 @@ extern "C" LV_DLL_EXPORT gu_result gu_message_box(const char* title, const char*
 	return GU_SUCCESS;
 }
 
+extern "C" LV_DLL_EXPORT gu_result gu_input_box(const char* title, const char* message, const char* default_input, intptr_t* input_pointer, int32_t* input_size)
+{
+	*input_pointer = (intptr_t)InputBox((char*)message, (char*)title, (char*)default_input);
+	*input_size = strlen((char*)*input_pointer);
+
+	return GU_SUCCESS;
+}
+
 
 
 

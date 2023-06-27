@@ -36,6 +36,9 @@
     <ClInclude Include="portable-file-dialogs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="inputbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inputbox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

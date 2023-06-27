@@ -119,6 +119,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_create_folder.vi" Type="VI" URL="../Private/Library/gu_create_folder.vi"/>
 			<Item Name="gu_delete.vi" Type="VI" URL="../Private/Library/gu_delete.vi"/>
 			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
+			<Item Name="gu_input_box.vi" Type="VI" URL="../Private/Library/gu_input_box.vi"/>
 			<Item Name="gu_is_text_utf8.vi" Type="VI" URL="../Private/Library/gu_is_text_utf8.vi"/>
 			<Item Name="gu_is_text_utf16.vi" Type="VI" URL="../Private/Library/gu_is_text_utf16.vi"/>
 			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
@@ -139,6 +140,18 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Memory/Copy String Array.vi"/>
 			<Item Name="Copy String.vi" Type="VI" URL="../Private/Memory/Copy String.vi"/>
 			<Item Name="Move Block.vim" Type="VI" URL="../Private/Memory/Move Block.vim"/>
+		</Item>
+		<Item Name="User Interface" Type="Folder">
+			<Item Name="Read Boolean Text.vi" Type="VI" URL="../Private/User Interface/Read Boolean Text.vi"/>
+			<Item Name="Read Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read Listbox Data.vi"/>
+			<Item Name="Read MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read MultCol Listbox Data.vi"/>
+			<Item Name="Read Ring Control.vi" Type="VI" URL="../Private/User Interface/Read Ring Control.vi"/>
+			<Item Name="Read String Array (1D).vi" Type="VI" URL="../Private/User Interface/Read String Array (1D).vi"/>
+			<Item Name="Read String Array (2D).vi" Type="VI" URL="../Private/User Interface/Read String Array (2D).vi"/>
+			<Item Name="Read String.vi" Type="VI" URL="../Private/User Interface/Read String.vi"/>
+			<Item Name="Read Tab Control.vi" Type="VI" URL="../Private/User Interface/Read Tab Control.vi"/>
+			<Item Name="Read Table Data.vi" Type="VI" URL="../Private/User Interface/Read Table Data.vi"/>
+			<Item Name="Write String.vi" Type="VI" URL="../Private/User Interface/Write String.vi"/>
 		</Item>
 		<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
 		<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>

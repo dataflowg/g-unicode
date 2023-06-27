@@ -25,6 +25,7 @@ non-Windows platforms, but when called will return the warning GE_W_WIN32_ONLY.
 #include "tinydir.h"
 #define PFD_NO_ASYNC
 #include "portable-file-dialogs.h"
+#include "inputbox.h"
 
 #if defined(_WIN32)
 #define LV_DLL_IMPORT  __declspec(dllimport)
@@ -95,6 +96,7 @@ extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_
 extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length);
 extern "C" LV_DLL_EXPORT gu_result gu_select_folder_dialog(const char* title, const char* default_path, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length);
 extern "C" LV_DLL_EXPORT gu_result gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon, int32_t* user_selection);
+extern "C" LV_DLL_EXPORT gu_result gu_input_box(const char* title, const char* message, const char* default_input, intptr_t* input_pointer, int32_t* input_size);
 
 //////////////////
 // File I/O API //
