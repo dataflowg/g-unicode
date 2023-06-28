@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-06-26 07:54:52" Creator="Dataflow_G" Comments="" ID="ad47f3aef7adbdf1a988e93345cbb1f0">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-06-28 02:26:43" Creator="Dataflow_G" Comments="" ID="26c80afda05bd62f8b5bfb2b3eb94c27">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.1.0.4</Library_Version>
@@ -16,9 +16,7 @@
     <Target>LabVIEW</Target>
   </Library_General_Settings>
   <Advanced_Settings>
-    <Package_Dependencies>
-      <Additional_External_Dependencies>ni_lib_unicode &gt;=2.0.1.6</Additional_External_Dependencies>
-    </Package_Dependencies>
+    <Package_Dependencies/>
     <Custom_Action_VIs>
       <Pre-Build_VI/>
       <Post-Build_VI/>
@@ -289,7 +287,7 @@
         <Path>..\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2DC36A87D56B07251F5E2BFCA9B6E02B</GUID>
+      <GUID>5D9C1413634AF8B20CFEC9CCB32538C8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -466,7 +464,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\String\Not Equal String-Path.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3E5E99A7CAEB388035519C2E7B756A44</GUID>
+      <GUID>C5872B39AE40E1C5CAA15F182E7B7E70</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -825,7 +823,7 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
         <Path>..\G-Unicode\File IO\Get Volume Info.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F8CD6A82F1017F41A5B2CA5941A08806</GUID>
+      <GUID>D0549B0B3831671B2E19573D2EAF9F4D</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -988,7 +986,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control (UTF-16LE).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>DB5B2004DAAF90BF768A3D8B55F7DDD5</GUID>
+      <GUID>37766ECD4E2BEB18334CDE2B498A06A5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1163,7 +1161,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Unicode\Strip BOM.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5B8190694B900CBBC557BDCA3019877B</GUID>
+      <GUID>78288E806D03FDE059E51743240D629F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1268,7 +1266,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Examples\Unicode Text File Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A85C7F70880CCD721F30BFDFCDF311A0</GUID>
+      <GUID>C016A5A173F4D4B34635583CD39E26A1</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

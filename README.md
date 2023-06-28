@@ -3,7 +3,7 @@
   <img width="346" height="115" src="images/g-unicode-logo.png">
 </p>
 <p align="center">
-A cross-platform LabVIEW library for manipulating unicode strings, and performing file I/O on unicode paths.
+A LabVIEW library for manipulating unicode strings, and performing file I/O on unicode paths.
 </p>
 
 <p align="center">
@@ -22,13 +22,13 @@ A cross-platform LabVIEW library for manipulating unicode strings, and performin
 * Library is currently under development, with the first release coming soon
 
 ## <a id="motivation"></a>Motivation
-LabVIEW doesn't provide official unicode support under Windows, but through a combination of hidden control properties, ini tokens, and good luck, it is possible to read and display unicode strings. Unfortunately there are still many gaps in functionality:
+LabVIEW doesn't provide official unicode support under Windows, but through a combination of hidden control properties, byte order marks, and good luck, it is possible to read and display unicode strings. Unfortunately there are still many gaps in functionality:
 * File I/O functions don't support unicode, and any unicode characters in paths are replaced with `?` rendering them invalid
 * String operations aren't unicode aware
 
 There is a UTF-8 locale setting in Windows, and ability to embed a UTF-8 application manifest to a compiled LabVIEW app (both available since Windows 10 v1903), which brings another level of unicode support to LabVIEW. This still requires special string handling and encoding for display.
 
-G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to develop applications with unicode and multi-lingual support.
+G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to develop applications with unicode and multilingual support.
 
 ## <a id="features"></a>Features
 * New classes: _UTF-8 String_ and _UTF-8 Path_
@@ -78,6 +78,34 @@ In the example below the unicode path `c:\LabVIEW Data\안녕하세요.tdms` is 
 ![Unicode path with TDMS functions](images/g-unicode-tdms-example.png?raw=true "Unicode path with TDMS functions")
 
 There are caveats to this approach (the file must exist, ReFS file system isn't supported, TDMS index files will have the short path name, etc) so proceed with caution!
+
+### Tips On Displaying Unicode
+LabVIEW's unicode support is experimental, and it can be very easy to run into issues. If unicode text doesn't display correctly (it has the characteristic double-spacing or is completely wrong), check the table below for tips on how to set unicode text.
+
+If there's a check mark in the _Copy + Paste Unicode_ column, the target text will need to have some unicode text (such as _مرحبا_) copied and pasted into the text field first to force the text to display as unicode.
+
+Text Item           | Method                                               | Copy + Paste Unicode
+--------------------|------------------------------------------------------|---------------------
+Caption             | `Write Control Caption.vim` with scalar UTF-8 String |
+String              | `Write Control.vim` with scalar UTF-8 String         |
+String Array (1D)   | `Write Control.vim` with 1D UTF-8 String array       |
+String Array (2D)   | `Write Control.vim` with 2D UTF-8 String array       |
+Tab Pages           | `Write Control.vim` with 1D UTF-8 String array       | :heavy_check_mark: (once for each page)
+Boolean Text        | `Write Control.vim` with 1D UTF-8 String array (4 elements) |
+Table Data          | `Write Control.vim` with 2D UTF-8 String array       |
+Listbox             | `Write Control.vim` with 1D UTF-8 String array       |
+MultiColumn Listbox | `Write Control.vim` with 2D UTF-8 String array       |
+Text / Menu Ring    | `Write Control.vim` with 1D UTF-8 String array       |
+Chart / Graph Axis  | `Write Control.vim` with 1D UTF-8 String array (2 elements) |
+Chart / Graph Plots | Set _Active Plot_ property, then write UTF-16LE to _Plot Name_ | :heavy_check_mark: (once on any plot name)
+Tree                | Write UTF-16LE + BOM to _Left Cell String_ (see `Unicode Tree File Browser Example.vi`) |
+
+If the above hasn't helped, and unicode display still looks wrong:
+* Disable the _UseUnicode_ flag in `labview.ini` to avoid accidentally mixing text encodings. This flag does not affect unicode input or display (which is managed by a control's __Force Unicode Text__ and __Interpret As Unicode__ private properties).
+* Try copy and paste some unicode text (such as _สวัสดี_) over the current text. This is sometimes necessary to force the text to display as unicode (e.g. tab page text)
+* The unicode text may be UTF-16LE encoded when UTF-8 is assumed (or vica versa). Try switching encoding using `Encode String.vi`
+* Some text items require a Byte Order Mark (BOM) in addition to UTF-16LE encoded text. Try adding a BOM with `Prepend BOM.vi` (__Note:__ `Write Control.vim` does this automatically for supported controls)
+* If a control or constant still isn't displaying text correctly, try deleting and recreating it.
 
 ### Examples
 See the example VIs in [Examples](src/LabVIEW/G-Unicode/Examples).

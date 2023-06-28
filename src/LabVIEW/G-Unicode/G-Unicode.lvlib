@@ -143,6 +143,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 		<Item Name="User Interface" Type="Folder">
 			<Item Name="Read Boolean Text.vi" Type="VI" URL="../Private/User Interface/Read Boolean Text.vi"/>
+			<Item Name="Read Caption.vi" Type="VI" URL="../Private/User Interface/Read Caption.vi"/>
 			<Item Name="Read Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read Listbox Data.vi"/>
 			<Item Name="Read MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read MultCol Listbox Data.vi"/>
 			<Item Name="Read Ring Control.vi" Type="VI" URL="../Private/User Interface/Read Ring Control.vi"/>
@@ -151,7 +152,17 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Read String.vi" Type="VI" URL="../Private/User Interface/Read String.vi"/>
 			<Item Name="Read Tab Control.vi" Type="VI" URL="../Private/User Interface/Read Tab Control.vi"/>
 			<Item Name="Read Table Data.vi" Type="VI" URL="../Private/User Interface/Read Table Data.vi"/>
+			<Item Name="Write Boolean Text.vi" Type="VI" URL="../Private/User Interface/Write Boolean Text.vi"/>
+			<Item Name="Write Caption.vi" Type="VI" URL="../Private/User Interface/Write Caption.vi"/>
+			<Item Name="Write Graph-Chart Axis Labels.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Axis Labels.vi"/>
+			<Item Name="Write Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write Listbox Data.vi"/>
+			<Item Name="Write MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write MultCol Listbox Data.vi"/>
+			<Item Name="Write Ring Control.vi" Type="VI" URL="../Private/User Interface/Write Ring Control.vi"/>
+			<Item Name="Write String Array (1D).vi" Type="VI" URL="../Private/User Interface/Write String Array (1D).vi"/>
+			<Item Name="Write String Array (2D).vi" Type="VI" URL="../Private/User Interface/Write String Array (2D).vi"/>
 			<Item Name="Write String.vi" Type="VI" URL="../Private/User Interface/Write String.vi"/>
+			<Item Name="Write Tab Control.vi" Type="VI" URL="../Private/User Interface/Write Tab Control.vi"/>
+			<Item Name="Write Table Data.vi" Type="VI" URL="../Private/User Interface/Write Table Data.vi"/>
 		</Item>
 		<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
 		<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>
