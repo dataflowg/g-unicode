@@ -684,7 +684,7 @@ extern "C" LV_DLL_EXPORT gu_result gu_list_folder(const char* path, const char* 
 #endif
 }
 
-gu_result gu_file_operation(const char* src, const char* dest, UINT func)
+gu_result gu_file_operation(const char* src, const char* dest, uint32_t func)
 {
 #if defined _WIN32
 	SHFILEOPSTRUCT fileOps;
@@ -788,6 +788,98 @@ extern "C" LV_DLL_EXPORT gu_result gu_delete(const char* src, int32_t delete_hie
 #endif
 }
 
+extern "C" LV_DLL_EXPORT gu_result gu_short_path(const char* path, intptr_t* short_path_pointer, int32_t* short_path_length)
+{
+	*short_path_pointer = 0;
+	*short_path_length = 0;
+
+#if defined _WIN32
+	if (strlen(path) == 0)
+	{
+		return GU_SUCCESS;
+	}
+
+	wchar_t* wide_path = widen(path);
+	if (wide_path == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	int32_t wide_short_path_length = GetShortPathNameW(wide_path, NULL, 0);
+
+	wchar_t* wide_short_path = (wchar_t*)malloc(wide_short_path_length * sizeof(wchar_t));
+	if (wide_short_path == NULL)
+	{
+		free(wide_path);
+		return GU_E_MEMORY;
+	}
+
+	GetShortPathNameW(wide_path, wide_short_path, wide_short_path_length);
+
+	char* short_path = narrow(wide_short_path);
+
+	if (short_path == NULL)
+	{
+		free(wide_path);
+		free(wide_short_path);
+		return GU_E_MEMORY;
+	}
+
+	*short_path_pointer = (intptr_t)short_path;
+	*short_path_length = strlen(short_path);
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
+#endif
+}
+
+extern "C" LV_DLL_EXPORT gu_result gu_long_path(const char* path, intptr_t* long_path_pointer, int32_t* long_path_length)
+{
+	*long_path_pointer = 0;
+	*long_path_length = 0;
+
+#if defined _WIN32
+	if (strlen(path) == 0)
+	{
+		return GU_SUCCESS;
+	}
+
+	wchar_t* wide_path = widen(path);
+	if (wide_path == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	int32_t wide_long_path_length = GetLongPathNameW(wide_path, NULL, 0);
+
+	wchar_t* wide_long_path = (wchar_t*)malloc(wide_long_path_length * sizeof(wchar_t));
+	if (wide_long_path == NULL)
+	{
+		free(wide_path);
+		return GU_E_MEMORY;
+	}
+
+	GetLongPathNameW(wide_path, wide_long_path, wide_long_path_length);
+
+	char* long_path = narrow(wide_long_path);
+
+	if (long_path == NULL)
+	{
+		free(wide_path);
+		free(wide_long_path);
+		return GU_E_MEMORY;
+	}
+
+	*long_path_pointer = (intptr_t)long_path;
+	*long_path_length = strlen(long_path);
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY;
+#endif
+}
+
 
 
 
@@ -827,6 +919,38 @@ extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16(const char* utf8_str, uint8_t 
 	int utf8_length = strlen(utf8_str);
 
 	return MultiByteToWideChar(CP_UTF8, 0, utf8_str, utf8_length, (wchar_t*)utf16_str, utf16_str_size);
+#else
+	return 0;
+#endif
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_utf16_to_utf8_length(const wchar_t* utf16_str)
+{
+#if defined(_WIN32)
+	if (utf16_str == NULL)
+	{
+		return 0;
+	}
+
+	int32_t utf16_length = wcslen(utf16_str);
+
+	return WideCharToMultiByte(CP_UTF8, 0, utf16_str, utf16_length, 0, 0, NULL, NULL);
+#else
+	return 0;
+#endif
+}
+
+extern "C" LV_DLL_EXPORT int32_t gu_utf16_to_utf8(const wchar_t* utf16_str, char* utf8_str, int32_t utf8_str_size)
+{
+#if defined(_WIN32)
+	if (utf16_str == NULL || utf8_str_size == 0)
+	{
+		return 0;
+	}
+
+	int utf16_length = wcslen(utf16_str);
+
+	return WideCharToMultiByte(CP_UTF8, 0, utf16_str, utf16_length, (char*)utf8_str, utf8_str_size, NULL, NULL);
 #else
 	return 0;
 #endif

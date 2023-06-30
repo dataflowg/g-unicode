@@ -98,6 +98,7 @@ MultiColumn Listbox | `Write Control.vim` with 2D UTF-8 String array       |
 Text / Menu Ring    | `Write Control.vim` with 1D UTF-8 String array       |
 Chart / Graph Axis  | `Write Control.vim` with 1D UTF-8 String array (2 elements) |
 Chart / Graph Plots | Set _Active Plot_ property, then write UTF-16LE to _Plot Name_ | :heavy_check_mark: (once on any plot name)
+Radio Buttons       | `Write Control.vim` with 1D UTF-8 String array (1 element per button) |
 Tree                | Write UTF-16LE + BOM to _Left Cell String_ (see `Unicode Tree File Browser Example.vi`) |
 
 If the above hasn't helped, and unicode display still looks wrong:
@@ -106,6 +107,12 @@ If the above hasn't helped, and unicode display still looks wrong:
 * The unicode text may be UTF-16LE encoded when UTF-8 is assumed (or vica versa). Try switching encoding using `Encode String.vi`
 * Some text items require a Byte Order Mark (BOM) in addition to UTF-16LE encoded text. Try adding a BOM with `Prepend BOM.vi` (__Note:__ `Write Control.vim` does this automatically for supported controls)
 * If a control or constant still isn't displaying text correctly, try deleting and recreating it.
+
+If the control to be written doesn't have explicit support in G-Unicode, it may still be possible to display unicode text. There are three methods LabVIEW for Windows uses to display unicode, depending on the control type:
+1. Erasing the text, setting __Force Unicode Text__ to `TRUE`, then writing UTF-16LE encoded text
+2. Writing UTF-16LE encoded text with BOM
+3. Copying + pasting unicode text to the target to enable unicode display, then writing UTF-16LE encoded text
+
 
 ### Examples
 See the example VIs in [Examples](src/LabVIEW/G-Unicode/Examples).

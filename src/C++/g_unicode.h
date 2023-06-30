@@ -14,12 +14,13 @@ non-Windows platforms, but when called will return the warning GE_W_WIN32_ONLY.
 #define _G_UNICODE_H_
 
 #include <stdint.h>
-#include <io.h>
 #include <fcntl.h>
 #include <errno.h>
+#if defined(_WIN32)
+#include <io.h>
 #include <shlwapi.h>
-
 #pragma comment(lib, "shlwapi.lib")
+#endif
 
 #include "utf8.h"
 #include "tinydir.h"
@@ -107,13 +108,17 @@ extern "C" LV_DLL_EXPORT gu_result gu_list_folder(const char* path, const char* 
 extern "C" LV_DLL_EXPORT gu_result gu_move(const char* src, const char* dest);
 extern "C" LV_DLL_EXPORT gu_result gu_copy(const char* src, const char* dest);
 extern "C" LV_DLL_EXPORT gu_result gu_delete(const char* src, int32_t delete_hierarchy);
-gu_result gu_file_operation(const char* src, const char* dest, UINT func);
+gu_result gu_file_operation(const char* src, const char* dest, uint32_t func);
+extern "C" LV_DLL_EXPORT gu_result gu_short_path(const char* path, intptr_t* short_path_pointer, int32_t* short_path_length);
+extern "C" LV_DLL_EXPORT gu_result gu_long_path(const char* path, intptr_t* long_path_pointer, int32_t* long_path_length);
 
 ////////////////////////
 // Win32 API Wrappers //
 ////////////////////////
 extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16_length(const char* utf8);
 extern "C" LV_DLL_EXPORT int32_t gu_utf8_to_utf16(const char* utf8_str, uint8_t* utf16_str, int32_t utf16_str_size);
+extern "C" LV_DLL_EXPORT int32_t gu_utf16_to_utf8_length(const wchar_t* utf16_str);
+extern "C" LV_DLL_EXPORT int32_t gu_utf16_to_utf8(const wchar_t* utf16_str, char* utf8_str, int32_t utf8_str_size);
 
 //////////////////////////
 // Ancilliary Functions //

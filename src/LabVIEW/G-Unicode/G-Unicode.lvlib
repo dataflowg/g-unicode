@@ -113,6 +113,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="UTF-8 to Text.vi" Type="VI" URL="../Private/Conversion/UTF-8 to Text.vi"/>
 		</Item>
 		<Item Name="Library" Type="Folder">
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="_Debug Path.vi" Type="VI" URL="../Private/Library/_Debug Path.vi"/>
 			<Item Name="gu_copy.vi" Type="VI" URL="../Private/Library/gu_copy.vi"/>
 			<Item Name="gu_create_file.vi" Type="VI" URL="../Private/Library/gu_create_file.vi"/>
@@ -121,6 +122,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_free.vi" Type="VI" URL="../Private/Library/gu_free.vi"/>
 			<Item Name="gu_input_box.vi" Type="VI" URL="../Private/Library/gu_input_box.vi"/>
 			<Item Name="gu_is_text_utf8.vi" Type="VI" URL="../Private/Library/gu_is_text_utf8.vi"/>
+			<Item Name="gu_long_path.vi" Type="VI" URL="../Private/Library/gu_long_path.vi"/>
 			<Item Name="gu_is_text_utf16.vi" Type="VI" URL="../Private/Library/gu_is_text_utf16.vi"/>
 			<Item Name="gu_list_folder.vi" Type="VI" URL="../Private/Library/gu_list_folder.vi"/>
 			<Item Name="gu_message_box.vi" Type="VI" URL="../Private/Library/gu_message_box.vi"/>
@@ -130,6 +132,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_rotate_string.vi" Type="VI" URL="../Private/Library/gu_rotate_string.vi"/>
 			<Item Name="gu_search_split_string.vi" Type="VI" URL="../Private/Library/gu_search_split_string.vi"/>
 			<Item Name="gu_select_folder_dialog.vi" Type="VI" URL="../Private/Library/gu_select_folder_dialog.vi"/>
+			<Item Name="gu_short_path.vi" Type="VI" URL="../Private/Library/gu_short_path.vi"/>
 			<Item Name="gu_string_subset.vi" Type="VI" URL="../Private/Library/gu_string_subset.vi"/>
 			<Item Name="gu_strlen.vi" Type="VI" URL="../Private/Library/gu_strlen.vi"/>
 			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
@@ -142,6 +145,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Move Block.vim" Type="VI" URL="../Private/Memory/Move Block.vim"/>
 		</Item>
 		<Item Name="User Interface" Type="Folder">
+			<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
 			<Item Name="Read Boolean Text.vi" Type="VI" URL="../Private/User Interface/Read Boolean Text.vi"/>
 			<Item Name="Read Caption.vi" Type="VI" URL="../Private/User Interface/Read Caption.vi"/>
 			<Item Name="Read Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read Listbox Data.vi"/>
@@ -152,6 +156,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Read String.vi" Type="VI" URL="../Private/User Interface/Read String.vi"/>
 			<Item Name="Read Tab Control.vi" Type="VI" URL="../Private/User Interface/Read Tab Control.vi"/>
 			<Item Name="Read Table Data.vi" Type="VI" URL="../Private/User Interface/Read Table Data.vi"/>
+			<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>
 			<Item Name="Write Boolean Text.vi" Type="VI" URL="../Private/User Interface/Write Boolean Text.vi"/>
 			<Item Name="Write Caption.vi" Type="VI" URL="../Private/User Interface/Write Caption.vi"/>
 			<Item Name="Write Graph-Chart Axis Labels.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Axis Labels.vi"/>
@@ -164,8 +169,6 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Write Tab Control.vi" Type="VI" URL="../Private/User Interface/Write Tab Control.vi"/>
 			<Item Name="Write Table Data.vi" Type="VI" URL="../Private/User Interface/Write Table Data.vi"/>
 		</Item>
-		<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
-		<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>
 	</Item>
 	<Item Name="String" Type="Folder">
 		<Item Name="Concatenate Strings.vim" Type="VI" URL="../String/Concatenate Strings.vim"/>
@@ -201,5 +204,8 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Encode String.vi" Type="VI" URL="../Unicode/Encode String.vi"/>
 		<Item Name="Prepend BOM.vi" Type="VI" URL="../Unicode/Prepend BOM.vi"/>
 		<Item Name="Strip BOM.vi" Type="VI" URL="../Unicode/Strip BOM.vi"/>
+	</Item>
+	<Item Name="Write Radio Buttons.vi" Type="VI" URL="../Private/User Interface/Write Radio Buttons.vi">
+		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
 </Library>

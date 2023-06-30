@@ -143,12 +143,8 @@
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 				<Item Name="Tree_ShowScrollBar.vi" Type="VI" URL="/&lt;vilib&gt;/tree/Tree_ShowScrollBar.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
-				<Item Name="UI Unicode Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UI Unicode Tools.lvlib"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
-			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
