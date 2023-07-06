@@ -40,12 +40,15 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Write Graph Axis Labels (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Axis Labels (UTF-8 String).vi"/>
 				<Item Name="Write Graph Cursor Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Cursor Names (UTF-8 String).vi"/>
 				<Item Name="Write Graph Plot Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Plot Names (UTF-8 String).vi"/>
+				<Item Name="Write Listbox Header (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Listbox Header (UTF-8 String).vi"/>
 				<Item Name="Write Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Write Multicolumn Listbox Headers (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Multicolumn Listbox Headers (UTF-8 String).vi"/>
 				<Item Name="Write Multicolumn Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Multicolumn Listbox Items (UTF-8 String).vi"/>
 				<Item Name="Write Radio Button Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Radio Button Text (UTF-8 String).vi"/>
 				<Item Name="Write Ring Strings (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Ring Strings (UTF-8 String).vi"/>
 				<Item Name="Write String Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write String Value (UTF-8 String).vi"/>
 				<Item Name="Write Tab Pages (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Tab Pages (UTF-8 String).vi"/>
+				<Item Name="Write Table Headers (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Table Headers (UTF-8 String).vi"/>
 				<Item Name="Write Table Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Table Value (UTF-8 String).vi"/>
 			</Item>
 		</Item>
@@ -199,7 +202,9 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Write Graph-Chart Cursor Names.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Cursor Names.vi"/>
 			<Item Name="Write Graph-Chart Plot Names.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Plot Names.vi"/>
 			<Item Name="Write Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write Listbox Data.vi"/>
+			<Item Name="Write Listbox Header.vi" Type="VI" URL="../Private/User Interface/Write Listbox Header.vi"/>
 			<Item Name="Write MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write MultCol Listbox Data.vi"/>
+			<Item Name="Write MultCol Listbox Headers.vi" Type="VI" URL="../Private/User Interface/Write MultCol Listbox Headers.vi"/>
 			<Item Name="Write Radio Buttons.vi" Type="VI" URL="../Private/User Interface/Write Radio Buttons.vi"/>
 			<Item Name="Write Ring Control.vi" Type="VI" URL="../Private/User Interface/Write Ring Control.vi"/>
 			<Item Name="Write String Array (1D).vi" Type="VI" URL="../Private/User Interface/Write String Array (1D).vi"/>
@@ -207,6 +212,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Write String.vi" Type="VI" URL="../Private/User Interface/Write String.vi"/>
 			<Item Name="Write Tab Control.vi" Type="VI" URL="../Private/User Interface/Write Tab Control.vi"/>
 			<Item Name="Write Table Data.vi" Type="VI" URL="../Private/User Interface/Write Table Data.vi"/>
+			<Item Name="Write Table Headers.vi" Type="VI" URL="../Private/User Interface/Write Table Headers.vi"/>
 		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">

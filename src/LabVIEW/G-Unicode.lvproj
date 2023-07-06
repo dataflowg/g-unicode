@@ -69,14 +69,14 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Examples" Type="Folder">
 			<Item Name="Tree Browser.lvlib" Type="Library" URL="../G-Unicode/Examples/Tree Browser/Tree Browser.lvlib"/>
-			<Item Name="Unicode Conversion Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Conversion Example.vi"/>
 			<Item Name="Unicode Input Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Input Example.vi"/>
 			<Item Name="Unicode List Folder Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode List Folder Example.vi"/>
 			<Item Name="Unicode Path With LabVIEW File IO Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Path With LabVIEW File IO Example.vi"/>
-			<Item Name="Unicode Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Text File Example.vi"/>
+			<Item Name="Unicode Read Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Read Text File Example.vi"/>
 			<Item Name="Unicode Multilingual Interface Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Multilingual Interface Example.vi"/>
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
 			<Item Name="Unicode Tab Page Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tab Page Example.vi"/>
+			<Item Name="Unicode Write Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Write Text File Example.vi"/>
 		</Item>
 		<Item Name="QuickDrop Plugins" Type="Folder">
 			<Item Name="G-Unicode Constant Editor.vi" Type="VI" URL="../G-Unicode/QuickDrop Plugins/G-Unicode Constant Editor.vi"/>
@@ -144,6 +144,7 @@
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 				<Item Name="Tree_ShowScrollBar.vi" Type="VI" URL="/&lt;vilib&gt;/tree/Tree_ShowScrollBar.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
 		</Item>
