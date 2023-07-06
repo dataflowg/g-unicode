@@ -76,6 +76,7 @@
 			<Item Name="Unicode Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Text File Example.vi"/>
 			<Item Name="Unicode Multilingual Interface Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Multilingual Interface Example.vi"/>
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
+			<Item Name="Unicode Tab Page Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tab Page Example.vi"/>
 		</Item>
 		<Item Name="QuickDrop Plugins" Type="Folder">
 			<Item Name="G-Unicode Constant Editor.vi" Type="VI" URL="../G-Unicode/QuickDrop Plugins/G-Unicode Constant Editor.vi"/>
@@ -83,7 +84,7 @@
 		<Item Name="Unit Tests" Type="Folder">
 			<Item Name="Dialog &amp; User Interface" Type="Folder">
 				<Item Name="Test Read-Write Control Caption.vi" Type="VI" URL="../Unit Tests/Dialog &amp; User Interface/Test Read-Write Control Caption.vi"/>
-				<Item Name="Test Read-Write Control.vi" Type="VI" URL="../Unit Tests/Dialog &amp; User Interface/Test Read-Write Control.vi"/>
+				<Item Name="Test Read-Write Control Text.vi" Type="VI" URL="../Unit Tests/Dialog &amp; User Interface/Test Read-Write Control Text.vi"/>
 			</Item>
 			<Item Name="File IO" Type="Folder">
 				<Item Name="Test List Folder.vi" Type="VI" URL="../Unit Tests/File IO/Test List Folder.vi"/>

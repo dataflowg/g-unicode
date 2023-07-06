@@ -17,16 +17,47 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Message Box Dialog Type.ctl" Type="VI" URL="../Dialog &amp; User Interface/Message Box/Message Box Dialog Type.ctl"/>
 			<Item Name="Message Box Icon Type.ctl" Type="VI" URL="../Dialog &amp; User Interface/Message Box/Message Box Icon Type.ctl"/>
 		</Item>
+		<Item Name="Polymorphic VIs" Type="Folder">
+			<Item Name="Read Control Text" Type="Folder">
+				<Item Name="Read 1D String Array Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read 1D String Array Value (UTF-8 String).vi"/>
+				<Item Name="Read 2D String Array Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read 2D String Array Value (UTF-8 String).vi"/>
+				<Item Name="Read Boolean Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Boolean Text (UTF-8 String).vi"/>
+				<Item Name="Read Graph Axis Labels (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Axis Labels (UTF-8 String).vi"/>
+				<Item Name="Read Graph Cursor Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Cursor Names (UTF-8 String).vi"/>
+				<Item Name="Read Graph Plot Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Plot Names (UTF-8 String).vi"/>
+				<Item Name="Read Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Read Multicolumn Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Multicolumn Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Read Radio Button Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Radio Button Text (UTF-8 String).vi"/>
+				<Item Name="Read Ring Strings (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Ring Strings (UTF-8 String).vi"/>
+				<Item Name="Read String Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read String Value (UTF-8 String).vi"/>
+				<Item Name="Read Tab Pages (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Tab Pages (UTF-8 String).vi"/>
+				<Item Name="Read Table Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Table Value (UTF-8 String).vi"/>
+			</Item>
+			<Item Name="Write Control Text" Type="Folder">
+				<Item Name="Write 1D String Array Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write 1D String Array Value (UTF-8 String).vi"/>
+				<Item Name="Write 2D String Array Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write 2D String Array Value (UTF-8 String).vi"/>
+				<Item Name="Write Boolean Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Boolean Text (UTF-8 String).vi"/>
+				<Item Name="Write Graph Axis Labels (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Axis Labels (UTF-8 String).vi"/>
+				<Item Name="Write Graph Cursor Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Cursor Names (UTF-8 String).vi"/>
+				<Item Name="Write Graph Plot Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Graph Plot Names (UTF-8 String).vi"/>
+				<Item Name="Write Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Write Multicolumn Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Multicolumn Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Write Radio Button Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Radio Button Text (UTF-8 String).vi"/>
+				<Item Name="Write Ring Strings (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Ring Strings (UTF-8 String).vi"/>
+				<Item Name="Write String Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write String Value (UTF-8 String).vi"/>
+				<Item Name="Write Tab Pages (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Tab Pages (UTF-8 String).vi"/>
+				<Item Name="Write Table Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Table Value (UTF-8 String).vi"/>
+			</Item>
+		</Item>
 		<Item Name="Input Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Input Box.vim"/>
 		<Item Name="Message Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Message Box.vim"/>
 		<Item Name="One Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog.vim"/>
-		<Item Name="Read Control Caption.vim" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption.vim"/>
-		<Item Name="Read Control.vim" Type="VI" URL="../Dialog &amp; User Interface/Read Control.vim"/>
+		<Item Name="Read Control Caption.vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption.vi"/>
+		<Item Name="Read Control Text.vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Text.vi"/>
 		<Item Name="Two Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog.vim"/>
 		<Item Name="Update Unicode Controls.vi" Type="VI" URL="../Dialog &amp; User Interface/Update Unicode Controls.vi"/>
-		<Item Name="Write Control (UTF-16LE).vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control (UTF-16LE).vim"/>
-		<Item Name="Write Control Caption.vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption.vim"/>
-		<Item Name="Write Control.vim" Type="VI" URL="../Dialog &amp; User Interface/Write Control.vim"/>
+		<Item Name="Write Control Caption.vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption.vi"/>
+		<Item Name="Write Control Text.vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Text.vi"/>
 	</Item>
 	<Item Name="File I/O" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
@@ -92,6 +123,7 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="UTF-8 to Text (LabVIEW Path).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/UTF-8 to Text (LabVIEW Path).vi"/>
 				<Item Name="UTF-8 to Text (LabVIEW String).vi" Type="VI" URL="../Private/Conversion/Polymorphic VIs/UTF-8 to Text (LabVIEW String).vi"/>
 			</Item>
+			<Item Name="Control Text as UTF-8 String (Array).vim" Type="VI" URL="../Private/Conversion/Control Text as UTF-8 String (Array).vim"/>
 			<Item Name="Encoded UTF-8 String to Encoded UTF-16LE String.vi" Type="VI" URL="../Private/Conversion/Encoded UTF-8 String to Encoded UTF-16LE String.vi"/>
 			<Item Name="Encoded UTF-16LE String as UTF-8 String (Array).vim" Type="VI" URL="../Private/Conversion/Encoded UTF-16LE String as UTF-8 String (Array).vim"/>
 			<Item Name="Encoded UTF-16LE String to Encoded UTF-8 String.vi" Type="VI" URL="../Private/Conversion/Encoded UTF-16LE String to Encoded UTF-8 String.vi"/>
@@ -148,8 +180,12 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Input Box GUI.vi" Type="VI" URL="../Private/Input Box GUI.vi"/>
 			<Item Name="Read Boolean Text.vi" Type="VI" URL="../Private/User Interface/Read Boolean Text.vi"/>
 			<Item Name="Read Caption.vi" Type="VI" URL="../Private/User Interface/Read Caption.vi"/>
+			<Item Name="Read Graph-Chart Axis Labels.vi" Type="VI" URL="../Private/User Interface/Read Graph-Chart Axis Labels.vi"/>
+			<Item Name="Read Graph-Chart Cursor Names.vi" Type="VI" URL="../Private/User Interface/Read Graph-Chart Cursor Names.vi"/>
+			<Item Name="Read Graph-Chart Plot Names.vi" Type="VI" URL="../Private/User Interface/Read Graph-Chart Plot Names.vi"/>
 			<Item Name="Read Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read Listbox Data.vi"/>
 			<Item Name="Read MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read MultCol Listbox Data.vi"/>
+			<Item Name="Read Radio Button Text.vi" Type="VI" URL="../Private/User Interface/Read Radio Button Text.vi"/>
 			<Item Name="Read Ring Control.vi" Type="VI" URL="../Private/User Interface/Read Ring Control.vi"/>
 			<Item Name="Read String Array (1D).vi" Type="VI" URL="../Private/User Interface/Read String Array (1D).vi"/>
 			<Item Name="Read String Array (2D).vi" Type="VI" URL="../Private/User Interface/Read String Array (2D).vi"/>
@@ -160,8 +196,11 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Write Boolean Text.vi" Type="VI" URL="../Private/User Interface/Write Boolean Text.vi"/>
 			<Item Name="Write Caption.vi" Type="VI" URL="../Private/User Interface/Write Caption.vi"/>
 			<Item Name="Write Graph-Chart Axis Labels.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Axis Labels.vi"/>
+			<Item Name="Write Graph-Chart Cursor Names.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Cursor Names.vi"/>
+			<Item Name="Write Graph-Chart Plot Names.vi" Type="VI" URL="../Private/User Interface/Write Graph-Chart Plot Names.vi"/>
 			<Item Name="Write Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write Listbox Data.vi"/>
 			<Item Name="Write MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Write MultCol Listbox Data.vi"/>
+			<Item Name="Write Radio Buttons.vi" Type="VI" URL="../Private/User Interface/Write Radio Buttons.vi"/>
 			<Item Name="Write Ring Control.vi" Type="VI" URL="../Private/User Interface/Write Ring Control.vi"/>
 			<Item Name="Write String Array (1D).vi" Type="VI" URL="../Private/User Interface/Write String Array (1D).vi"/>
 			<Item Name="Write String Array (2D).vi" Type="VI" URL="../Private/User Interface/Write String Array (2D).vi"/>
@@ -193,7 +232,6 @@ https://github.com/dataflowg/g-unicode</Property>
 	<Item Name="Unicode" Type="Folder">
 		<Item Name="Controls" Type="Folder">
 			<Item Name="Detect String Encoding Steps.ctl" Type="VI" URL="../Unicode/Controls/Detect String Encoding Steps.ctl"/>
-			<Item Name="Input String Encoding.ctl" Type="VI" URL="../Unicode/Controls/Input String Encoding.ctl"/>
 			<Item Name="String Encoding.ctl" Type="VI" URL="../Unicode/Controls/String Encoding.ctl"/>
 		</Item>
 		<Item Name="SubVIs" Type="Folder">
@@ -204,8 +242,5 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Encode String.vi" Type="VI" URL="../Unicode/Encode String.vi"/>
 		<Item Name="Prepend BOM.vi" Type="VI" URL="../Unicode/Prepend BOM.vi"/>
 		<Item Name="Strip BOM.vi" Type="VI" URL="../Unicode/Strip BOM.vi"/>
-	</Item>
-	<Item Name="Write Radio Buttons.vi" Type="VI" URL="../Private/User Interface/Write Radio Buttons.vi">
-		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
 </Library>

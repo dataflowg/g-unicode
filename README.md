@@ -82,30 +82,34 @@ There are caveats to this approach (the file must exist, ReFS file system isn't 
 ### Tips On Displaying Unicode
 LabVIEW's unicode support is experimental, and it can be very easy to run into issues. If unicode text doesn't display correctly (it has the characteristic double-spacing or is completely wrong), check the table below for tips on how to set unicode text.
 
-If there's a check mark in the _Copy + Paste Unicode_ column, the target text will need to have some unicode text (such as _مرحبا_) copied and pasted into the text field first to force the text to display as unicode.
+If there's a check mark in the _Copy + Paste Unicode_ column, the target text will need to have some unicode text copied and pasted into the text field first to force the text to display as unicode. The unicode text must be copied from a LabVIEW string displaying unicode.
 
-Text Item           | Method                                               | Copy + Paste Unicode
---------------------|------------------------------------------------------|---------------------
-Caption             | `Write Control Caption.vim` with scalar UTF-8 String |
-String              | `Write Control.vim` with scalar UTF-8 String         |
-String Array (1D)   | `Write Control.vim` with 1D UTF-8 String array       |
-String Array (2D)   | `Write Control.vim` with 2D UTF-8 String array       |
-Tab Pages           | `Write Control.vim` with 1D UTF-8 String array       | :heavy_check_mark: (once for each page)
-Boolean Text        | `Write Control.vim` with 1D UTF-8 String array (4 elements) |
-Table Data          | `Write Control.vim` with 2D UTF-8 String array       |
-Listbox             | `Write Control.vim` with 1D UTF-8 String array       |
-MultiColumn Listbox | `Write Control.vim` with 2D UTF-8 String array       |
-Text / Menu Ring    | `Write Control.vim` with 1D UTF-8 String array       |
-Chart / Graph Axis  | `Write Control.vim` with 1D UTF-8 String array (2 elements) |
-Chart / Graph Plots | Set _Active Plot_ property, then write UTF-16LE to _Plot Name_ | :heavy_check_mark: (once on any plot name)
-Radio Buttons       | `Write Control.vim` with 1D UTF-8 String array (1 element per button) |
-Tree                | Write UTF-16LE + BOM to _Left Cell String_ (see `Unicode Tree File Browser Example.vi`) |
+**NOTE:** The _Stacked_ text orientation doesn't handle combining characters, diacritics, etc
+
+Text Item            | Method                                               | Copy + Paste Unicode
+---------------------|------------------------------------------------------|---------------------
+Caption              | `Write Control Caption.vi` with scalar UTF-8 String  |
+String               | `Write Control Text.vi` with scalar UTF-8 String     |
+String Array (1D)    | `Write Control Text.vi` with 1D UTF-8 String array   |
+String Array (2D)    | `Write Control Text.vi` with 2D UTF-8 String array   |
+Tab Pages            | `Write Control Text.vi` with 1D UTF-8 String array   | :heavy_check_mark: (once for each page, see `Unicode Tab Page Example.vi` for details)
+Boolean Text         | `Write Control Text.vi` with 1D UTF-8 String array (4 elements) |
+Table Data           | `Write Control Text.vi` with 2D UTF-8 String array   |
+Listbox              | `Write Control Text.vi` with 1D UTF-8 String array   |
+MultiColumn Listbox  | `Write Control Text.vi` with 2D UTF-8 String array   |
+Text / Menu Ring     | `Write Control Text.vi` with 1D UTF-8 String array   |
+Graph Axis Labels    | `Write Control Text.vi` with 2x scalar UTF-8 String  |
+Graph Plot Names     | `Write Control Text.vi` with 1D UTF-8 String array   | :heavy_check_mark: (once on any plot name, doesn't persist)
+Graph Cursor Names   | `Write Control Text.vi` with 1D UTF-8 String array   |
+Radio Buttons        | `Write Control Text.vi` with 1D UTF-8 String array (1 element per button) |
+Tree                 | Write UTF-16LE + BOM to _Left Cell String_ (see `Unicode Tree File Browser Example.vi`) |
+Picture Text         | Write UTF-16LE + BOM with `Draw Text At Point.vi`    |
 
 If the above hasn't helped, and unicode display still looks wrong:
 * Disable the _UseUnicode_ flag in `labview.ini` to avoid accidentally mixing text encodings. This flag does not affect unicode input or display (which is managed by a control's __Force Unicode Text__ and __Interpret As Unicode__ private properties).
-* Try copy and paste some unicode text (such as _สวัสดี_) over the current text. This is sometimes necessary to force the text to display as unicode (e.g. tab page text)
+* Try copy and paste some unicode text over the current text (from a LabVIEW string control). This is sometimes necessary to force the text to display as unicode (e.g. tab page text)
 * The unicode text may be UTF-16LE encoded when UTF-8 is assumed (or vica versa). Try switching encoding using `Encode String.vi`
-* Some text items require a Byte Order Mark (BOM) in addition to UTF-16LE encoded text. Try adding a BOM with `Prepend BOM.vi` (__Note:__ `Write Control.vim` does this automatically for supported controls)
+* Some text items require a Byte Order Mark (BOM) in addition to UTF-16LE encoded text. Try adding a BOM with `Prepend BOM.vi` (__Note:__ `Write Control Text.vi` does this automatically for supported controls)
 * If a control or constant still isn't displaying text correctly, try deleting and recreating it.
 
 If the control to be written doesn't have explicit support in G-Unicode, it may still be possible to display unicode text. There are three methods LabVIEW for Windows uses to display unicode, depending on the control type:

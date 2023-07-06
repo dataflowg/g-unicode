@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-06-30 08:47:56" Creator="Dataflow_G" Comments="" ID="ef295fb4827f56c132f3fb016601a09f">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-07-05 15:05:45" Creator="Dataflow_G" Comments="" ID="9175613a93fd19f3def48922f39c762a">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.1.0.4</Library_Version>
@@ -287,7 +287,7 @@
         <Path>..\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>588CBB1DC11B1F641D38A445FA39B3AF</GUID>
+      <GUID>907923D625D135029277E76C65A4566A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -464,7 +464,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\String\Not Equal String-Path.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>29F8463AB169587411FA7423FC468FAC</GUID>
+      <GUID>B42CCEF24C89B82F9862507485DDF21B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -823,7 +823,7 @@ All functions in this palette accept either UTF-8 paths or LabVIEW paths, where 
         <Path>..\G-Unicode\File IO\Get Volume Info.vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5221971A4FEF95C263340805DC0E553F</GUID>
+      <GUID>C6D3F3319674AF16E734A051AA4DE10B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -905,62 +905,6 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Write Control.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Read Control.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Dialog &amp; User Interface\Read Control.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Read Control Caption.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Dialog &amp; User Interface\Read Control Caption.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Write Control Caption.vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control Caption.vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Update Unicode Controls.vi</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
@@ -975,18 +919,60 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Write Control (UTF-16LE).vim</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Write Control Text.vi</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>1</Row>
-          <Column>4</Column>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control (UTF-16LE).vim</Path>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control Text.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FC256D22D3447D8602E48D31DFA87B9A</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Control Text.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Read Control Text.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Write Control Caption.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Write Control Caption.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Control Caption.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Dialog &amp; User Interface\Read Control Caption.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>F87D0B69B0E65CACDBF18359CAF0F630</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1161,7 +1147,7 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Unicode\Strip BOM.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FC9FECDBF6D3B91210EDD686B37DC36E</GUID>
+      <GUID>BC644B3D1FD2F9DC414FCFD2AAD5B4E8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1280,7 +1266,21 @@ All functions in this palette accept either UTF-8 strings or LabVIEW strings, wh
         <Path>..\G-Unicode\Examples\Unicode Tree File Browser Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3E2106FCAED5CDD6070EE4376FA8881C</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode Tab Page Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>..\G-Unicode\Examples\Unicode Tab Page Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>4DF71367CC87ECE9E309ACC069023BCD</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
