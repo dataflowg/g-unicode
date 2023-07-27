@@ -49,7 +49,7 @@ G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to 
 TBD
 
 ## <a id="usage"></a>Usage
-**IMPORTANT:** LabVIEW has a [UseUnicode](https://labviewwiki.org/wiki/LabVIEW_configuration_file/Miscellaneous#useUnicode) ini token to help aid in handling unicode input. It is strongly recommended to **NOT** use this token. It makes dealing with string controls and constants problematic, silently mixing UTF-16LE and ANSI encodings when pasting or typing text. _G-Unicode does not require this token._
+**IMPORTANT:** LabVIEW has a [UseUnicode](https://labviewwiki.org/wiki/LabVIEW_configuration_file/Miscellaneous#useUnicode) ini token to help aid in handling unicode input. It enables right-click options for unicode display, and enables pasting unicode text from external applications. This is useful, but can also make dealing with string controls and constants problematic, silently mixing UTF-16LE and ANSI encodings when pasting or typing text. It is recommended to disable this token during development, though can be enabled in built applications. _G-Unicode does not require this token._
 
 **IMPORTANT II:** G-Unicode relies on LabVIEW's experimental unicode support for unicode string input. This unicode string input is _**very buggy**_, and prone to strange input behavior and outright crashes. Where possible it's recommended to avoid using LabVIEW's string controls for unicode input.
 
@@ -130,7 +130,7 @@ TBD
 TBD
 
 ## <a id="license"></a>License
-TBD
+G-Unicode is made available under the zlib license. See [LICENSE](LICENSE) for details.
 
 ## <a id="acknowledgments"></a>Acknowledgments
 This library uses the following open source code. Massive thanks to the authors of these libraries.

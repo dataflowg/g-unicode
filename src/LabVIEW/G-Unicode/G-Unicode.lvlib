@@ -1,6 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="20008000">
-	<Property Name="NI.Lib.Description" Type="Str">A cross-platform LabVIEW library for using unicode.
+	<Property Name="NI.Lib.Description" Type="Str">A LabVIEW library for manipulating unicode strings, and performing file I/O on unicode paths.
 
 https://github.com/dataflowg/g-unicode</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
@@ -52,43 +52,43 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Write Table Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Write Control Text/Write Table Value (UTF-8 String).vi"/>
 			</Item>
 		</Item>
-		<Item Name="Input Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Input Box.vim"/>
-		<Item Name="Message Box.vim" Type="VI" URL="../Dialog &amp; User Interface/Message Box.vim"/>
-		<Item Name="One Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog.vim"/>
-		<Item Name="Read Control Caption.vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption.vi"/>
-		<Item Name="Read Control Text.vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Text.vi"/>
-		<Item Name="Two Button Dialog.vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog.vim"/>
-		<Item Name="Update Unicode Controls.vi" Type="VI" URL="../Dialog &amp; User Interface/Update Unicode Controls.vi"/>
-		<Item Name="Write Control Caption.vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption.vi"/>
-		<Item Name="Write Control Text.vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Text.vi"/>
+		<Item Name="Input Box (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/Input Box (Unicode).vim"/>
+		<Item Name="Message Box (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/Message Box (Unicode).vim"/>
+		<Item Name="One Button Dialog (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog (Unicode).vim"/>
+		<Item Name="Read Control Caption (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption (Unicode).vi"/>
+		<Item Name="Read Control Text (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Text (Unicode).vi"/>
+		<Item Name="Two Button Dialog (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog (Unicode).vim"/>
+		<Item Name="Update Unicode Controls (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Update Unicode Controls (Unicode).vi"/>
+		<Item Name="Write Control Caption (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption (Unicode).vi"/>
+		<Item Name="Write Control Text (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Text (Unicode).vi"/>
 	</Item>
 	<Item Name="File I/O" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
-		<Item Name="Array of Strings to Path.vim" Type="VI" URL="../File IO/Array of Strings to Path.vim"/>
-		<Item Name="Build Path.vim" Type="VI" URL="../File IO/Build Path.vim"/>
-		<Item Name="Close File.vi" Type="VI" URL="../File IO/Close File.vi"/>
-		<Item Name="Compare Two Paths.vim" Type="VI" URL="../File IO/Compare Two Paths.vim"/>
-		<Item Name="Copy.vim" Type="VI" URL="../File IO/Copy.vim"/>
-		<Item Name="Create File.vim" Type="VI" URL="../File IO/Create File.vim"/>
-		<Item Name="Create Folder.vim" Type="VI" URL="../File IO/Create Folder.vim"/>
-		<Item Name="Delete.vim" Type="VI" URL="../File IO/Delete.vim"/>
-		<Item Name="File Dialog.vim" Type="VI" URL="../File IO/File Dialog.vim"/>
-		<Item Name="Get File Extension.vim" Type="VI" URL="../File IO/Get File Extension.vim"/>
-		<Item Name="Get Volume Info.vim" Type="VI" URL="../File IO/Get Volume Info.vim"/>
-		<Item Name="List Directory and LLBs.vim" Type="VI" URL="../File IO/List Directory and LLBs.vim"/>
-		<Item Name="List Folder.vim" Type="VI" URL="../File IO/List Folder.vim"/>
-		<Item Name="Move.vim" Type="VI" URL="../File IO/Move.vim"/>
-		<Item Name="Not A Path.vim" Type="VI" URL="../File IO/Not A Path.vim"/>
-		<Item Name="Open-Create-Replace File.vim" Type="VI" URL="../File IO/Open-Create-Replace File.vim"/>
-		<Item Name="Path to Short Name.vi" Type="VI" URL="../File IO/Path to Short Name.vi"/>
-		<Item Name="Path Type.vim" Type="VI" URL="../File IO/Path Type.vim"/>
-		<Item Name="Path to Array of Strings.vim" Type="VI" URL="../File IO/Path to Array of Strings.vim"/>
-		<Item Name="Path to String.vim" Type="VI" URL="../File IO/Path to String.vim"/>
-		<Item Name="Refnum To Path.vim" Type="VI" URL="../File IO/Refnum To Path.vim"/>
-		<Item Name="Short Name to Path.vi" Type="VI" URL="../File IO/Short Name to Path.vi"/>
-		<Item Name="String to Path.vim" Type="VI" URL="../File IO/String to Path.vim"/>
-		<Item Name="Strip Path.vim" Type="VI" URL="../File IO/Strip Path.vim"/>
-		<Item Name="Recursive File List.vim" Type="VI" URL="../File IO/Recursive File List.vim"/>
+		<Item Name="Array of Strings to Path (Unicode).vim" Type="VI" URL="../File IO/Array of Strings to Path (Unicode).vim"/>
+		<Item Name="Build Path (Unicode).vim" Type="VI" URL="../File IO/Build Path (Unicode).vim"/>
+		<Item Name="Close File (Unicode).vi" Type="VI" URL="../File IO/Close File (Unicode).vi"/>
+		<Item Name="Compare Two Paths (Unicode).vim" Type="VI" URL="../File IO/Compare Two Paths (Unicode).vim"/>
+		<Item Name="Copy (Unicode).vim" Type="VI" URL="../File IO/Copy (Unicode).vim"/>
+		<Item Name="Create File (Unicode).vim" Type="VI" URL="../File IO/Create File (Unicode).vim"/>
+		<Item Name="Create Folder (Unicode).vim" Type="VI" URL="../File IO/Create Folder (Unicode).vim"/>
+		<Item Name="Delete (Unicode).vim" Type="VI" URL="../File IO/Delete (Unicode).vim"/>
+		<Item Name="File Dialog (Unicode).vim" Type="VI" URL="../File IO/File Dialog (Unicode).vim"/>
+		<Item Name="Get File Extension (Unicode).vim" Type="VI" URL="../File IO/Get File Extension (Unicode).vim"/>
+		<Item Name="Get Volume Info (Unicode).vim" Type="VI" URL="../File IO/Get Volume Info (Unicode).vim"/>
+		<Item Name="List Directory and LLBs (Unicode).vim" Type="VI" URL="../File IO/List Directory and LLBs (Unicode).vim"/>
+		<Item Name="List Folder (Unicode).vim" Type="VI" URL="../File IO/List Folder (Unicode).vim"/>
+		<Item Name="Move (Unicode).vim" Type="VI" URL="../File IO/Move (Unicode).vim"/>
+		<Item Name="Not A Path (Unicode).vim" Type="VI" URL="../File IO/Not A Path (Unicode).vim"/>
+		<Item Name="Open-Create-Replace File (Unicode).vim" Type="VI" URL="../File IO/Open-Create-Replace File (Unicode).vim"/>
+		<Item Name="Path to Short Name (Unicode).vi" Type="VI" URL="../File IO/Path to Short Name (Unicode).vi"/>
+		<Item Name="Path Type (Unicode).vim" Type="VI" URL="../File IO/Path Type (Unicode).vim"/>
+		<Item Name="Path to Array of Strings (Unicode).vim" Type="VI" URL="../File IO/Path to Array of Strings (Unicode).vim"/>
+		<Item Name="Path to String (Unicode).vim" Type="VI" URL="../File IO/Path to String (Unicode).vim"/>
+		<Item Name="Refnum To Path (Unicode).vim" Type="VI" URL="../File IO/Refnum To Path (Unicode).vim"/>
+		<Item Name="Short Name to Path (Unicode).vi" Type="VI" URL="../File IO/Short Name to Path (Unicode).vi"/>
+		<Item Name="String to Path (Unicode).vim" Type="VI" URL="../File IO/String to Path (Unicode).vim"/>
+		<Item Name="Strip Path (Unicode).vim" Type="VI" URL="../File IO/Strip Path (Unicode).vim"/>
+		<Item Name="Recursive File List (Unicode).vim" Type="VI" URL="../File IO/Recursive File List (Unicode).vim"/>
 	</Item>
 	<Item Name="Private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
@@ -216,17 +216,17 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">
-		<Item Name="Concatenate Strings.vim" Type="VI" URL="../String/Concatenate Strings.vim"/>
-		<Item Name="Empty String-Path.vim" Type="VI" URL="../String/Empty String-Path.vim"/>
-		<Item Name="Equal String-Path.vim" Type="VI" URL="../String/Equal String-Path.vim"/>
-		<Item Name="Not Equal String-Path.vim" Type="VI" URL="../String/Not Equal String-Path.vim"/>
-		<Item Name="Reverse String.vim" Type="VI" URL="../String/Reverse String.vim"/>
-		<Item Name="Rotate String.vim" Type="VI" URL="../String/Rotate String.vim"/>
-		<Item Name="Search-Split String.vim" Type="VI" URL="../String/Search-Split String.vim"/>
-		<Item Name="String Length.vim" Type="VI" URL="../String/String Length.vim"/>
-		<Item Name="String Subset.vim" Type="VI" URL="../String/String Subset.vim"/>
-		<Item Name="To Lower Case.vim" Type="VI" URL="../String/To Lower Case.vim"/>
-		<Item Name="To Upper Case.vim" Type="VI" URL="../String/To Upper Case.vim"/>
+		<Item Name="Concatenate Strings (Unicode).vim" Type="VI" URL="../String/Concatenate Strings (Unicode).vim"/>
+		<Item Name="Empty String-Path (Unicode).vim" Type="VI" URL="../String/Empty String-Path (Unicode).vim"/>
+		<Item Name="Equal String-Path (Unicode).vim" Type="VI" URL="../String/Equal String-Path (Unicode).vim"/>
+		<Item Name="Not Equal String-Path (Unicode).vim" Type="VI" URL="../String/Not Equal String-Path (Unicode).vim"/>
+		<Item Name="Reverse String (Unicode).vim" Type="VI" URL="../String/Reverse String (Unicode).vim"/>
+		<Item Name="Rotate String (Unicode).vim" Type="VI" URL="../String/Rotate String (Unicode).vim"/>
+		<Item Name="Search-Split String (Unicode).vim" Type="VI" URL="../String/Search-Split String (Unicode).vim"/>
+		<Item Name="String Length (Unicode).vim" Type="VI" URL="../String/String Length (Unicode).vim"/>
+		<Item Name="String Subset (Unicode).vim" Type="VI" URL="../String/String Subset (Unicode).vim"/>
+		<Item Name="To Lower Case (Unicode).vim" Type="VI" URL="../String/To Lower Case (Unicode).vim"/>
+		<Item Name="To Upper Case (Unicode).vim" Type="VI" URL="../String/To Upper Case (Unicode).vim"/>
 	</Item>
 	<Item Name="Types" Type="Folder">
 		<Item Name="Encoded UTF-8 Path.ctl" Type="VI" URL="../Types/Encoded UTF-8 Path.ctl"/>
