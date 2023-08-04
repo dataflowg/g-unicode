@@ -72,6 +72,7 @@
 			<Item Name="Unicode Input Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Input Example.vi"/>
 			<Item Name="Unicode List Folder Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode List Folder Example.vi"/>
 			<Item Name="Unicode Path With LabVIEW File IO Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Path With LabVIEW File IO Example.vi"/>
+			<Item Name="Unicode Picture Control Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Picture Control Example.vi"/>
 			<Item Name="Unicode Read Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Read Text File Example.vi"/>
 			<Item Name="Unicode Multilingual Interface Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Multilingual Interface Example.vi"/>
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
@@ -101,10 +102,8 @@
 			</Item>
 			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
 		</Item>
-		<Item Name="VIPM" Type="Folder">
-			<Item Name="Generate Palettes.vi" Type="VI" URL="../VIPM/Generate Palettes.vi"/>
-		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
+		<Item Name="VI Tree.vi" Type="VI" URL="../G-Unicode/VI Tree.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -148,7 +147,10 @@
 				<Item Name="Tree_ShowScrollBar.vi" Type="VI" URL="/&lt;vilib&gt;/tree/Tree_ShowScrollBar.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
-				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
+				<Item Name="PCT Pad String.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/PCT Pad String.vi"/>
+				<Item Name="Draw Text in Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Draw Text in Rect.vi"/>
+				<Item Name="Draw Text at Point.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Draw Text at Point.vi"/>
+				<Item Name="Stall Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Stall Data Flow.vim"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
 		</Item>

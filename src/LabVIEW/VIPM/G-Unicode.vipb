@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-07-27 07:45:08" Creator="Dataflow_G" Comments="" ID="66e33e59ec59aa66381faff5edfa0715">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-02 07:35:35" Creator="Dataflow_G" Comments="" ID="08d590eadd4d39f3b252a9d3814aa181">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
-    <Library_Version>0.1.0.6</Library_Version>
+    <Library_Version>0.1.0.2</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Package Source</Library_Source_Folder>
     <Library_Output_Folder>Packages</Library_Output_Folder>
@@ -27,8 +27,19 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>G-Unicode.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary/>
-      <Description/>
+      <One_Line_Description_Summary>A LabVIEW library for displaying and manipulating unicode strings, and for file I/O with unicode paths.</One_Line_Description_Summary>
+      <Description>A LabVIEW library for displaying unicode, manipulating unicode strings, and performing file I/O on unicode paths.
+
+* Drop-in unicode replacements for string, file I/O, and user dialog functions
+* Unicode path support
+-- Read/write filenames and paths which contain unicode - no more "?????" paths
+-- Native system file dialog which returns unicode paths
+-- File references opened from unicode paths compatible with LabVIEW's File I/O functions
+* All Unicode data is internally encoded as UTF-8, stored in new UTF-8 String and UTF-8 Path class types
+* New VIs accept both standard LabVIEW strings/paths and UTF-8 String/Path class inputs
+* Custom class probes allows viewing unicode text when debugging
+* Custom QuickDrop plugin allows viewing and editing UTF-8 String/Path constant values
+* VIs for reading and writing Unicode text to LabVIEW controls</Description>
       <Copyright/>
       <Packager/>
       <URL>https://github.com/dataflowg/g-unicode</URL>
@@ -281,7 +292,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7E275BDA4F5E4E0FE9F40210E784E78B</GUID>
+      <GUID>69DAF829A08D9A1C36C76E007CD3AEB1</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -456,15 +467,43 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Types\UTF-8 Path\Read Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BA861BE17FE3EABD0E018B4792DC143B</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Write Raw UTF-8 String</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Types\UTF-8 String\Write Encoded UTF-8 String.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Write Raw UTF-8 Path</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>54083CB53B4B753EF04EC487CF19CA00</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
       <Name>String</Name>
       <View_Format>Icons</View_Format>
       <Size>
-        <Height_Row>2</Height_Row>
-        <Width_Col.>6</Width_Col.>
+        <Height_Row>3</Height_Row>
+        <Width_Col.>4</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C20001D00000C1A00000400000000000020002000080000000000FFFFFF00FF8000000000000000000000004444444444440000565651513D3D000093937D7D26260000CACAA5A512120000F7F7C6C601010000EEEEBFBF05050000868673732C2C00004848464642420000ABAB8E8E1E1E0000FAFAC8C801010000DEDEB4B40B0B000094947D7D26260000D0D0AAAA10100000A8A88D8D1F1F000078786A6A30300000E2E2B7B70A0A0000E4E4B8B8090900008C8C787829290000C0C09D9D1616000052524E4E3E3E00006B6B606035350000F8F8C7C701010000BABA9A9A18180000FFFF7F7FFFFF0000CECEA8A811110000CCCCA7A7121200009B9B8383242400005E5E56563A3A00007878696931310000DDDDB2B20C0C0000C6C6A2A214140000E1E1B6B60A0A0000C9C9A5A51212000051514D4D3E3E0000ADAD90901D1D0000A9A98D8D1E1E00007D7D6E6E2E2E0000585852523C3C0000BEBE9D9D171700007B7B6B6B2F2F0000D3D3ACAC0F0F0000D1D1AAAA10100000B0B092921C1C0000E4E4B9B909090000B3B395951A1A0000DDDDB2B20B0B0000B0B091911C1C00009696808025250000848472722C2C0000BDBD9B9B17170000B3B395951B1B000054544F4F3D3D00005B5B56563A3A00006A6A606035350000757567673232000096967F7F25250000FFFF0000FFFF0000FFFFFFFFFDFD00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010102030405060701010101010101010101010101010101010000010101010108090A0A0B0C0D0E01010101010101010101010101010101010000010101010F1011120101010101010101010101010101010101010101010100000101010F0A13140101010101010101010101010101010101010101010101000001011516170101010101010101010101010101181801010101010101010100000101191A01010101010101010101181801010118180101010101010101010000011B0A1C010101010101171D0101011818010118181818010101181818010000011E1F0101010101010120210101181818010118180118180118180101010000220A23010101010101240A250118011818010118180118180118180101010000260A270101010128290A2A010101181818180118181818010101181818010000012B0A2C242D2E0A2F0A30010101010101010101010101010101010101010000010131320B330734350A360101010101010101010101010101010101010100000101010101010101150A37010101010101010101010101010101010101010000010101010101010101380101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010101013939393939393939393939393939393901010101010101000001010101010101393A3A3A3A3A3A3A3A3A3A3A3A3A3A3901010101010101000001010101010101393A3A3A3A3A3A393A3A3A3A3A3A3A3901010101010101000001010101010101393A3A3A3A3A3A393A3A3A3A3A3A3A3901010101010101000001010101010101393A3A39393A3A3939393A3939393A3901010101010101000001010101010101393A393A393A3A393A393A393A3A3A3901010101010101000001010101010101393A393A393A3A393A393A393A3A3A3901010101010101000001010101010101393A393939393A3939393A3939393A3901010101010101000001010101010101393A3A3A3A3A3A3A3A3A3A3A3A3A3A3901010101010101000001010101010101393939393939393939393939393939390101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
       <BW_Color_Icon>00000000</BW_Color_Icon>
@@ -485,94 +524,10 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>1</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Concatenate Strings (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Empty String-Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
           <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Empty String-Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Equal String-Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Equal String-Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Not Equal String-Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Not Equal String-Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Reverse String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Reverse String (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Rotate String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Rotate String (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Search-Split String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Search-Split String (Unicode).vim</Path>
+        <Path>Package Source\G-Unicode\String\Concatenate Strings (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -582,8 +537,8 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>2</Row>
-          <Column>2</Column>
+          <Row>1</Row>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\String Length (Unicode).vim</Path>
@@ -596,7 +551,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>2</Row>
+          <Row>1</Row>
           <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
@@ -606,15 +561,57 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>To Lower Case (Unicode).vim</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Search-Split String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Search-Split String (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Equal String-Path (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>4</Column>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\To Lower Case (Unicode).vim</Path>
+        <Path>Package Source\G-Unicode\String\Equal String-Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Not Equal String-Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Not Equal String-Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Empty String-Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Empty String-Path (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -624,22 +621,64 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>2</Row>
-          <Column>5</Column>
+          <Row>3</Row>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\To Upper Case (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>27AC0005DFBE5D455BE9F7396042EE32</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>To Lower Case (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\To Lower Case (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Reverse String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Reverse String (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Rotate String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Rotate String (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>42FAA59487C43BAAD5BAAC47EEFBEAD8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
       <Name>File I/O</Name>
       <View_Format>Icons</View_Format>
       <Size>
-        <Height_Row>5</Height_Row>
-        <Width_Col.>6</Width_Col.>
+        <Height_Row>6</Height_Row>
+        <Width_Col.>5</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C20001D00000C1A00000400000000000020002000080000000000FFFFFF00FF8000000000000000000000004444444444440000565651513D3D000093937D7D26260000CACAA5A512120000F7F7C6C601010000EEEEBFBF05050000868673732C2C00004848464642420000ABAB8E8E1E1E0000FAFAC8C801010000DEDEB4B40B0B000094947D7D26260000D0D0AAAA10100000A8A88D8D1F1F000078786A6A30300000E2E2B7B70A0A0000E4E4B8B8090900008C8C787829290000C0C09D9D1616000052524E4E3E3E00006B6B606035350000F8F8C7C701010000BABA9A9A18180000FFFF7F7FFFFF0000CECEA8A811110000CCCCA7A7121200009B9B8383242400005E5E56563A3A00007878696931310000DDDDB2B20C0C0000C6C6A2A214140000E1E1B6B60A0A0000C9C9A5A51212000051514D4D3E3E0000ADAD90901D1D0000A9A98D8D1E1E00007D7D6E6E2E2E0000585852523C3C0000BEBE9D9D171700007B7B6B6B2F2F0000D3D3ACAC0F0F0000D1D1AAAA10100000B0B092921C1C0000E4E4B9B909090000B3B395951A1A0000DDDDB2B20B0B0000B0B091911C1C00009696808025250000848472722C2C0000BDBD9B9B17170000B3B395951B1B000054544F4F3D3D00005B5B56563A3A00006A6A606035350000757567673232000096967F7F2525000000002626FFFF0000FFFFFFFFFFFF00004040C0C0C0C00000A3A3A3A3A3A30000CCCCCCCCCCCC00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010102030405060701010101010101010101010101010101010000010101010108090A0A0B0C0D0E01010101010101010101010101010101010000010101010F1011120101010101010101010101010101010101010101010100000101010F0A13140101010101010101010101010101010101010101010101000001011516170101010101010101010101010101181801010101010101010100000101191A01010101010101010101181801010118180101010101010101010000011B0A1C010101010101171D0101011818010118181818010101181818010000011E1F0101010101010120210101181818010118180118180118180101010000220A23010101010101240A250118011818010118180118180118180101010000260A270101010128290A2A010101181818180118181818010101181818010000012B0A2C242D2E0A2F0A30010101010101010101010101010101010101010000010131320B330734350A360101010101010101010101010101010101010100000101010101010101150A370101010101010101010101010101010101010100000101010101010101013801010101010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010139393A3A3A3A3A3A3A3939010101013B3B3B010101010101010100000101010139393A3C3C3C3A3C3A3939010101013B013B010101010101010100000101010139393A3A3A3A3A3A3A3939010101013B3B3B010101010101010100000101010139393A3C3A3C3C3A3A3939010101010101013B0101010101010100000101010139393A3A3A3A3A3A3A393901010101010101013B3B3B01010101000001010101393939393939393939393901010101010101013B013B01010101000001010101393939393939393939393901010101010101013B3B3B010101010000010101013939393D3D3D3D3D393939010101010101013B010101010101010000010101013939393D393D3D3D393939010101013B3B3B01010101010101010000010101013939393D393D3D3D393939010101013B013B01010101010101010000010101010139393D3D3D3D3D393939010101013B3B3B01010101010101010000010101010101010101010101010101010101010101010101010101010101000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
       <BW_Color_Icon>00000000</BW_Color_Icon>
@@ -655,267 +694,15 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Array of Strings to Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Array of Strings to Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Build Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Build Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Close File (Unicode).vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Close File (Unicode).vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Compare Two Paths (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Compare Two Paths (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Copy (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Copy (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Create File (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Create File (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Create Folder (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Create Folder (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Delete (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Delete (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>File Dialog (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\File Dialog (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Get File Extension (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Get File Extension (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Get Volume Info (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Get Volume Info (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>List Directory and LLBs (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\List Directory and LLBs (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>List Folder (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\List Folder (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Move (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>3</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Move (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Not A Path (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
           <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Not A Path (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Open-Create-Replace File (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Open-Create-Replace File (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to Array of Strings (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Path to Array of Strings (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to Short Name (Unicode).vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Path to Short Name (Unicode).vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Path to String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>4</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Path to String (Unicode).vim</Path>
+        <Path>Package Source\G-Unicode\File IO\Move (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -926,7 +713,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>4</Row>
-          <Column>2</Column>
+          <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\File IO\Path Type (Unicode).vim</Path>
@@ -935,43 +722,71 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Recursive File List (Unicode).vim</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Open-Create-Replace File (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
+          <Row>1</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Open-Create-Replace File (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Close File (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Close File (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>List Folder (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
           <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Recursive File List (Unicode).vim</Path>
+        <Path>Package Source\G-Unicode\File IO\List Folder (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Refnum To Path (Unicode).vim</NameSub_Menu_Name>
+        <NameSub_Menu_Name>File Dialog (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
+          <Row>1</Row>
           <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Refnum To Path (Unicode).vim</Path>
+        <Path>Package Source\G-Unicode\File IO\File Dialog (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Short Name to Path (Unicode).vi</NameSub_Menu_Name>
+        <NameSub_Menu_Name>Path to String (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
-          <Column>5</Column>
+          <Row>2</Row>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\File IO\Short Name to Path (Unicode).vi</Path>
+        <Path>Package Source\G-Unicode\File IO\Path to String (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -981,11 +796,123 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
-          <Column>6</Column>
+          <Row>2</Row>
+          <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\File IO\String to Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Path to Array of Strings (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Path to Array of Strings (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Array of Strings to Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Array of Strings to Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Refnum To Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>5</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Refnum To Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Create Folder (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Create Folder (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Copy (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Copy (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Delete (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Delete (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Get Volume Info (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>5</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Get Volume Info (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Build Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Build Path (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -995,22 +922,120 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>5</Row>
-          <Column>1</Column>
+          <Row>4</Row>
+          <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\File IO\Strip Path (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4520E92FBAA2F8B0C2310DD2582AF8BB</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Not A Path (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Not A Path (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Get File Extension (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Get File Extension (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Recursive File List (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Recursive File List (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Compare Two Paths (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>5</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Compare Two Paths (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Create File (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>6</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Create File (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Path to Short Name (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>6</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Path to Short Name (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Short Name to Path (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>6</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Short Name to Path (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>888B5B85D1D8C95B00D8C7D0A52BB10F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
       <Name>Dialog &amp; User Interface</Name>
       <View_Format>Icons</View_Format>
       <Size>
-        <Height_Row>2</Height_Row>
-        <Width_Col.>6</Width_Col.>
+        <Height_Row>3</Height_Row>
+        <Width_Col.>4</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C20001D00000C1A00000400000000000020002000080000000000FFFFFF00FF8000000000000000000000004444444444440000565651513D3D000093937D7D26260000CACAA5A512120000F7F7C6C601010000EEEEBFBF05050000868673732C2C00004848464642420000ABAB8E8E1E1E0000FAFAC8C801010000DEDEB4B40B0B000094947D7D26260000D0D0AAAA10100000A8A88D8D1F1F000078786A6A30300000E2E2B7B70A0A0000E4E4B8B8090900008C8C787829290000C0C09D9D1616000052524E4E3E3E00006B6B606035350000F8F8C7C701010000BABA9A9A18180000FFFF7F7FFFFF0000CECEA8A811110000CCCCA7A7121200009B9B8383242400005E5E56563A3A00007878696931310000DDDDB2B20C0C0000C6C6A2A214140000E1E1B6B60A0A0000C9C9A5A51212000051514D4D3E3E0000ADAD90901D1D0000A9A98D8D1E1E00007D7D6E6E2E2E0000585852523C3C0000BEBE9D9D171700007B7B6B6B2F2F0000D3D3ACAC0F0F0000D1D1AAAA10100000B0B092921C1C0000E4E4B9B909090000B3B395951A1A0000DDDDB2B20B0B0000B0B091911C1C00009696808025250000848472722C2C0000BDBD9B9B17170000B3B395951B1B000054544F4F3D3D00005B5B56563A3A00006A6A606035350000757567673232000096967F7F25250000FFFFFFFFFEFE000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010102030405060701010101010101010101010101010101010000010101010108090A0A0B0C0D0E01010101010101010101010101010101010000010101010F1011120101010101010101010101010101010101010101010100000101010F0A13140101010101010101010101010101010101010101010101000001011516170101010101010101010101010101181801010101010101010100000101191A01010101010101010101181801010118180101010101010101010000011B0A1C010101010101171D0101011818010118181818010101181818010000011E1F0101010101010120210101181818010118180118180118180101010000220A23010101010101240A250118011818010118180118180118180101010000260A270101010128290A2A010101181818180118181818010101181818010000012B0A2C242D2E0A2F0A30010101010101010101010101010101010101010000010131320B330734350A360101010101010101010101010101010101010100000101010101010101150A3701010101010101010101010101010101010101000001010101010101010138010101010101010101010101010101010101010100000101010101010100000000000000000000000000000000010101010101010000010101010101010039393939390000000000000000000001010101010101000001010101010101003939393939000000393939393900000101010101010100000101010101010100393900393900003939393939393900010101010101010000010101010101010039390039390000393939393939390001010101010101000001010101010101003939393939000039393939393939000101010101010100000101010101010100393939393900003939393939393900010101010101010000010101010101010039393900000000003939393939000001010101010101000001010101010101003939393900000000003939390000000101010101010100000101010101010100393939390000000039393900000000010101010101010000010101010101010039390000000000393939000000000001010101010101000001010101010101003939393900000000000000000000000101010101010100000101010101010100393939390000000000000000000000010101010101010000010101010101010000000000000000000000000000000001010101010101000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
       <BW_Color_Icon>00000000</BW_Color_Icon>
@@ -1023,104 +1048,6 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Synchronyze_with_Directory>true</Synchronyze_with_Directory>
         <Synchronize_Directory_Path>G-Unicode\Dialog &amp; User Interface</Synchronize_Directory_Path>
       </Synchronization_Info>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Input Box (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Input Box (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Message Box (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Message Box (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>One Button Dialog (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\One Button Dialog (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Read Control Caption (Unicode).vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Read Control Caption (Unicode).vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Read Control Text (Unicode).vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>5</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Read Control Text (Unicode).vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Two Button Dialog (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Two Button Dialog (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Update Unicode Controls (Unicode).vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Update Unicode Controls (Unicode).vi</Path>
-        <VI_Title/>
-      </Items_Data>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
@@ -1138,18 +1065,116 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Control Text (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Read Control Text (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Write Control Text (Unicode).vi</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>2</Row>
-          <Column>3</Column>
+          <Row>1</Row>
+          <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Write Control Text (Unicode).vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>DF0BBFC50EEC412B2D2F4A1011EBB4AF</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Update Unicode Controls (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Update Unicode Controls (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Read Control Caption (Unicode).vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Read Control Caption (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>One Button Dialog (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\One Button Dialog (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Two Button Dialog (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Two Button Dialog (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Message Box (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Message Box (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Input Box (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>3</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Input Box (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>35CFB5DF6C0E0EFE9F1210B0131A1F9E</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1157,7 +1182,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <View_Format>Icons</View_Format>
       <Size>
         <Height_Row>2</Height_Row>
-        <Width_Col.>6</Width_Col.>
+        <Width_Col.>4</Width_Col.>
       </Size>
       <_256_Color_Icon>00000C20001D00000C1A00000400000000000020002000080000000000FFFFFF00FF8000000000000000000000004444444444440000565651513D3D000093937D7D26260000CACAA5A512120000F7F7C6C601010000EEEEBFBF05050000868673732C2C00004848464642420000ABAB8E8E1E1E0000FAFAC8C801010000DEDEB4B40B0B000094947D7D26260000D0D0AAAA10100000A8A88D8D1F1F000078786A6A30300000E2E2B7B70A0A0000E4E4B8B8090900008C8C787829290000C0C09D9D1616000052524E4E3E3E00006B6B606035350000F8F8C7C701010000BABA9A9A18180000FFFF7F7FFFFF0000CECEA8A811110000CCCCA7A7121200009B9B8383242400005E5E56563A3A00007878696931310000DDDDB2B20C0C0000C6C6A2A214140000E1E1B6B60A0A0000C9C9A5A51212000051514D4D3E3E0000ADAD90901D1D0000A9A98D8D1E1E00007D7D6E6E2E2E0000585852523C3C0000BEBE9D9D171700007B7B6B6B2F2F0000D3D3ACAC0F0F0000D1D1AAAA10100000B0B092921C1C0000E4E4B9B909090000B3B395951A1A0000DDDDB2B20B0B0000B0B091911C1C00009696808025250000848472722C2C0000BDBD9B9B17170000B3B395951B1B000054544F4F3D3D00005B5B56563A3A00006A6A606035350000757567673232000096967F7F25250000FFFFFFFFFFFF000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010102030405060701010101010101010101010101010101010000010101010108090A0A0B0C0D0E01010101010101010101010101010101010000010101010F1011120101010101010101010101010101010101010101010100000101010F0A13140101010101010101010101010101010101010101010101000001011516170101010101010101010101010101181801010101010101010100000101191A01010101010101010101181801010118180101010101010101010000011B0A1C010101010101171D0101011818010118181818010101181818010000011E1F0101010101010120210101181818010118180118180118180101010000220A23010101010101240A250118011818010118180118180118180101010000260A270101010128290A2A010101181818180118181818010101181818010000012B0A2C242D2E0A2F0A30010101010101010101010101010101010101010000010131320B330734350A360101010101010101010101010101010101010100000101010101010101150A3701010101010101010101010101010101010101000001010101010101010138010101010101010101010101010101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010139393901013939390139010101390101393901010101010101000001010101013901013901390101013939013939013901013901010101010100000101010101390101390139390101390139013901390101390101010101010000010101010139010139013901010139010101390139010139010101010101000001010101013939390101393939013901010139010139390101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101000001010101010101010101010101010101010101010101010101010101010100000101010101010101010101010101010101010101010101010101010101010000010101010101010101010101010101010101010101010101010101010101000000000000000000000000000000000000000000000000000000000000000000</_256_Color_Icon>
       <BW_Color_Icon>00000000</BW_Color_Icon>
@@ -1187,85 +1212,15 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Unicode List Folder Example.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>2</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Examples\Unicode List Folder Example.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Unicode Multilingual Interface Example.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Examples\Unicode Multilingual Interface Example.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Unicode Path With LabVIEW File IO Example.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Examples\Unicode Path With LabVIEW File IO Example.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Unicode Read Text File Example.vi</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>1</Row>
-          <Column>5</Column>
+          <Row>2</Row>
+          <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\Examples\Unicode Read Text File Example.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Unicode Tab Page Example.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>6</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Examples\Unicode Tab Page Example.vi</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Unicode Tree File Browser Example.vi</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>2</Row>
-          <Column>1</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\Examples\Unicode Tree File Browser Example.vi</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -1276,13 +1231,83 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>2</Column>
+          <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\Examples\Unicode Write Text File Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>EBC0F702B3522265FF82D11C1246B68C</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode Path With LabVIEW File IO Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Examples\Unicode Path With LabVIEW File IO Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode Multilingual Interface Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Examples\Unicode Multilingual Interface Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode List Folder Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Examples\Unicode List Folder Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode Tree File Browser Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Examples\Unicode Tree File Browser Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Unicode Tab Page Example.vi</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\Examples\Unicode Tab Page Example.vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>811DB5DE1553D717EC9DCF79A84DD1FD</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

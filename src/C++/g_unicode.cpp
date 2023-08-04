@@ -391,21 +391,51 @@ extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_
 // Dialog API //
 ////////////////
 
-extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length)
+extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length, intptr_t* paths_pointer, int32_t* num_paths)
 {
 	*path_length = 0;
 	*path_pointer = 0;
+	*paths_pointer = 0;
+	*num_paths = 0;
 	*cancelled = 0;
 
 	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
 	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
+	pfd::opt _option = allow_multi_select ? pfd::opt::multiselect : pfd::opt::none;
 
-	auto selection = pfd::open_file(_title, _default_path, { "All Files (*.*)", "*" }, pfd::opt::none).result();
+	auto selection = pfd::open_file(_title, _default_path, { "All Files (*.*)", "*" }, _option).result();
 
 	// User cancelled the dialog
 	if (selection.size() == 0)
 	{
 		*cancelled = 1;
+		return GU_SUCCESS;
+	}
+
+	if (allow_multi_select)
+	{
+		int32_t multi_path_length = 0;
+		gu_string* multi_path = (gu_string*)malloc(selection.size() * sizeof(gu_string));
+		if (multi_path == NULL)
+		{
+			return GU_E_MEMORY;
+		}
+
+		for (int i = 0; i < selection.size(); i++)
+		{
+			multi_path[i].string = _strdup(selection[i].c_str());
+			if (multi_path[i].string == NULL)
+			{
+				//free_string_list(multi_path, multi_path_length);
+				return GU_E_MEMORY;
+			}
+			multi_path[i].size = strlen(multi_path[i].string);
+			multi_path_length++;
+		}
+
+		*paths_pointer = (intptr_t)multi_path;
+		*num_paths = multi_path_length;
+
 		return GU_SUCCESS;
 	}
 

@@ -25,12 +25,15 @@ https://github.com/dataflowg/g-unicode</Property>
 				<Item Name="Read Graph Axis Labels (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Axis Labels (UTF-8 String).vi"/>
 				<Item Name="Read Graph Cursor Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Cursor Names (UTF-8 String).vi"/>
 				<Item Name="Read Graph Plot Names (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Graph Plot Names (UTF-8 String).vi"/>
+				<Item Name="Read Listbox Header (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Listbox Header (UTF-8 String).vi"/>
 				<Item Name="Read Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Listbox Items (UTF-8 String).vi"/>
+				<Item Name="Read Multicolumn Listbox Headers (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Multicolumn Listbox Headers (UTF-8 String).vi"/>
 				<Item Name="Read Multicolumn Listbox Items (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Multicolumn Listbox Items (UTF-8 String).vi"/>
 				<Item Name="Read Radio Button Text (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Radio Button Text (UTF-8 String).vi"/>
 				<Item Name="Read Ring Strings (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Ring Strings (UTF-8 String).vi"/>
 				<Item Name="Read String Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read String Value (UTF-8 String).vi"/>
 				<Item Name="Read Tab Pages (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Tab Pages (UTF-8 String).vi"/>
+				<Item Name="Read Table Headers (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Table Headers (UTF-8 String).vi"/>
 				<Item Name="Read Table Value (UTF-8 String).vi" Type="VI" URL="../Dialog &amp; User Interface/Polymorphic VIs/Read Control Text/Read Table Value (UTF-8 String).vi"/>
 			</Item>
 			<Item Name="Write Control Text" Type="Folder">
@@ -187,7 +190,9 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Read Graph-Chart Cursor Names.vi" Type="VI" URL="../Private/User Interface/Read Graph-Chart Cursor Names.vi"/>
 			<Item Name="Read Graph-Chart Plot Names.vi" Type="VI" URL="../Private/User Interface/Read Graph-Chart Plot Names.vi"/>
 			<Item Name="Read Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read Listbox Data.vi"/>
+			<Item Name="Read Listbox Header.vi" Type="VI" URL="../Private/User Interface/Read Listbox Header.vi"/>
 			<Item Name="Read MultCol Listbox Data.vi" Type="VI" URL="../Private/User Interface/Read MultCol Listbox Data.vi"/>
+			<Item Name="Read MultCol Listbox Headers.vi" Type="VI" URL="../Private/User Interface/Read MultCol Listbox Headers.vi"/>
 			<Item Name="Read Radio Button Text.vi" Type="VI" URL="../Private/User Interface/Read Radio Button Text.vi"/>
 			<Item Name="Read Ring Control.vi" Type="VI" URL="../Private/User Interface/Read Ring Control.vi"/>
 			<Item Name="Read String Array (1D).vi" Type="VI" URL="../Private/User Interface/Read String Array (1D).vi"/>
@@ -195,6 +200,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Read String.vi" Type="VI" URL="../Private/User Interface/Read String.vi"/>
 			<Item Name="Read Tab Control.vi" Type="VI" URL="../Private/User Interface/Read Tab Control.vi"/>
 			<Item Name="Read Table Data.vi" Type="VI" URL="../Private/User Interface/Read Table Data.vi"/>
+			<Item Name="Read Table Headers.vi" Type="VI" URL="../Private/User Interface/Read Table Headers.vi"/>
 			<Item Name="Update Unicode Controls Async.vi" Type="VI" URL="../Private/Update Unicode Controls Async.vi"/>
 			<Item Name="Write Boolean Text.vi" Type="VI" URL="../Private/User Interface/Write Boolean Text.vi"/>
 			<Item Name="Write Caption.vi" Type="VI" URL="../Private/User Interface/Write Caption.vi"/>
@@ -242,6 +248,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 		<Item Name="SubVIs" Type="Folder">
 			<Item Name="Byte Order Marks.vi" Type="VI" URL="../Unicode/SubVIs/Byte Order Marks.vi"/>
+			<Item Name="UTF-16 Byte Swap.vi" Type="VI" URL="../Unicode/SubVIs/UTF-16 Byte Swap.vi"/>
 		</Item>
 		<Item Name="Detect BOM.vi" Type="VI" URL="../Unicode/Detect BOM.vi"/>
 		<Item Name="Detect String Encoding.vi" Type="VI" URL="../Unicode/Detect String Encoding.vi"/>
