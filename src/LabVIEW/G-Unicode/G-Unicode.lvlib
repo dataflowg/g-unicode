@@ -60,6 +60,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="One Button Dialog (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/One Button Dialog (Unicode).vim"/>
 		<Item Name="Read Control Caption (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Caption (Unicode).vi"/>
 		<Item Name="Read Control Text (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Read Control Text (Unicode).vi"/>
+		<Item Name="Set Window Title (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/Set Window Title (Unicode).vim"/>
 		<Item Name="Two Button Dialog (Unicode).vim" Type="VI" URL="../Dialog &amp; User Interface/Two Button Dialog (Unicode).vim"/>
 		<Item Name="Update Unicode Controls (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Update Unicode Controls (Unicode).vi"/>
 		<Item Name="Write Control Caption (Unicode).vi" Type="VI" URL="../Dialog &amp; User Interface/Write Control Caption (Unicode).vi"/>

@@ -53,7 +53,9 @@ G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to 
 G-Unicode is published on [vipm.io](https://www.vipm.io/package/dataflow_g_lib_g_unicode/), and can be installed using VI Package Manager (VIPM). The packages are also available as [github releases](https://github.com/dataflowg/g-unicode/releases) and can be installed manually using VIPM.
 
 ## <a id="usage"></a>Usage
-**IMPORTANT:** LabVIEW has a [UseUnicode](https://labviewwiki.org/wiki/LabVIEW_configuration_file/Miscellaneous#useUnicode) ini token to help aid in handling unicode input. It enables right-click options for unicode display, and enables pasting unicode text from external applications. This is useful, but can also make dealing with string controls and constants problematic, silently mixing UTF-16LE and ANSI encodings when pasting or typing text. It is recommended to disable this token during development, though it can be enabled in built applications. _G-Unicode does not require this token._
+**IMPORTANT:** LabVIEW has a [UseUnicode](https://labviewwiki.org/wiki/LabVIEW_configuration_file/Miscellaneous#useUnicode) ini token to help aid in handling unicode input. It enables right-click options for unicode display, and enables pasting unicode text from external applications. This is useful, but can also make dealing with string controls and constants problematic, silently mixing UTF-16LE and ANSI encodings when pasting or typing text. It is recommended to disable this token during development, though it can be enabled in built applications. _G-Unicode does not require this token, except for the following functions:_
+
+* `Set Window Title (Unicode).vim`
 
 **IMPORTANT II:** G-Unicode relies on LabVIEW's experimental unicode support for unicode string input. This unicode string input is _**very buggy**_, and prone to strange input behavior and outright crashes. Where possible it's recommended to avoid using LabVIEW's string controls for unicode input and instead use `Input Box (Unicode).vim` or some other method.
 
