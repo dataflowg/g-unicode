@@ -177,8 +177,12 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="gu_to_lower_case.vi" Type="VI" URL="../Private/Library/gu_to_lower_case.vi"/>
 			<Item Name="gu_to_upper_case.vi" Type="VI" URL="../Private/Library/gu_to_upper_case.vi"/>
 			<Item Name="Result To Error.vi" Type="VI" URL="../Private/Library/Result To Error.vi"/>
+			<Item Name="gu_string_to_codepoint_array.vi" Type="VI" URL="../Private/Library/gu_string_to_codepoint_array.vi"/>
+			<Item Name="gu_codepoint_array_to_string.vi" Type="VI" URL="../Private/Library/gu_codepoint_array_to_string.vi"/>
 		</Item>
 		<Item Name="Memory" Type="Folder">
+			<Item Name="Allocate And Move Block.vim" Type="VI" URL="../Private/Memory/Allocate And Move Block.vim"/>
+			<Item Name="Copy Array.vim" Type="VI" URL="../Private/Memory/Copy Array.vim"/>
 			<Item Name="Copy String Array.vi" Type="VI" URL="../Private/Memory/Copy String Array.vi"/>
 			<Item Name="Copy String.vi" Type="VI" URL="../Private/Memory/Copy String.vi"/>
 			<Item Name="Move Block.vim" Type="VI" URL="../Private/Memory/Move Block.vim"/>
@@ -223,6 +227,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">
+		<Item Name="Codepoint Array To String (Unicode).vi" Type="VI" URL="../String/Codepoint Array To String (Unicode).vi"/>
 		<Item Name="Concatenate Strings (Unicode).vim" Type="VI" URL="../String/Concatenate Strings (Unicode).vim"/>
 		<Item Name="Empty String-Path (Unicode).vim" Type="VI" URL="../String/Empty String-Path (Unicode).vim"/>
 		<Item Name="Equal String-Path (Unicode).vim" Type="VI" URL="../String/Equal String-Path (Unicode).vim"/>
@@ -232,8 +237,10 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Search-Split String (Unicode).vim" Type="VI" URL="../String/Search-Split String (Unicode).vim"/>
 		<Item Name="String Length (Unicode).vim" Type="VI" URL="../String/String Length (Unicode).vim"/>
 		<Item Name="String Subset (Unicode).vim" Type="VI" URL="../String/String Subset (Unicode).vim"/>
+		<Item Name="String To Codepoint Array (Unicode).vim" Type="VI" URL="../String/String To Codepoint Array (Unicode).vim"/>
 		<Item Name="To Lower Case (Unicode).vim" Type="VI" URL="../String/To Lower Case (Unicode).vim"/>
 		<Item Name="To Upper Case (Unicode).vim" Type="VI" URL="../String/To Upper Case (Unicode).vim"/>
+		<Item Name="Trim Whitespace (Unicode).vim" Type="VI" URL="../String/Trim Whitespace (Unicode).vim"/>
 	</Item>
 	<Item Name="Types" Type="Folder">
 		<Item Name="Encoded UTF-8 Path.ctl" Type="VI" URL="../Types/Encoded UTF-8 Path.ctl"/>

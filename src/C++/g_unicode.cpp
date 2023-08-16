@@ -208,8 +208,6 @@ extern "C" LV_DLL_EXPORT gu_result gu_rotate_string(char* str)
 	return GU_SUCCESS;
 }
 
-
-
 extern "C" LV_DLL_EXPORT gu_result gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t reverse, intptr_t* string_a_pointer, int32_t* string_a_size, intptr_t* string_b_pointer, int32_t* string_b_size)
 {
 	*string_a_pointer = 0;
@@ -275,6 +273,81 @@ extern "C" LV_DLL_EXPORT gu_result gu_search_split_string(const char* str, const
 	*string_b_pointer = (intptr_t)string_b;
 	*string_a_size = a_size;
 	*string_b_size = b_size;
+
+	return GU_SUCCESS;
+}
+
+extern "C" LV_DLL_EXPORT gu_result gu_string_to_codepoint_array(const char* str, intptr_t* codepoint_array, int32_t* codepoint_array_size)
+{
+	*codepoint_array = 0;
+	*codepoint_array_size = 0;
+
+	if (str == NULL)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
+
+	int32_t num_codepoints = utf8len(str);
+	int32_t* codepoints = (int32_t*)calloc(num_codepoints, sizeof(int32_t));
+
+	if (codepoints == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	char* ptr = (char*)str;
+	for (int i = 0; i < num_codepoints; i++)
+	{
+		ptr = utf8codepoint(ptr, &codepoints[i]);
+	}
+
+	*codepoint_array = (intptr_t)codepoints;
+	*codepoint_array_size = num_codepoints;
+
+	return GU_SUCCESS;
+}
+
+extern "C" LV_DLL_EXPORT gu_result gu_codepoint_array_to_string(int32_t* codepoint_array, int32_t codepoint_array_size, intptr_t* str_pointer, int32_t* str_size)
+{
+	*str_pointer = 0;
+	*str_size = 0;
+
+	if (codepoint_array_size <= 0)
+	{
+		return GU_SUCCESS;
+	}
+
+	if (codepoint_array == NULL)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
+
+	int32_t codepoint_byte_size = 0;
+	for (int i = 0; i < codepoint_array_size; i++)
+	{
+		codepoint_byte_size += utf8codepointsize(codepoint_array[i]);
+	}
+
+	char* str = (char*)calloc(codepoint_byte_size + 1, sizeof(char));
+	if (str == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	char* ptr = (char*)str;
+	for (int i = 0; i < codepoint_array_size; i++)
+	{
+		ptr = utf8catcodepoint(ptr, codepoint_array[i], codepoint_byte_size - (ptr - str));
+
+		if (ptr == NULL)
+		{
+			free(str);
+			return GU_E_MEMORY;
+		}
+	}
+
+	*str_pointer = (intptr_t)str;
+	*str_size = codepoint_byte_size;
 
 	return GU_SUCCESS;
 }

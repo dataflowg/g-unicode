@@ -99,12 +99,12 @@
 				<Item Name="Test Search-Split String.vi" Type="VI" URL="../Unit Tests/String/Test Search-Split String.vi"/>
 				<Item Name="Test String Length.vi" Type="VI" URL="../Unit Tests/String/Test String Length.vi"/>
 				<Item Name="Test String Subset.vi" Type="VI" URL="../Unit Tests/String/Test String Subset.vi"/>
+				<Item Name="Test String To Codepoint Array.vi" Type="VI" URL="../Unit Tests/String/Test String To Codepoint Array.vi"/>
 			</Item>
 			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
 		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
 		<Item Name="VI Tree.vi" Type="VI" URL="../G-Unicode/VI Tree.vi"/>
-		<Item Name="test.vi" Type="VI" URL="../G-Unicode/test.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
