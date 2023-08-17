@@ -22,7 +22,21 @@ A LabVIEW library for displaying unicode, manipulating unicode strings, and perf
 </p>
 
 ## <a id="whats-new"></a>What's New?
-* Initial release! Check out the included examples to see what G-Unicode can do.
+* Additional string, file I/O, and UI functions.
+
+#### New VIs
+##### String Palette
+* `String To Codepoint Array (Unicode).vim`
+* `Codepoint Array To String (Unicode).vi`
+* `1D String Array To Delimited String (Unicode).vim`
+* `Delimited String To 1D String Array (Unicode).vim`
+* `Normalize End Of Line (Unicode).vim`
+* `Trim Whitespace (Unicode).vim`
+##### File I/O Palette
+* `Detect Text File Encoding (Unicode).vim`
+##### Dialog & User Interface Palette
+* `Set Window Title (Unicode).vim`
+    * Requires _UseUnicode=TRUE_ in labview.ini
 
 ## <a id="motivation"></a>Motivation
 LabVIEW doesn't provide official unicode support under Windows, but through a combination of hidden control properties, byte order marks, and good luck, it is possible to read and display unicode strings. Unfortunately there are still many gaps in functionality:
@@ -47,8 +61,6 @@ G-Unicode seeks to streamline unicode handling in LabVIEW, making it simpler to 
 
 ![G-Unicode palettes](images/g-unicode-palettes.png?raw=true "G-Unicode palettes")
 
-![G-Unicode custom probe](images/g-unicode-demo-2.png?raw=true "G-Unicode custom probe")
-
 ## <a id="installation"></a>Installation
 G-Unicode is published on [vipm.io](https://www.vipm.io/package/dataflow_g_lib_g_unicode/), and can be installed using VI Package Manager (VIPM). The packages are also available as [github releases](https://github.com/dataflowg/g-unicode/releases) and can be installed manually using VIPM.
 
@@ -68,6 +80,11 @@ UTF-8 String | ![UTF-8 String wire](images/wire-utf8-string.png?raw=true "UTF-8 
 UTF-8 Path   | ![UTF-8 Path wire](images/wire-utf8-path.png?raw=true "UTF-8 Path wire")
 
 Most functions in G-Unicode support wiring either a UTF-8 String/Path class, a standard LabVIEW string/path, or a combination of both (as in `Concatenate Strings (Unicode).vim`). When a standard LabVIEW type is wired to a G-Unicode function it is internally converted to UTF-8 using LabVIEW's built-in `Text to UTF-8` primitive, and any return values are in the respective UTF-8 class.
+
+#### Editing UTF-8 String/Path Constants
+UTF-8 String and UTF-8 Path class values can be set during edit time using the QuickDrop shortcut **Ctrl+G**. Select a UTF-8 control/constant on the front panel/block diagram, then press _Ctrl+Space_ to bring up QuickDrop, then press _Ctrl+G_ to open a unicode input dialog to view and set the UTF-8 value. When a custom value is applied to the class, its icon will have a dark colored background. The custom value of a UTF-8 class can be cleared using the QuickDrop shortcut **Ctrl+Shift+G**.
+
+![G-Unicode custom probe](images/g-unicode-demo-2.png?raw=true "G-Unicode custom probe")
 
 ### Error Wiring
 There are two types of error wiring conventions used throughout G-Unicode. The first is the standard error in/error out clusters wired to the lower left and right terminals respectively. It is recommended to always wire these terminals.

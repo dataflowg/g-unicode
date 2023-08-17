@@ -76,6 +76,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Create File (Unicode).vim" Type="VI" URL="../File IO/Create File (Unicode).vim"/>
 		<Item Name="Create Folder (Unicode).vim" Type="VI" URL="../File IO/Create Folder (Unicode).vim"/>
 		<Item Name="Delete (Unicode).vim" Type="VI" URL="../File IO/Delete (Unicode).vim"/>
+		<Item Name="Detect Text File Encoding (Unicode).vim" Type="VI" URL="../File IO/Detect Text File Encoding (Unicode).vim"/>
 		<Item Name="File Dialog (Unicode).vim" Type="VI" URL="../File IO/File Dialog (Unicode).vim"/>
 		<Item Name="Get File Extension (Unicode).vim" Type="VI" URL="../File IO/Get File Extension (Unicode).vim"/>
 		<Item Name="Get Volume Info (Unicode).vim" Type="VI" URL="../File IO/Get Volume Info (Unicode).vim"/>
@@ -227,10 +228,13 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">
+		<Item Name="1D String Array To Delimited String (Unicode).vim" Type="VI" URL="../String/1D String Array To Delimited String (Unicode).vim"/>
 		<Item Name="Codepoint Array To String (Unicode).vi" Type="VI" URL="../String/Codepoint Array To String (Unicode).vi"/>
 		<Item Name="Concatenate Strings (Unicode).vim" Type="VI" URL="../String/Concatenate Strings (Unicode).vim"/>
+		<Item Name="Delimited String To 1D String Array (Unicode).vim" Type="VI" URL="../String/Delimited String To 1D String Array (Unicode).vim"/>
 		<Item Name="Empty String-Path (Unicode).vim" Type="VI" URL="../String/Empty String-Path (Unicode).vim"/>
 		<Item Name="Equal String-Path (Unicode).vim" Type="VI" URL="../String/Equal String-Path (Unicode).vim"/>
+		<Item Name="Normalize End Of Line (Unicode).vim" Type="VI" URL="../String/Normalize End Of Line (Unicode).vim"/>
 		<Item Name="Not Equal String-Path (Unicode).vim" Type="VI" URL="../String/Not Equal String-Path (Unicode).vim"/>
 		<Item Name="Reverse String (Unicode).vim" Type="VI" URL="../String/Reverse String (Unicode).vim"/>
 		<Item Name="Rotate String (Unicode).vim" Type="VI" URL="../String/Rotate String (Unicode).vim"/>

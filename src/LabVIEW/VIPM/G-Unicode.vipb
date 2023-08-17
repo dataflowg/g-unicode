@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-16 03:17:18" Creator="Dataflow_G" Comments="" ID="d09004fc76b04cb8fbbcfc392946e816">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-17 03:05:38" Creator="Dataflow_G" Comments="" ID="af73c8de4c05b88064faa53818d791f3">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.2.0.1</Library_Version>
@@ -300,7 +300,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>206C724695CCCC8AF9B2568347EC50B4</GUID>
+      <GUID>CD2D051C3DC8CA3D348ADBDF96280352</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -503,7 +503,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BB9E7195C8AFD639165A6B6796AA42BE</GUID>
+      <GUID>E067F65D0A7242D9845B6CEF1C2AD509</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -569,26 +569,12 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
       <Items_Data>
         <Type>Item</Type>
         <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Search-Split String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>1</Row>
-          <Column>4</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Search-Split String (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
         <NameSub_Menu_Name>Equal String-Path (Unicode).vim</NameSub_Menu_Name>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>1</Column>
+          <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Equal String-Path (Unicode).vim</Path>
@@ -602,7 +588,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>2</Column>
+          <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Not Equal String-Path (Unicode).vim</Path>
@@ -616,7 +602,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>2</Row>
-          <Column>3</Column>
+          <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Empty String-Path (Unicode).vim</Path>
@@ -630,7 +616,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>3</Row>
-          <Column>1</Column>
+          <Column>3</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\To Upper Case (Unicode).vim</Path>
@@ -644,24 +630,10 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>3</Row>
-          <Column>2</Column>
+          <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\To Lower Case (Unicode).vim</Path>
-        <VI_Title/>
-      </Items_Data>
-      <Items_Data>
-        <Type>Item</Type>
-        <Sub_Palette_Index>-1</Sub_Palette_Index>
-        <NameSub_Menu_Name>Reverse String (Unicode).vim</NameSub_Menu_Name>
-        <Short_Name/>
-        <is_Merge_VI>false</is_Merge_VI>
-        <Position>
-          <Row>3</Row>
-          <Column>3</Column>
-        </Position>
-        <Icon>00000000</Icon>
-        <Path>Package Source\G-Unicode\String\Reverse String (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -671,11 +643,53 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>3</Row>
-          <Column>4</Column>
+          <Row>4</Row>
+          <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Rotate String (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Reverse String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>2</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Reverse String (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Delimited String To 1D String Array (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>3</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Delimited String To 1D String Array (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>1D String Array To Delimited String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>4</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\1D String Array To Delimited String (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -685,7 +699,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
+          <Row>3</Row>
           <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
@@ -699,11 +713,25 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Short_Name/>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
-          <Row>4</Row>
+          <Row>3</Row>
           <Column>2</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Codepoint Array To String (Unicode).vi</Path>
+        <VI_Title/>
+      </Items_Data>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Search-Split String (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>2</Row>
+          <Column>1</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Search-Split String (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
       <Items_Data>
@@ -714,13 +742,27 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <is_Merge_VI>false</is_Merge_VI>
         <Position>
           <Row>1</Row>
-          <Column>5</Column>
+          <Column>4</Column>
         </Position>
         <Icon>00000000</Icon>
         <Path>Package Source\G-Unicode\String\Trim Whitespace (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9DAE8AF277CDA7395898C73D396B754E</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Normalize End Of Line (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>1</Row>
+          <Column>5</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\String\Normalize End Of Line (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>6F82E53CABADE931EEFB1BB455EB6D85</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1077,7 +1119,21 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\File IO\Short Name to Path (Unicode).vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5B623505BD8B9C8290D6C3CBA15946ED</GUID>
+      <Items_Data>
+        <Type>Item</Type>
+        <Sub_Palette_Index>-1</Sub_Palette_Index>
+        <NameSub_Menu_Name>Detect Text File Encoding (Unicode).vim</NameSub_Menu_Name>
+        <Short_Name/>
+        <is_Merge_VI>false</is_Merge_VI>
+        <Position>
+          <Row>6</Row>
+          <Column>4</Column>
+        </Position>
+        <Icon>00000000</Icon>
+        <Path>Package Source\G-Unicode\File IO\Detect Text File Encoding (Unicode).vim</Path>
+        <VI_Title/>
+      </Items_Data>
+      <GUID>C0D431EF4B542667DEC63C1769DEFFE2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1238,7 +1294,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Set Window Title (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>493D379DEDAFE6BE1FD712C3AAE77950</GUID>
+      <GUID>CD7F38CC90F2DB3912FFBE4350B1B529</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1385,7 +1441,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples\Unicode Picture Control Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F23FED74C4D8C9D0BC6D7B942B8F33F3</GUID>
+      <GUID>869F77139CD7FF1FBF40144AAB55ADE2</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
