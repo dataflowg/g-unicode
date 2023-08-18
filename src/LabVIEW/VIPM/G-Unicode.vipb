@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-17 03:05:38" Creator="Dataflow_G" Comments="" ID="af73c8de4c05b88064faa53818d791f3">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-18 08:26:40" Creator="Dataflow_G" Comments="" ID="d6c4e9e630774c799c031ac1619656e4">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
-    <Library_Version>0.2.0.1</Library_Version>
+    <Library_Version>0.2.0.2</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Package Source</Library_Source_Folder>
     <Library_Output_Folder>Packages</Library_Output_Folder>
@@ -300,7 +300,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CD2D051C3DC8CA3D348ADBDF96280352</GUID>
+      <GUID>40370B2847E32B86C91F611DD94A9122</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -503,7 +503,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E067F65D0A7242D9845B6CEF1C2AD509</GUID>
+      <GUID>2B030E68FDC2F5DA72CBD109584B0FE6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -762,7 +762,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\String\Normalize End Of Line (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6F82E53CABADE931EEFB1BB455EB6D85</GUID>
+      <GUID>6AD6A33F83D9BEC4260D29CC2DA926F2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1133,7 +1133,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\File IO\Detect Text File Encoding (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C0D431EF4B542667DEC63C1769DEFFE2</GUID>
+      <GUID>C44284CF4BA3FA0980AEDCB367EAE472</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1294,7 +1294,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Set Window Title (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CD7F38CC90F2DB3912FFBE4350B1B529</GUID>
+      <GUID>4C691D08FC2882DE2B6FF0728D08E925</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1441,7 +1441,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples\Unicode Picture Control Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>869F77139CD7FF1FBF40144AAB55ADE2</GUID>
+      <GUID>7F642AC6C7EBB219ECD7F73B3CD1DC01</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
