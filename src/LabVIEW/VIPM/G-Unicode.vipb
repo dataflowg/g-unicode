@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-18 08:26:40" Creator="Dataflow_G" Comments="" ID="d6c4e9e630774c799c031ac1619656e4">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-21 08:18:10" Creator="Dataflow_G" Comments="" ID="54f1b15425b2fe008751d9df1885c8e2">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.2.0.2</Library_Version>
@@ -43,10 +43,23 @@
       <Copyright/>
       <Packager/>
       <URL>https://github.com/dataflowg/g-unicode</URL>
-      <Release_Notes>NEW FUNCTIONS
+      <Release_Notes>* Additional string, file I/O, and UI functions (see below).
+* QuickDrop shortcut (Ctrl+G) to view/edit UTF-8 class value now works on front panel controls
+* QuickDrop shortcut (Ctrl+Shift+G) to erase UTF-8 class value from constant / control
+
+NEW VIs
+## String Palette ##
 * String To Codepoint Array (Unicode).vim
 * Codepoint Array To String (Unicode).vi
+* 1D String Array To Delimited String (Unicode).vim
+* Delimited String To 1D String Array (Unicode).vim
+* Normalize End Of Line (Unicode).vim
 * Trim Whitespace (Unicode).vim
+
+## File I/O Palette ##
+* Detect Text File Encoding (Unicode).vim
+
+## Dialog &amp; User Interface Palette ##
 * Set Window Title (Unicode).vim
 -- Requires UseUnicode=TRUE in labview.ini
 
@@ -300,7 +313,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>40370B2847E32B86C91F611DD94A9122</GUID>
+      <GUID>5E25587C0311FAE3E647BA2AFA7245CF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -503,7 +516,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2B030E68FDC2F5DA72CBD109584B0FE6</GUID>
+      <GUID>C3429F556BC4B855706381E9FE0A4FE9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -762,7 +775,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\String\Normalize End Of Line (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6AD6A33F83D9BEC4260D29CC2DA926F2</GUID>
+      <GUID>496792E71DF3726267BF6C611D5F6D3B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1133,7 +1146,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\File IO\Detect Text File Encoding (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C44284CF4BA3FA0980AEDCB367EAE472</GUID>
+      <GUID>70328CE063E96F7F5E6B54C2DEB58D72</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1294,7 +1307,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Set Window Title (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4C691D08FC2882DE2B6FF0728D08E925</GUID>
+      <GUID>2EC97A2190777C2CE5E6FDDCE93A55A7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1441,7 +1454,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples\Unicode Picture Control Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7F642AC6C7EBB219ECD7F73B3CD1DC01</GUID>
+      <GUID>3F7D49EAE1B9F80C7A99A60AEAFD7BE8</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

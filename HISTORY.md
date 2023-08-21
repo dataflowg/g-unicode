@@ -1,6 +1,8 @@
 # G-Unicode Release History
-### v0.2.0 - 2023-xx-xx
+### v0.2.0 - 2023-08-21
 * Additional string, file I/O, and UI functions.
+* QuickDrop shortcut (Ctrl+G) to view/edit UTF-8 class value now works on front panel controls
+* QuickDrop shortcut (Ctrl+Shift+G) to erase UTF-8 class value from constant / control
 
 #### New VIs
 ##### String Palette

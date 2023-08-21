@@ -100,6 +100,7 @@
 				<Item Name="Test String Length.vi" Type="VI" URL="../Unit Tests/String/Test String Length.vi"/>
 				<Item Name="Test String Subset.vi" Type="VI" URL="../Unit Tests/String/Test String Subset.vi"/>
 				<Item Name="Test String To Codepoint Array.vi" Type="VI" URL="../Unit Tests/String/Test String To Codepoint Array.vi"/>
+				<Item Name="Test String To 1D Array.vi" Type="VI" URL="../Unit Tests/String/Test String To 1D Array.vi"/>
 			</Item>
 			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
 		</Item>

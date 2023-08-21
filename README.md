@@ -23,6 +23,8 @@ A LabVIEW library for displaying unicode, manipulating unicode strings, and perf
 
 ## <a id="whats-new"></a>What's New?
 * Additional string, file I/O, and UI functions.
+* QuickDrop shortcut (Ctrl+G) to view/edit UTF-8 class value now works on front panel controls
+* QuickDrop shortcut (Ctrl+Shift+G) to erase UTF-8 class value from constant / control
 
 #### New VIs
 ##### String Palette
