@@ -180,6 +180,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Result To Error.vi" Type="VI" URL="../Private/Library/Result To Error.vi"/>
 			<Item Name="gu_string_to_codepoint_array.vi" Type="VI" URL="../Private/Library/gu_string_to_codepoint_array.vi"/>
 			<Item Name="gu_codepoint_array_to_string.vi" Type="VI" URL="../Private/Library/gu_codepoint_array_to_string.vi"/>
+			<Item Name="gu_normalize_string.vi" Type="VI" URL="../Private/Library/gu_normalize_string.vi"/>
 		</Item>
 		<Item Name="Memory" Type="Folder">
 			<Item Name="Allocate And Move Block.vim" Type="VI" URL="../Private/Memory/Allocate And Move Block.vim"/>
@@ -228,6 +229,9 @@ https://github.com/dataflowg/g-unicode</Property>
 		</Item>
 	</Item>
 	<Item Name="String" Type="Folder">
+		<Item Name="Controls" Type="Folder">
+			<Item Name="Normalized Form.ctl" Type="VI" URL="../String/Controls/Normalized Form.ctl"/>
+		</Item>
 		<Item Name="1D String Array To Delimited String (Unicode).vim" Type="VI" URL="../String/1D String Array To Delimited String (Unicode).vim"/>
 		<Item Name="Codepoint Array To String (Unicode).vi" Type="VI" URL="../String/Codepoint Array To String (Unicode).vi"/>
 		<Item Name="Concatenate Strings (Unicode).vim" Type="VI" URL="../String/Concatenate Strings (Unicode).vim"/>
@@ -235,6 +239,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Empty String-Path (Unicode).vim" Type="VI" URL="../String/Empty String-Path (Unicode).vim"/>
 		<Item Name="Equal String-Path (Unicode).vim" Type="VI" URL="../String/Equal String-Path (Unicode).vim"/>
 		<Item Name="Normalize End Of Line (Unicode).vim" Type="VI" URL="../String/Normalize End Of Line (Unicode).vim"/>
+		<Item Name="Normalize String (Unicode).vim" Type="VI" URL="../String/Normalize String (Unicode).vim"/>
 		<Item Name="Not Equal String-Path (Unicode).vim" Type="VI" URL="../String/Not Equal String-Path (Unicode).vim"/>
 		<Item Name="Reverse String (Unicode).vim" Type="VI" URL="../String/Reverse String (Unicode).vim"/>
 		<Item Name="Rotate String (Unicode).vim" Type="VI" URL="../String/Rotate String (Unicode).vim"/>

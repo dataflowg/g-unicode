@@ -88,7 +88,9 @@ extern "C" LV_DLL_EXPORT gu_result gu_reverse_string(char* str);
 extern "C" LV_DLL_EXPORT gu_result gu_rotate_string(char* str);
 extern "C" LV_DLL_EXPORT gu_result gu_search_split_string(const char* str, const char* search_str, int32_t offset, int32_t reverse, intptr_t* string_a_pointer, int32_t* string_a_length, intptr_t* string_b_pointer, int32_t* string_b_length);
 extern "C" LV_DLL_EXPORT gu_result gu_string_to_codepoint_array(const char* str, intptr_t* codepoint_array, int32_t* codepoint_array_size);
-extern "C" LV_DLL_EXPORT gu_result gu_codepoint_array_to_string(int32_t * codepoint_array, int32_t codepoint_array_size, intptr_t * str_pointer, int32_t * str_size);
+extern "C" LV_DLL_EXPORT gu_result gu_codepoint_array_to_string(int32_t * codepoint_array, int32_t codepoint_array_size, intptr_t* str_pointer, int32_t* str_size);
+extern "C" LV_DLL_EXPORT gu_result gu_normalize_string(const char* str, uint16_t form, intptr_t* normalized_pointer, int32_t* normalized_size);
+//extern "C" LV_DLL_EXPORT gu_result gu_is_normalized_string(const char* str, uint16_t form, int32_t* is_normalized);
 
 extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf16(const char* buf, int32_t size, int32_t* is_utf16);
 extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_utf8);

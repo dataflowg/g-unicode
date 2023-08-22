@@ -75,6 +75,7 @@
 			<Item Name="Unicode Picture Control Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Picture Control Example.vi"/>
 			<Item Name="Unicode Read Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Read Text File Example.vi"/>
 			<Item Name="Unicode Multilingual Interface Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Multilingual Interface Example.vi"/>
+			<Item Name="Unicode String Normalization Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode String Normalization Example.vi"/>
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
 			<Item Name="Unicode Tab Page Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tab Page Example.vi"/>
 			<Item Name="Unicode Write Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Write Text File Example.vi"/>

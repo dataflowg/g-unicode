@@ -352,6 +352,77 @@ extern "C" LV_DLL_EXPORT gu_result gu_codepoint_array_to_string(int32_t* codepoi
 	return GU_SUCCESS;
 }
 
+extern "C" LV_DLL_EXPORT gu_result gu_normalize_string(const char* str, uint16_t norm_form, intptr_t * normalized_pointer, int32_t * normalized_size)
+{
+	*normalized_pointer = 0;
+	*normalized_size = 0;
+
+#if defined(_WIN32)
+	if (str == NULL)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
+
+	NORM_FORM form;
+	switch (norm_form)
+	{
+		case 0: form = NormalizationC; break;
+		case 1: form = NormalizationD; break;
+		case 2: form = NormalizationKC; break;
+		case 3: form = NormalizationKD; break;
+		default: form = NormalizationOther; break;
+	}
+
+	if (form == NormalizationOther)
+	{
+		return GU_E_INVALID_PARAMS;
+	}
+
+	wchar_t* wide_str = widen(str);
+
+	if (wide_str == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	// wide_str contains a NULL char from widen(), so can specify length is -1
+	int32_t norm_str_size = NormalizeString(form, wide_str, -1, NULL, 0);
+	wchar_t* norm_str = (wchar_t*)malloc(sizeof(wchar_t) * norm_str_size);
+
+	if (norm_str == NULL)
+	{
+		free(wide_str);
+		return GU_E_MEMORY;
+	}
+	
+	int32_t result = NormalizeString(form, wide_str, -1, norm_str, norm_str_size);
+	free(wide_str);
+	wide_str = NULL;
+
+	if (result <= 0)
+	{
+		free(norm_str);
+		return GU_E_GENERIC;
+	}
+
+	char* narrow_str = narrow(norm_str);
+	free(norm_str);
+	norm_str = NULL;
+
+	if (narrow_str == NULL)
+	{
+		return GU_E_MEMORY;
+	}
+
+	*normalized_pointer = (intptr_t)narrow_str;
+	*normalized_size = strlen(narrow_str);
+
+	return GU_SUCCESS;
+#else
+	return GU_W_WIN32_ONLY
+#endif
+}
+
 extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf16(const char* buf, int32_t size, int32_t* is_utf16)
 {
 	*is_utf16 = 0;
