@@ -28,6 +28,10 @@ A LabVIEW library for displaying unicode, manipulating unicode strings, and perf
 
 #### New VIs
 ##### String Palette
+* `Normalize String (Unicode).vim`
+    * Example: `Unicode String Normalization Example.vi`
+* `Spreadsheet String To Array.vim`
+* `Array To Spreadsheet String.vim`
 * `String To Codepoint Array (Unicode).vim`
 * `Codepoint Array To String (Unicode).vi`
 * `1D String Array To Delimited String (Unicode).vim`

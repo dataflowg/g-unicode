@@ -1,4 +1,16 @@
 # G-Unicode Release History
+### v0.3.0 - 2023-08-xx
+* Additional string functions & example.
+
+#### New VIs
+##### String Palette
+* `Normalize String (Unicode).vim`
+    * Example: `Unicode String Normalization Example.vi`
+* `Spreadsheet String To Array.vim`
+* `Array To Spreadsheet String.vim`
+
+
+
 ### v0.2.0 - 2023-08-21
 * Additional string, file I/O, and UI functions.
 * QuickDrop shortcut (Ctrl+G) to view/edit UTF-8 class value now works on front panel controls
