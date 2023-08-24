@@ -233,7 +233,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Normalized Form.ctl" Type="VI" URL="../String/Controls/Normalized Form.ctl"/>
 		</Item>
 		<Item Name="1D String Array To Delimited String (Unicode).vim" Type="VI" URL="../String/1D String Array To Delimited String (Unicode).vim"/>
-		<Item Name="Array To Spreadsheet String.vim" Type="VI" URL="../String/Array To Spreadsheet String.vim"/>
+		<Item Name="Array To Spreadsheet String (Unicode).vim" Type="VI" URL="../String/Array To Spreadsheet String (Unicode).vim"/>
 		<Item Name="Codepoint Array To String (Unicode).vi" Type="VI" URL="../String/Codepoint Array To String (Unicode).vi"/>
 		<Item Name="Concatenate Strings (Unicode).vim" Type="VI" URL="../String/Concatenate Strings (Unicode).vim"/>
 		<Item Name="Delimited String To 1D String Array (Unicode).vim" Type="VI" URL="../String/Delimited String To 1D String Array (Unicode).vim"/>
@@ -245,7 +245,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Reverse String (Unicode).vim" Type="VI" URL="../String/Reverse String (Unicode).vim"/>
 		<Item Name="Rotate String (Unicode).vim" Type="VI" URL="../String/Rotate String (Unicode).vim"/>
 		<Item Name="Search-Split String (Unicode).vim" Type="VI" URL="../String/Search-Split String (Unicode).vim"/>
-		<Item Name="Spreadsheet String To Array.vim" Type="VI" URL="../String/Spreadsheet String To Array.vim"/>
+		<Item Name="Spreadsheet String To Array (Unicode).vim" Type="VI" URL="../String/Spreadsheet String To Array (Unicode).vim"/>
 		<Item Name="String Length (Unicode).vim" Type="VI" URL="../String/String Length (Unicode).vim"/>
 		<Item Name="String Subset (Unicode).vim" Type="VI" URL="../String/String Subset (Unicode).vim"/>
 		<Item Name="String To Codepoint Array (Unicode).vim" Type="VI" URL="../String/String To Codepoint Array (Unicode).vim"/>
@@ -272,6 +272,7 @@ https://github.com/dataflowg/g-unicode</Property>
 		<Item Name="Detect BOM.vi" Type="VI" URL="../Unicode/Detect BOM.vi"/>
 		<Item Name="Detect String Encoding.vi" Type="VI" URL="../Unicode/Detect String Encoding.vi"/>
 		<Item Name="Encode String.vi" Type="VI" URL="../Unicode/Encode String.vi"/>
+		<Item Name="Normalize String.vi" Type="VI" URL="../Unicode/Normalize String.vi"/>
 		<Item Name="Prepend BOM.vi" Type="VI" URL="../Unicode/Prepend BOM.vi"/>
 		<Item Name="Strip BOM.vi" Type="VI" URL="../Unicode/Strip BOM.vi"/>
 	</Item>
