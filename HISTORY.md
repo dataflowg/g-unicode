@@ -1,13 +1,22 @@
 # G-Unicode Release History
 ### v0.3.0 - 2023-08-xx
-* Additional string functions & example.
+* Additional string functions & example
+* Updated UTF-8 String / Path class custom probes to display Unicode in Value column of probe watch window
+* New custom probe `Unicode String Probe.vi`
+    * Detects and displays Unicode for the probed LabVIEW string
+* New custom probe `Unicode String Probe (All).vi`
+    * Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings for the probed LabVIEW string
 
 #### New VIs
 ##### String Palette
-* `Normalize String (Unicode).vim`
+* `Normalize String (Unicode).vim` & `Normalize String.vi`
     * Example: `Unicode String Normalization Example.vi`
 * `Spreadsheet String To Array.vim`
 * `Array To Spreadsheet String.vim`
+
+##### Custom Probes
+* `Unicode String Probe.vi`
+* `Unicode String Probe (All).vi`
 
 
 

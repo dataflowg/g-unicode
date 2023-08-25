@@ -22,27 +22,23 @@ A LabVIEW library for displaying unicode, manipulating unicode strings, and perf
 </p>
 
 ## <a id="whats-new"></a>What's New?
-* Additional string, file I/O, and UI functions.
-* QuickDrop shortcut (Ctrl+G) to view/edit UTF-8 class value now works on front panel controls
-* QuickDrop shortcut (Ctrl+Shift+G) to erase UTF-8 class value from constant / control
+* Additional string functions & example
+* Updated UTF-8 String / Path class custom probes to display Unicode in Value column of probe watch window
+* New custom probe `Unicode String Probe.vi`
+    * Detects and displays Unicode for the probed LabVIEW string
+* New custom probe `Unicode String Probe (All).vi`
+    * Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings for the probed LabVIEW string
 
 #### New VIs
 ##### String Palette
-* `Normalize String (Unicode).vim`
+* `Normalize String (Unicode).vim` & `Normalize String.vi`
     * Example: `Unicode String Normalization Example.vi`
 * `Spreadsheet String To Array.vim`
 * `Array To Spreadsheet String.vim`
-* `String To Codepoint Array (Unicode).vim`
-* `Codepoint Array To String (Unicode).vi`
-* `1D String Array To Delimited String (Unicode).vim`
-* `Delimited String To 1D String Array (Unicode).vim`
-* `Normalize End Of Line (Unicode).vim`
-* `Trim Whitespace (Unicode).vim`
-##### File I/O Palette
-* `Detect Text File Encoding (Unicode).vim`
-##### Dialog & User Interface Palette
-* `Set Window Title (Unicode).vim`
-    * Requires _UseUnicode=TRUE_ in labview.ini
+
+##### Custom Probes
+* `Unicode String Probe.vi`
+* `Unicode String Probe (All).vi`
 
 ## <a id="motivation"></a>Motivation
 LabVIEW doesn't provide official unicode support under Windows, but through a combination of hidden control properties, byte order marks, and good luck, it is possible to read and display unicode strings. Unfortunately there are still many gaps in functionality:
@@ -133,6 +129,7 @@ Graph Cursor Names   | `Write Control Text (Unicode).vi` with 1D UTF-8 String ar
 Radio Buttons        | `Write Control Text (Unicode).vi` with 1D UTF-8 String array (1 element per button) |
 Tree                 | Write UTF-16LE + BOM to _Left Cell String_ (see `Unicode Tree File Browser Example.vi`) |
 Picture Text         | Write UTF-16LE + BOM with the picture function text VIs (see `Unicode Picture Control Example.vi`) |
+Probe Value          | Write UTF-16LE + BOM to custom probe VI's Value String output  |
 
 If the above hasn't helped, and unicode display still looks wrong:
 * Disable the _UseUnicode_ flag in `labview.ini` to avoid accidentally mixing text encodings. This flag does not affect unicode input or display (which is managed by a control's __Force Unicode Text__ and __Interpret As Unicode__ private properties).
