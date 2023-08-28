@@ -107,8 +107,8 @@
 			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
 		</Item>
 		<Item Name="Custom Probes" Type="Folder">
-			<Item Name="Unicode String Probe (All).vi" Type="VI" URL="../G-Unicode/Custom Probes/Unicode String Probe (All).vi"/>
 			<Item Name="Unicode String Probe.vi" Type="VI" URL="../G-Unicode/Custom Probes/Unicode String Probe.vi"/>
+			<Item Name="Unicode String Probe (Extended).vi" Type="VI" URL="../G-Unicode/Custom Probes/Unicode String Probe (Extended).vi"/>
 		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
 		<Item Name="VI Tree.vi" Type="VI" URL="../G-Unicode/VI Tree.vi"/>
