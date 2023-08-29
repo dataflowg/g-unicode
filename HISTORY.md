@@ -5,7 +5,9 @@
 * New custom probe `Unicode String Probe (Extended).vi`
     * Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings plus raw bytes for a LabVIEW string
 * Updated UTF-8 String / Path class custom probes to display Unicode text in the Value column of probe watch window
-* Additional string functions & example
+* `Search-Split String (Unicode).vim` can search on individual I32 codepoint
+* Updated VI documentation detailing supported malleable VI input types
+* Additional string functions
 
 #### New VIs
 ##### String Palette
