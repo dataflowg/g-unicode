@@ -284,6 +284,9 @@ protected:
 
     // Keep handle to executing command
     std::shared_ptr<executor> m_async;
+
+    int m_result_code;
+    std::string m_result;
 };
 
 class file_dialog : public dialog
@@ -361,8 +364,6 @@ public:
 private:
     // Some extra logic to map the exit code to button number
     std::map<int, button> m_mappings;
-    int m_exit_code;
-    std::string m_stdout;
 };
 
 //
@@ -1076,6 +1077,153 @@ inline internal::file_dialog::file_dialog(type in_type,
     }
     filter_list += '\0';
 
+// Code in the below #if block is identical to the #else case, except the return value is stored in the class data, and a goto is used to 'return'
+#if defined(PFD_NO_ASYNC)
+    (void)m_result_code;
+    m_wtitle = internal::str2wstr(title);
+    m_wdefault_path = internal::str2wstr(default_path);
+    auto wfilter_list = internal::str2wstr(filter_list);
+
+    // Initialise COM. This is required for the new folder selection window,
+    // (see https://github.com/samhocevar/portable-file-dialogs/pull/21)
+    // and to avoid random crashes with GetOpenFileNameW() (see
+    // https://github.com/samhocevar/portable-file-dialogs/issues/51)
+    ole32_dll ole32;
+
+    // Folder selection uses a different method
+    if (in_type == type::folder)
+    {
+#if PFD_HAS_IFILEDIALOG
+        if (flags(flag::is_vista))
+        {
+            // On Vista and higher we should be able to use IFileDialog for folder selection
+            IFileDialog *ifd;
+            HRESULT hr = dll::proc<HRESULT WINAPI(REFCLSID, LPUNKNOWN, DWORD, REFIID, LPVOID *)>(ole32, "CoCreateInstance")
+                (CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&ifd));
+
+            // In case CoCreateInstance fails (which it should not), try legacy approach
+            if (SUCCEEDED(hr))
+            {
+                m_result = select_folder_vista(ifd, options & opt::force_path);
+                goto file_dialog_return;
+            }
+        }
+#endif
+
+        BROWSEINFOW bi;
+        memset(&bi, 0, sizeof(bi));
+
+        bi.lpfn = &bffcallback;
+        bi.lParam = (LPARAM)this;
+
+        if (flags(flag::is_vista))
+        {
+            if (ole32.is_initialized())
+                bi.ulFlags |= BIF_NEWDIALOGSTYLE;
+            bi.ulFlags |= BIF_EDITBOX;
+            bi.ulFlags |= BIF_STATUSTEXT;
+        }
+
+        auto *list = SHBrowseForFolderW(&bi);
+        std::string ret;
+        if (list)
+        {
+            auto buffer = new wchar_t[MAX_PATH];
+            SHGetPathFromIDListW(list, buffer);
+            dll::proc<void WINAPI(LPVOID)>(ole32, "CoTaskMemFree")(list);
+            ret = internal::wstr2str(buffer);
+            delete[] buffer;
+        }
+        m_result = ret;
+        goto file_dialog_return;
+    }
+
+    { // Braces required to avoid goto compiler error
+        OPENFILENAMEW ofn;
+        memset(&ofn, 0, sizeof(ofn));
+        ofn.lStructSize = sizeof(OPENFILENAMEW);
+        ofn.hwndOwner = GetActiveWindow();
+
+        ofn.lpstrFilter = wfilter_list.c_str();
+
+        auto woutput = std::wstring(MAX_PATH * 256, L'\0');
+        ofn.lpstrFile = (LPWSTR)woutput.data();
+        ofn.nMaxFile = (DWORD)woutput.size();
+        if (!m_wdefault_path.empty())
+        {
+            // If a directory was provided, use it as the initial directory. If
+            // a valid path was provided, use it as the initial file. Otherwise,
+            // let the Windows API decide.
+            auto path_attr = GetFileAttributesW(m_wdefault_path.c_str());
+            if (path_attr != INVALID_FILE_ATTRIBUTES && (path_attr & FILE_ATTRIBUTE_DIRECTORY))
+                ofn.lpstrInitialDir = m_wdefault_path.c_str();
+            else if (m_wdefault_path.size() <= woutput.size())
+                //second argument is size of buffer, not length of string
+                StringCchCopyW(ofn.lpstrFile, MAX_PATH * 256 + 1, m_wdefault_path.c_str());
+            else
+            {
+                ofn.lpstrFileTitle = (LPWSTR)m_wdefault_path.data();
+                ofn.nMaxFileTitle = (DWORD)m_wdefault_path.size();
+            }
+        }
+        ofn.lpstrTitle = m_wtitle.c_str();
+        ofn.Flags = OFN_NOCHANGEDIR | OFN_EXPLORER;
+
+        dll comdlg32("comdlg32.dll");
+
+        // Apply new visual style (required for windows XP)
+        new_style_context ctx;
+
+        if (in_type == type::save)
+        {
+            if (!(options & opt::force_overwrite))
+                ofn.Flags |= OFN_OVERWRITEPROMPT;
+
+            dll::proc<BOOL WINAPI(LPOPENFILENAMEW)> get_save_file_name(comdlg32, "GetSaveFileNameW");
+            if (get_save_file_name(&ofn) == 0)
+            {
+                m_result = "";
+                goto file_dialog_return;
+            }
+            m_result = internal::wstr2str(woutput.c_str());
+            goto file_dialog_return;
+        }
+        else
+        {
+            if (options & opt::multiselect)
+                ofn.Flags |= OFN_ALLOWMULTISELECT;
+            ofn.Flags |= OFN_PATHMUSTEXIST;
+
+            dll::proc<BOOL WINAPI(LPOPENFILENAMEW)> get_open_file_name(comdlg32, "GetOpenFileNameW");
+            if (get_open_file_name(&ofn) == 0)
+            {
+                m_result = "";
+                goto file_dialog_return;
+            }
+        }
+
+        std::string prefix;
+        for (wchar_t const *p = woutput.c_str(); *p; )
+        {
+            auto filename = internal::wstr2str(p);
+            p += wcslen(p);
+            // In multiselect mode, we advance p one wchar further and
+            // check for another filename. If there is one and the
+            // prefix is empty, it means we just read the prefix.
+            if ((options & opt::multiselect) && *++p && prefix.empty())
+            {
+                prefix = filename + "\\";
+                continue;
+            }
+
+            m_vector_result.push_back(prefix + filename);
+        }
+
+        m_result = "";
+    }
+file_dialog_return:
+    return;
+#else
     m_async->start_func([this, in_type, title, default_path, filter_list,
                          options](int *exit_code) -> std::string
     {
@@ -1200,7 +1348,7 @@ inline internal::file_dialog::file_dialog(type in_type,
             // prefix is empty, it means we just read the prefix.
             if ((options & opt::multiselect) && *++p && prefix.empty())
             {
-                prefix = filename + "/";
+                prefix = filename + "\\";
                 continue;
             }
 
@@ -1209,6 +1357,8 @@ inline internal::file_dialog::file_dialog(type in_type,
 
         return "";
     });
+#endif
+
 #elif __EMSCRIPTEN__
     // FIXME: do something
     (void)in_type;
@@ -1364,7 +1514,11 @@ inline internal::file_dialog::file_dialog(type in_type,
 inline std::string internal::file_dialog::string_result()
 {
 #if _WIN32
+#if defined(PFD_NO_ASYNC)
+    return m_result;
+#else
     return m_async->result();
+#endif
 #else
     auto ret = m_async->result();
     // Strip potential trailing newline (zenity). Also strip trailing slash
@@ -1378,8 +1532,12 @@ inline std::string internal::file_dialog::string_result()
 inline std::vector<std::string> internal::file_dialog::vector_result()
 {
 #if _WIN32
+#if defined(PFD_NO_ASYNC)
+    return m_vector_result;
+#else
     m_async->result();
     return m_vector_result;
+#endif
 #else
     std::vector<std::string> ret;
     auto result = m_async->result();
@@ -1638,8 +1796,8 @@ inline message::message(std::string const &title,
     auto wtitle = internal::str2wstr(title);
     // Apply new visual style (required for all Windows versions)
     new_style_context ctx;
-    m_exit_code = MessageBoxW(GetActiveWindow(), wtext.c_str(), wtitle.c_str(), style);
-    m_stdout = "";
+    m_result_code = MessageBoxW(GetActiveWindow(), wtext.c_str(), wtitle.c_str(), style);
+    m_result = "";
 #else
     m_async->start_func([text, title, style](int* exit_code) -> std::string
     {
@@ -1812,8 +1970,8 @@ inline message::message(std::string const &title,
 inline button message::result()
 {
 #if defined PFD_NO_ASYNC
-    int exit_code = m_exit_code;
-    auto ret = m_stdout;
+    int exit_code = m_result_code;
+    auto ret = m_result;
 #else
     int exit_code;
     auto ret = m_async->result(&exit_code);
