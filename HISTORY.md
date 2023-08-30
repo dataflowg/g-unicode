@@ -1,13 +1,16 @@
 # G-Unicode Release History
-### v0.3.0 - 2023-08-28
+### v0.3.0 - 2023-08-29
 * New custom probe `Unicode String Probe.vi`
     * Detects and displays Unicode for any LabVIEW string
+    * Works as a regular string probe
 * New custom probe `Unicode String Probe (Extended).vi`
     * Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings plus raw bytes for a LabVIEW string
 * Updated UTF-8 String / Path class custom probes to display Unicode text in the Value column of probe watch window
 * `Search-Split String (Unicode).vim` can search on individual I32 codepoint
+* `Normalize End Of Line.vim` supports Unicode line separator (LS) and paragraph separator (PS)
 * Updated VI documentation detailing supported malleable VI input types
 * Additional string functions
+* Fix potential file dialog hang
 
 #### New VIs
 ##### String Palette

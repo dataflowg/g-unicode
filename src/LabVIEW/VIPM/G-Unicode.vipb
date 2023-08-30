@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-28 04:44:05" Creator="Dataflow_G" Comments="" ID="93d625b49d720011b6e2ef2ac92451c8">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2021-01-03 14:27:19" Modified_Date="2023-08-30 05:25:08" Creator="Dataflow_G" Comments="" ID="124ffda2c3b97c160f73857e0d6fe95d">
   <Library_General_Settings>
     <Package_File_Name>Dataflow_G_lib_G_Unicode</Package_File_Name>
     <Library_Version>0.3.0.2</Library_Version>
@@ -27,7 +27,7 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>G-Unicode.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary>A LabVIEW library for displaying and manipulating unicode strings, and for file I/O with unicode paths.</One_Line_Description_Summary>
+      <One_Line_Description_Summary>A LabVIEW library for displaying and manipulating Unicode strings, and for file I/O with Unicode paths.</One_Line_Description_Summary>
       <Description>A LabVIEW library for displaying Unicode, manipulating Unicode strings, and performing file I/O on Unicode paths.
 
 * Drop-in Unicode replacements for string, file I/O, and user dialog functions
@@ -43,26 +43,29 @@
       <Copyright/>
       <Packager/>
       <URL>https://github.com/dataflowg/g-unicode</URL>
-      <Release_Notes>* Additional string functions &amp; example
-* Updated UTF-8 String / Path class custom probes to display Unicode in Value column of probe watch window
-* New custom probe "Unicode String Probe.vi"
--- Detects and displays Unicode for the probed LabVIEW string
-* New custom probe "Unicode String Probe (All).vi
--- Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings for the probed LabVIEW string
+      <Release_Notes>* New custom probe `Unicode String Probe.vi`
+-- Detects and displays Unicode for any LabVIEW string
+-- Works as a regular string probe
+* New custom probe `Unicode String Probe (Extended).vi`
+-- Displays ANSI, UTF-8, UTF-16LE, and UTF-16BE encodings plus raw bytes for a LabVIEW string
+* Updated UTF-8 String / Path class custom probes to display Unicode text in the Value column of probe watch window
+* `Search-Split String (Unicode).vim` can search on individual I32 codepoint
+* `Normalize End Of Line.vim` supports Unicode line separator (LS) and paragraph separator (PS)
+* Updated VI documentation detailing supported malleable VI input types
+* Additional string functions
+* Fix potential file dialog hang
 
 NEW VIs
 ## String Palette ##
-* Normalize String (Unicode).vim &amp; Normalize String.vi
--- Example: Unicode String Normalization Example.vi
-* Spreadsheet String To Array.vim
-* Array To Spreadsheet String.vim
+* `Normalize String (Unicode).vim` &amp; `Normalize String.vi`
+    * Use to normalize Unicode codepoints into C, D, KC, and KD forms
+    * Example: `Unicode String Normalization Example.vi`
+* `Spreadsheet String To Array.vim`
+* `Array To Spreadsheet String.vim`
 
 ## Custom Probes ##
-* Unicode String Probe.vi
-* Unicode String Probe (All).vi
-
-Feedback and bug reports are welcome, and can be submitted via the G-Unicode issue tracker:
-https://github.com/dataflowg/g-unicode/issues</Release_Notes>
+* `Unicode String Probe.vi`
+* `Unicode String Probe (Extended).vi`</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -320,7 +323,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Unicode</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7ECD8A1F741385ECF29CCDB76439E112</GUID>
+      <GUID>3BC844A9069FC36FCD96883E77DCB563</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -425,7 +428,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Unicode\Prepend BOM.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4EC935A99F867A147756F4F96DD2374C</GUID>
+      <GUID>A923D9DF8C0B7B2D120964801CA85174</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -796,7 +799,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Unicode</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6869FCD4FA84712CC739AAC6BC1D0F7D</GUID>
+      <GUID>90426F3E498B4CA7A84C46DDDAA0D928</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1223,7 +1226,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Types\UTF-8 Path\Write Encoded UTF-8 Path.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6E86EEAA7C226ECB415BDAC91FE45F9C</GUID>
+      <GUID>4C891158CD701784D7AE9AFE5A8B4186</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1384,7 +1387,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Dialog &amp; User Interface\Set Window Title (Unicode).vim</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>79D2665DB6AEB073AE8D0555FE75A219</GUID>
+      <GUID>5F9CD8B7317F31A83B0A17E63779328B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -1545,7 +1548,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Examples\Unicode String Normalization Example.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3B9DDE0F562CDADE33B73AE28AD99C8B</GUID>
+      <GUID>F475169CCCF696EF03888FEC8A000AF6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -1650,7 +1653,7 @@ https://github.com/dataflowg/g-unicode/issues</Release_Notes>
         <Path>Package Source\G-Unicode\Unicode\Strip BOM.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>37166633D6D632104397D1AB44916CF1</GUID>
+      <GUID>F416DAFDB9B454F928DB0E22D5ABB460</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
