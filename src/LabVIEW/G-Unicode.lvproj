@@ -75,6 +75,7 @@
 			<Item Name="Unicode Picture Control Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Picture Control Example.vi"/>
 			<Item Name="Unicode Read Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Read Text File Example.vi"/>
 			<Item Name="Unicode Multilingual Interface Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Multilingual Interface Example.vi"/>
+			<Item Name="Unicode String Normalization Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode String Normalization Example.vi"/>
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
 			<Item Name="Unicode Tab Page Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tab Page Example.vi"/>
 			<Item Name="Unicode Write Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Write Text File Example.vi"/>
@@ -101,8 +102,13 @@
 				<Item Name="Test String Subset.vi" Type="VI" URL="../Unit Tests/String/Test String Subset.vi"/>
 				<Item Name="Test String To Codepoint Array.vi" Type="VI" URL="../Unit Tests/String/Test String To Codepoint Array.vi"/>
 				<Item Name="Test String To 1D Array.vi" Type="VI" URL="../Unit Tests/String/Test String To 1D Array.vi"/>
+				<Item Name="Test Spreadsheet String To Array.vi" Type="VI" URL="../Unit Tests/String/Test Spreadsheet String To Array.vi"/>
 			</Item>
 			<Item Name="Unit Test Data Path.vi" Type="VI" URL="../Unit Tests/Unit Test Data Path.vi"/>
+		</Item>
+		<Item Name="Custom Probes" Type="Folder">
+			<Item Name="Unicode String Probe.vi" Type="VI" URL="../G-Unicode/Custom Probes/Unicode String Probe.vi"/>
+			<Item Name="Unicode String Probe (Extended).vi" Type="VI" URL="../G-Unicode/Custom Probes/Unicode String Probe (Extended).vi"/>
 		</Item>
 		<Item Name="G-Unicode.lvlib" Type="Library" URL="../G-Unicode/G-Unicode.lvlib"/>
 		<Item Name="VI Tree.vi" Type="VI" URL="../G-Unicode/VI Tree.vi"/>
@@ -153,7 +159,6 @@
 				<Item Name="Draw Text in Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Draw Text in Rect.vi"/>
 				<Item Name="Draw Text at Point.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Draw Text at Point.vi"/>
 				<Item Name="Stall Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Stall Data Flow.vim"/>
-				<Item Name="Normalize End Of Line.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Normalize End Of Line.vi"/>
 				<Item Name="Assert Integer Type.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/TypeAssert/Assert Integer Type.vim"/>
 			</Item>
 			<Item Name="g_unicode_32.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_32.dll"/>
