@@ -386,7 +386,9 @@ extern "C" LV_DLL_EXPORT gu_result gu_normalize_string(const char* str, uint16_t
 	}
 
 	// wide_str contains a NULL char from widen(), so can specify length is -1
-	int32_t norm_str_size = NormalizeString(form, wide_str, -1, NULL, 0);
+	// Estimated size can be wrong for KD form (too small) depending on the input string.
+	// Multiply estimated size by 2 just in case.
+	int32_t norm_str_size = NormalizeString(form, wide_str, -1, NULL, 0) * 2;
 	wchar_t* norm_str = (wchar_t*)malloc(sizeof(wchar_t) * norm_str_size);
 
 	if (norm_str == NULL)

@@ -150,6 +150,7 @@ https://github.com/dataflowg/g-unicode</Property>
 			<Item Name="Text as String.vi" Type="VI" URL="../Private/Conversion/Text as String.vi"/>
 			<Item Name="Text as UTF-16LE String (Array).vim" Type="VI" URL="../Private/Conversion/Text as UTF-16LE String (Array).vim"/>
 			<Item Name="Text to UTF-8.vi" Type="VI" URL="../Private/Conversion/Text to UTF-8.vi"/>
+			<Item Name="To Fullwidth.vi" Type="VI" URL="../Private/Conversion/To Fullwidth.vi"/>
 			<Item Name="UTF-8 to Text.vi" Type="VI" URL="../Private/Conversion/UTF-8 to Text.vi"/>
 		</Item>
 		<Item Name="Library" Type="Folder">
