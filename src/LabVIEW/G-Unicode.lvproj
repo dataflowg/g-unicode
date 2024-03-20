@@ -70,7 +70,6 @@
 		<Item Name="Examples" Type="Folder">
 			<Item Name="Tree Browser.lvlib" Type="Library" URL="../G-Unicode/Examples/Tree Browser/Tree Browser.lvlib"/>
 			<Item Name="Unicode Input Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Input Example.vi"/>
-			<Item Name="Unicode List Folder Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode List Folder Example.vi"/>
 			<Item Name="Unicode Path With LabVIEW File IO Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Path With LabVIEW File IO Example.vi"/>
 			<Item Name="Unicode Picture Control Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Picture Control Example.vi"/>
 			<Item Name="Unicode Read Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Read Text File Example.vi"/>
@@ -79,6 +78,7 @@
 			<Item Name="Unicode Tree File Browser Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tree File Browser Example.vi"/>
 			<Item Name="Unicode Tab Page Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Tab Page Example.vi"/>
 			<Item Name="Unicode Write Text File Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Write Text File Example.vi"/>
+			<Item Name="Unicode Open File With Filters.vi" Type="VI" URL="../G-Unicode/Examples/Unicode Open File With Filters.vi"/>
 		</Item>
 		<Item Name="QuickDrop Plugins" Type="Folder">
 			<Item Name="G-Unicode UTF-8 Class Editor.vi" Type="VI" URL="../G-Unicode/QuickDrop Plugins/G-Unicode UTF-8 Class Editor.vi"/>
@@ -165,6 +165,8 @@
 			<Item Name="user32.dll" Type="Document" URL="user32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="g_unicode_64.dll" Type="Document" URL="../G-Unicode/lib/g_unicode_64.dll"/>
+			<Item Name="Unicode List Folder Example.vi" Type="VI" URL="../G-Unicode/Examples/Unicode List Folder Example.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
