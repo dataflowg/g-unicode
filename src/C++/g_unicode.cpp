@@ -535,7 +535,7 @@ extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_
 // Dialog API //
 ////////////////
 
-extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length, intptr_t* paths_pointer, int32_t* num_paths)
+extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char* filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length, intptr_t* paths_pointer, int32_t* num_paths)
 {
 	*path_length = 0;
 	*path_pointer = 0;
@@ -543,11 +543,22 @@ extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const 
 	*num_paths = 0;
 	*cancelled = 0;
 
-	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of Folder";
+	std::string _title = (strlen(title) > 0) ? title : "Choose or Enter Path of File";
 	std::string _default_path = (strlen(default_path) > 0) ? default_path : pfd::path::home();
 	pfd::opt _option = allow_multi_select ? pfd::opt::multiselect : pfd::opt::none;
 
-	auto selection = pfd::open_file(_title, _default_path, { "All Files (*.*)", "*" }, _option).result();
+	std::vector<std::string> filters = { "All Files (*.*)", "*" }; // Valeur par défaut des filtres
+	std::string filter_patterns_str(filter_patterns);
+	std::string filter_description_str(filter_description);
+	
+    if (!filter_patterns_str.empty()) {
+        filters.clear(); // Clear default filters if specific filters are provided
+
+        filters.push_back(filter_description_str);
+		filters.push_back(filter_patterns_str);
+    }
+
+	auto selection = pfd::open_file(_title, _default_path, filters, _option).result();
 
 	// User cancelled the dialog
 	if (selection.size() == 0)
