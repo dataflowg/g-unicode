@@ -98,7 +98,7 @@ extern "C" LV_DLL_EXPORT gu_result gu_is_text_utf8(const char* str, int32_t* is_
 ////////////////
 // Dialog API //
 ////////////////
-extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char** filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length, intptr_t* paths_pointer, int32_t* num_paths);
+extern "C" LV_DLL_EXPORT gu_result gu_open_file_dialog(const char* title, const char* default_path, int32_t num_filter_patterns, const char* filter_patterns, const char* filter_description, int32_t allow_multi_select, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length, intptr_t* paths_pointer, int32_t* num_paths);
 extern "C" LV_DLL_EXPORT gu_result gu_select_folder_dialog(const char* title, const char* default_path, int32_t* cancelled, intptr_t* path_pointer, int32_t* path_length);
 extern "C" LV_DLL_EXPORT gu_result gu_message_box(const char* title, const char* message, int32_t choice, int32_t icon, int32_t* user_selection);
 extern "C" LV_DLL_EXPORT gu_result gu_input_box(const char* title, const char* message, const char* default_input, intptr_t* input_pointer, int32_t* input_size);
